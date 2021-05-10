@@ -1,0 +1,188 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <title>Zombase</title>
+</head>
+
+<body class="bg-purple-100">
+    <!-- Navbar completa -->
+    <nav class="bg-purple-400">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="flex justify-between">
+                <div class="flex space-x-10">
+                    <!-- logo -->
+                    <div>
+                        <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+                            <img src="./img/logo.png" width="200" alt="">
+                        </a>
+                    </div>
+
+                    <!-- menu principal -->
+                    <div class="hidden md:flex items-center space-x-5">
+                        <a href="index.html" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Inicio</a>
+                        <a href="about-us.html" class="link-nav">Sobre nosotros</a>
+                        <a href="top-players.html" class="link-nav">Top Jugadores</a>
+                    </div>
+                </div>
+
+                <!-- menu login -->
+
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="#" class="link">Inicio</a>
+            <a href="#" class="link">Sobre nosotros</a>
+            <a href="#" class="link">Top jugadores</a>
+        </div>
+    </nav>
+    <div class="flex justify-center">
+        <div class="flex justify-evenly bg-gray-50 w-12/12 mt-10 mb-10 rounded">
+            <div class="grid grid-cols-1 xl:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 w-full items-baseline">
+                <div class="login bg-white m-5 sm:m-10 pt-10 pb-5 h-auto text-center">
+                    <h1 class="text-3xl mb-5">Inicia Sesión</h1>
+                    <form class="flex flex-col gap-5" action="">
+                        <div>
+                            <label class="text-sm block text-left mx-5">Correo electrónico</label>
+                            <div class="flex flex-col">
+                                <input type="text" placeholder="example@example.com" class="mx-5 ">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-sm block text-left mx-5">Contraseña</label>
+                            <div class="flex flex-col">
+                                <input type="password" placeholder="password" class="mx-5 ">
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-start flex-wrap">
+                            <div>
+                                <input type="checkbox" class="ml-5" id="recordar" value="remember">
+                                <label for="recordar">Recordar mi usuario</label>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <button class="bg-green-500 font-semibold mx-5 text-gray-100 hover:text-white hover:bg-green-400 rounded-md w-full py-2">Iniciar Sesión</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="register bg-white m-5 sm:m-10 pt-10 pb-5 h-auto text-center">
+                    <h1 class="text-3xl mb-5">Regístrate</h1>
+                    <form class="flex flex-col gap-5" action="">
+                        <div class="flex flex-row justify-between flex-wrap gap-5 xs:gap-5">
+                            <div>
+                                <label for="nombre" class="text-sm text-left block mx-5">Nombre</label>
+                                <input type="text" placeholder="Fran" id="nombre" class="mx-5">
+                            </div>
+                            <div>
+                                <label class="text-sm block text-left mx-5">Apellidos</label>
+                                <input type="text" placeholder="Rivera" class="mx-5">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-sm block text-left mx-5">Nº de teléfono</label>
+                            <div class="flex flex-col">
+                                <input type="text" placeholder="+34 656213123" class="mx-5">
+                            </div>
+
+                        </div>
+                        <div>
+                            <label class="text-sm block text-left mx-5">Correo electrónico</label>
+                            <div class="flex flex-col">
+                                <input type="text" placeholder="example@example.com" class="mx-5 ">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-sm block text-left mx-5">Contraseña</label>
+                            <div class="flex flex-col">
+                                <input type="password" placeholder="password" class="mx-5 ">
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-start flex-wrap">
+                            <div>
+                                <input type="checkbox" class="ml-5" id="acepto" value="acepto">
+                                <label class="mr-5" for="acepto">Acepto los terminos y condiciones</label>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <button class="bg-purple-500 font-semibold text-gray-200  hover:bg-purple-400 hover:text-white mx-5 rounded-md w-full py-2">Registrarme</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="bg-gray-900 flex justify-center">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center ">
+                <div class="sm:w-2/3 pt-5 ">
+                    <img src="./img/vigade.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="sm:w-2/3 pt-5">
+                    <p class="text-sm text-gray-400 mb-2 text-center">
+                        Este juego fue desarrollado con amor por el equipo de Vigade Studios
+                    </p>
+                </div>
+                <div class="sm:w-2/3 pt-5">
+                    <div class="flex flex-row gap-5 justify-center">
+                        <a href="#"><i class="fa fa-facebook link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-twitter link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-github link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-instagram link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-linkedin link-footer"></i> </a>
+                    </div>
+                </div>
+                <div class="sm:w-2/3 pt-5 pb-3">
+                    <div class="flex flex-row flex-wrap gap-5 justify-center">
+                        <a href="#" class="link-footer">Politica de privacidad</a>
+                        <a href="#" class="link-footer">Terminos y condiciones</a>
+                        <a href="#" class="link-footer">Soporte</a>
+                        <a href="#" class="link-footer">Contacto</a>
+                        <a href="#" class="link-footer">Declaración sobre las cookies</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script>
+        // grab everything we need
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
+        // add event listeners
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>

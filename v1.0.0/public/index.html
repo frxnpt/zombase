@@ -1,0 +1,259 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <title>Zombase</title>
+</head>
+
+<body class="bg-purple-100">
+    <!-- Navbar completa -->
+    <nav class="bg-purple-400">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="flex justify-between">
+                <div class="flex space-x-10">
+                    <!-- logo -->
+                    <div>
+                        <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+                            <img src="./img/logo.png" width="200" alt="">
+                        </a>
+                    </div>
+
+                    <!-- menu principal -->
+                    <div class="hidden md:flex items-center space-x-5">
+                        <a href="index.html"
+                            class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Inicio</a>
+                        <a href="about-us.html" class="link-nav">Sobre nosotros</a>
+                        <a href="top-players.html" class="link-nav">Top Jugadores</a>
+                    </div>
+                </div>
+
+                <!-- menu login -->
+                <div class="hidden md:flex items-center space-x-5">
+                    <a href="" class="link-nav">Iniciar Sesión</a>
+                    <a href=""
+                        class="font-semibold px-2 py-1 rounded-md bg-blue-900 box-border text-white hover:bg-purple-900 transition duration-500 shadow">Registrar</a>
+                </div>
+
+
+
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="#" class="link">Inicio</a>
+            <a href="#" class="link">Sobre nosotros</a>
+            <a href="#" class="link">Top jugadores</a>
+            <a href="#" class="link">Iniciar Sesión</a>
+            <a href="#" class="link">Registro</a>
+        </div>
+    </nav>
+
+
+    <!--Container-->
+    <div id="container">
+        <div id="animate">
+            <img height="100%" id="personaje">
+        </div>
+    </div>
+
+
+    <!-- info (temporal)-->
+    <p style="margin: auto; text-align: center;">
+        <span id="salud"></span><span id="municion"></span><span id="ronda">Ronda:</span>
+    </p>
+
+    </div>
+    <footer class="bg-gray-900 flex justify-center">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center ">
+                <div class="sm:w-2/3 pt-5 ">
+                    <img src="./img/vigade.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="sm:w-2/3 pt-5">
+                    <p class="text-sm text-gray-400 mb-2 text-center">
+                        Este juego fue desarrollado con amor por el equipo de Vigade Studios
+                    </p>
+                </div>
+                <div class="sm:w-2/3 pt-5">
+                    <div class="flex flex-row gap-5 justify-center">
+                        <a href="#"><i class="fa fa-facebook link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-twitter link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-github link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-instagram link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-linkedin link-footer"></i> </a>
+                    </div>
+                </div>
+                <div class="sm:w-2/3 pt-5 pb-3">
+                    <div class="flex flex-row gap-5 justify-center">
+                        <a href="#" class="link-footer">Politica de privacidad</a>
+                        <a href="#" class="link-footer">Terminos y condiciones</a>
+                        <a href="#" class="link-footer">Soporte</a>
+                        <a href="#" class="link-footer">Contacto</a>
+                        <a href="#" class="link-footer">Declaración sobre las cookies</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./scripts/recargar.js"></script>
+    <script src="./scripts/resetear.js"></script>
+    <script src="./scripts/pausa.js"></script>
+    <script src="./scripts/reanudar.js"></script>
+    <script src="./scripts/destruir.js"></script>
+    <script src="./scripts/colision.js"></script>
+    <script src="./scripts/reposicionDeObjeto.js"></script>
+    <script src="./scripts/movimiento.js"></script>
+    <script src="./scripts/disparar.js"></script>
+    <script src="./scripts/movimientoBala.js"></script>
+    <script src="./scripts/crearZombie.js"></script>
+    <script src="./scripts/movimientoZombie.js"></script>
+    <script src="./scripts/colisionZombie.js"></script>
+    <script src="./scripts/disparoZombie.js"></script>
+    <script src="./scripts/reestablecerMovimiento.js"></script>
+    <script src="./scripts/nuevaRonda.js"></script>
+    <script src="./scripts/finalPartida.js"></script>
+    <script src="./scripts/cambiarArma.js"></script>
+    <script>//TODO: Mirar decorator pattern javascript
+        var pausa = false;
+        var container = document.getElementById("container");
+        document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_PISTOLA1.png");
+        container.style.width = "70vw";
+        container.style.height = "83vh";
+        container.style.marginTop = document.body.clientHeight / 2 - container.clientHeight / 1.78 + "px";
+        container.style.marginLeft = document.body.clientWidth / 2 - container.clientWidth / 2 + "px";
+        var elem = document.getElementById("animate");
+        var xInicial = container.clientWidth / 2;
+        var yInicial = container.clientHeight / 2;
+        var widhtInicial = 2;
+        var heightInicial = 2;
+        var balasDisparadas = 0;
+        //Aumentará conforme matemos zombies
+        var ronda = 1;
+        var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
+
+        //Será necesario hacer lo mismo o algo parecido para los elementos que se destruyen (o buscar otra solucion)
+        var zombies = 0;//Nombre de los zombies
+        var contadorZombies = 0;//Contador de zombies para la ronda(reseteado a 0 despues de cada ronda)
+        //Guardamos de forma inicial la %pos relativa de la X y la Y para redimensionar luego (0.5 inicial)
+        var Jugador = {
+            salud: 100,
+            skinActual: "RAMBO",
+            armaActual: 1,
+            arma1:
+            {
+                nombre: "PISTOLA1",
+                cargador: 8,
+                tamanoCargador: 8,
+                municion: 120,
+                recarga: 2000,
+                cadencia: 0,
+                velocidad: 1,
+                impacto: 20
+            },
+            arma2:
+            {
+                nombre: "none",
+                cargador: 0,
+                tamanoCargador: 0,
+                municion: 0,
+                recarga: 0,
+                cadencia: 0,
+                velocidad: 0,
+                impacto: 0
+            },
+            velocidad: 1,
+            porcentajeX: 0.5,
+            porcentajeY: 0.5,
+            recargando: false
+        }//Valores iniciales del jugador
+        //TODO: importar variables (objetos de armas y zombies) desde fichero
+
+        //Contador para ver el orden de los intervalos, y luego poder eliminarlos detenidamente. Empieza (actualmente)en 2 porque es el 
+        //asignado directamente al movimiento nada más empezar y a la ronda. Al añadir zombies, bullets, etc, se le asignarán un valor de intervalo.
+        var contadorIntervalos = 2;
+        var intervalosAnteriores = 1;//1 para que empiece por el intervalo 1, no hay intervalo 0
+        //Lista de objetos a parte del personaje, container y balas, utilizados para ver si hay colision/redimensión.
+        //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
+        var listaZombies = [];
+
+        //balas activas para su reposicionamiento y redimension
+        var Balas = [];
+
+        elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
+            "vw; position: absolute; display: block; left: " +
+            xInicial + "px; top: " + yInicial + "px;";
+        document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
+        document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargador + " / " + Jugador.arma1.municion;
+
+        var ratonX = 0;
+        var ratonY = 0;
+
+        let keysPressed = {};
+        document.addEventListener('keydown', (event) => {
+            keysPressed[event.code] = true;
+        });
+
+        document.addEventListener('keyup', (event) => {
+            delete keysPressed[event.code];
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            if (pausa == false) {
+                ratonX = event.clientX;
+                ratonY = event.clientY;
+                var rad = Math.atan2(ratonX - elem.getBoundingClientRect().x, ratonY - elem.getBoundingClientRect().y);
+                var rot = (rad * (180 / Math.PI) * -1) + 180;
+                document.getElementById("personaje").style = "transform: rotate(" + rot + "deg);";
+            }
+        });
+
+        container.addEventListener("wheel", cambiarArma)
+        //Movimiento basado en % del tamaño del contedor, de forma que a tamaños de container mas grandes, tenga una velocidad similar
+        //En caso de un cuadrado 1000 x 1000, yendo de 3 en 3 de forma estática por ejemplo, tomaría mucho mas tiempo llegar a las esquinas
+        //que en un 400 x 400. Esto es para futuro tamaño responsive del container. 0.01 velocidad sería 1% del container por ejecución.
+        //Este valor nos servirá de referencia
+        var factorVelocidad = container.clientWidth * 0.025;
+        window.addEventListener("resize", reposicionDeObjetos);//A veces falla al pulsar maximizar?
+        document.addEventListener("click", disparar);
+
+        myMove();
+        var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
+        var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
+        var generarZombie = 0;
+    </script>
+
+    <script>
+        // hacemos las variables
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
+        // agrego los listeners para togglear
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>
