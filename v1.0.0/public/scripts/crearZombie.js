@@ -14,10 +14,10 @@ function crearZombie() {
             case 2:
                 tipoZombie = "zombieTipo2";
                 fondo = "./resources/zombies/ZOMBIE2.png";
-                velocidadZombie = 0.3;
-                cooldownZombie = 1420 - 20 * ronda;
+                velocidadZombie = 10;//Avanza un poco cada vez que dispara, leer abajo
+                cooldownZombie = 3100 - 20 * ronda;//Este es especial lleva el cooldown en el movimiento. y en este dispara
                 saludZombie = 100 + 45 * ronda;
-                impactoZombie = 8 + Math.round(ronda / 2);
+                impactoZombie = 0;//Su impacto estará en la bala
                 break;
 
             default://Zombie tipo1
@@ -83,6 +83,11 @@ function crearZombie() {
         }
         listaZombies.push(objetoZombie);
 
-        var moverZombie = setInterval(movimientoZombie, 25, zombies, tipoZombie);//ajustar velocidad y milisegundos para reducir zigzag
+        if (tipoZombie == "zombieTipo2") {
+            var moverZombie = setInterval(movimientoZombie, cooldownZombie, zombies, tipoZombie);
+        } else {
+            var moverZombie = setInterval(movimientoZombie, 25, zombies, tipoZombie);//ajustar velocidad y milisegundos para reducir zigzag
+        }
     }
+
 }

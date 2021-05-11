@@ -42,7 +42,7 @@ function movimientoZombie(zombies, tipoZombie) {
         document.getElementById("zombie" + zombies).style.top = yZombieFinal + "px";
 
         if (tipoZombie == "zombieTipo2") {
-            //disparoZombie(posArrayZombie);
+            disparoZombie(posArrayZombie);
         } else {
 
             var posXHitboxZ = xZombieFinal + document.getElementById("zombie" + zombies).getBoundingClientRect().width / 2;

@@ -1047,3 +1047,19 @@ body {
     display: block;
     background-color: red;
   }
+
+  .BulletZ {
+    width:1.4vw;
+    height: 1.4vw;
+    position: absolute;
+    border-radius: 25px;
+    background-color: red;
+    display: block;
+  }
+
+  .BOTIQUIN{
+	width:1.2vw;
+    height: 1.2vw;
+    position: absolute;
+	display: block;
+  }

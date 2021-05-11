@@ -48,6 +48,41 @@ function myMove(container, elem) {
             elem.style.left = x + "px";
             elem.style.top = y + "px";
 
+            if (items.length > 0) {
+
+                var xPersonajeHitbox = (elem.getBoundingClientRect().left + elem.getBoundingClientRect().width / 2) -
+                    document.getElementById("container").getBoundingClientRect().left;
+                var yPersonajeHitbox = (elem.getBoundingClientRect().top + elem.getBoundingClientRect().height / 2) -
+                    document.getElementById("container").getBoundingClientRect().top;
+
+                for (let i = 0; i < items.length; i++) {
+                    var limiteItemXizda = document.getElementById(items[i].nombre).getBoundingClientRect().left -
+                        document.getElementById("container").getBoundingClientRect().left;
+
+                    var limiteItemXdcha = document.getElementById(items[i].nombre).getBoundingClientRect().right -
+                        document.getElementById("container").getBoundingClientRect().left;
+
+                    var limiteItemYtop = document.getElementById(items[i].nombre).getBoundingClientRect().top -
+                        document.getElementById("container").getBoundingClientRect().top;
+
+                    var limiteItemYbot = document.getElementById(items[i].nombre).getBoundingClientRect().bottom -
+                        document.getElementById("container").getBoundingClientRect().top;
+
+                    if ((xPersonajeHitbox >= limiteItemXizda && xPersonajeHitbox <= limiteItemXdcha) &&
+                        (yPersonajeHitbox >= limiteItemYtop && yPersonajeHitbox <= limiteItemYbot)) {
+                        Jugador.salud = Jugador.salud + 20;
+                        if (Jugador.salud > 100) {
+                            Jugador.salud = 100;
+                        }
+                        document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
+                        destruir(items[i].nombre, "BOTIQUIN", i);
+                    }
+
+                }
+
+
+            }
+
             var rad = Math.atan2(ratonX - rectanguloObjeto.x, ratonY - rectanguloObjeto.y);
             var rot = (rad * (180 / Math.PI) * -1) + 180;
             document.getElementById("personaje").style = "transform: rotate(" + rot + "deg);"

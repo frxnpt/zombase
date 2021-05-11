@@ -122,10 +122,13 @@
     <script src="./scripts/reanudar.js"></script>
     <script src="./scripts/destruir.js"></script>
     <script src="./scripts/colision.js"></script>
+    <script src="./scripts/colisionBalaZ.js"></script>
     <script src="./scripts/reposicionDeObjeto.js"></script>
     <script src="./scripts/movimiento.js"></script>
     <script src="./scripts/disparar.js"></script>
+    <script src="./scripts/disparoZombie.js"></script>
     <script src="./scripts/movimientoBala.js"></script>
+    <script src="./scripts/movimientoBalaZombie.js"></script>
     <script src="./scripts/crearZombie.js"></script>
     <script src="./scripts/movimientoZombie.js"></script>
     <script src="./scripts/colisionZombie.js"></script>
@@ -148,7 +151,8 @@
         var widhtInicial = 2;
         var heightInicial = 2;
         var balasDisparadas = 0;
-        //Aumentará conforme matemos zombies
+        var balasDisparadasZombie = 0;
+        var contadorItems = 0;
         var ronda = 1;
         var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
 
@@ -192,13 +196,15 @@
         //Contador para ver el orden de los intervalos, y luego poder eliminarlos detenidamente. Empieza (actualmente)en 2 porque es el 
         //asignado directamente al movimiento nada más empezar y a la ronda. Al añadir zombies, bullets, etc, se le asignarán un valor de intervalo.
         var contadorIntervalos = 2;
-        var intervalosAnteriores = 1;//1 para que empiece por el intervalo 1, no hay intervalo 0
+        var intervalosAnteriores = 1;//1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
         //Lista de objetos a parte del personaje, container y balas, utilizados para ver si hay colision/redimensión.
         //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
         var listaZombies = [];
 
         //balas activas para su reposicionamiento y redimension
         var Balas = [];
+        var BalasZombie = [];
+        var items = [];
 
         elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
             "vw; position: absolute; display: block; left: " +

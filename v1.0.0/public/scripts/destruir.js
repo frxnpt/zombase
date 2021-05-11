@@ -16,5 +16,10 @@ function destruir(nombre, tipo, indice) {
             }
             var empezarRonda = setTimeout(nuevaRonda, 6000, contadorIntervalos);
         }
+    } else if (tipo == "BalaZombie") {
+        clearInterval(BalasZombie[indice].intervalo);
+        BalasZombie.splice(indice, 1);
+    } else if (tipo == "BOTIQUIN") {
+        items.splice(indice, 1);
     }
 }
