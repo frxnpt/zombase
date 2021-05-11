@@ -24,7 +24,7 @@ function colision(X, Y, impacto) {
                 listaZombies[i].salud = listaZombies[i].salud - impacto;
                 if (listaZombies[i].salud <= 0) {
                     switch (Math.floor(Math.random() * 2) + 1) {//Probabilidad de dropear un botiquin de un zombie cuando muere
-                        case 2:
+                        case 2://TODO: Hacer algo similar con las armas, y ademas que sea necesario pulsar una tecla para cambiar el arma actual.
                             contadorItems++;
                             var botiquin = document.createElement("div");
                             botiquin.setAttribute("id", "botiquin" + contadorItems);

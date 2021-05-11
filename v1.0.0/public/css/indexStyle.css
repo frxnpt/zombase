@@ -1,0 +1,105 @@
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+
+  }
+
+  img {
+    user-select: none;
+  }
+
+  #container {
+    position: relative;
+    background: yellow;
+    user-select: none;
+  }
+
+  p {
+    user-select: none;
+  }
+
+  .menu,
+  .menuFin {
+    width: 26vw;
+    height: 12vw;
+    position: absolute;
+    background-color: grey;
+    text-align: center;
+    font-size: 4vw;
+  }
+
+  #salud,
+  #municion {
+    padding-right: 18vw;
+  }
+
+  #ronda,
+  #municion,
+  #salud {
+    font-size: 2vw;
+  }
+
+  .botonContinuar,
+  .botonReiniciar {
+    font-size: 2vw;
+    margin: 8px;
+  }
+
+  #personaje {
+    transform: rotate(0deg);
+  }
+
+  #arma {
+    position: absolute;
+    display: block;
+    width: 0.5vw;
+    height: 0.5vw;
+  }
+
+  #armaActual {
+    width: 80%;
+  }
+
+  .PISTOLA1 {
+    width: 1vw;
+    height: 1vw;
+    position: absolute;
+    border-radius: 25px;
+    background-color: black;
+    display: block;
+  }
+
+  .zombieTipo1 {
+    width: 1.5vw;
+    height: 1.5vw;
+    position: absolute;
+    border-radius: 0px;
+    display: block;
+  }
+
+  .zombieTipo2 {
+    width: 2.2vw;
+    height: 2.2vw;
+    position: absolute;
+    border-radius: 0px;
+    display: block;
+    background-color: red;
+  }
+
+  .BulletZ {
+    width:1.4vw;
+    height: 1.4vw;
+    position: absolute;
+    border-radius: 25px;
+    background-color: red;
+    display: block;
+  }
+
+  .BOTIQUIN{
+	width:2.2vw;
+    height: 2.2vw;
+    position: absolute;
+	display: block;
+  }

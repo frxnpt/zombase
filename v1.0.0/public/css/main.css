@@ -590,8 +590,8 @@ video {
 		max-width: 1536px;
 	}
 }
-.m-10 {
-	margin: 2.5rem;
+.m-5 {
+	margin: 1.25rem;
 }
 .mx-auto {
 	margin-left: auto;
@@ -633,9 +633,6 @@ video {
 .mb-2 {
 	margin-bottom: 0.5rem;
 }
-.mr-2 {
-	margin-right: 0.5rem;
-}
 .mb-6 {
 	margin-bottom: 1.5rem;
 }
@@ -656,9 +653,6 @@ video {
 }
 .h-6 {
 	height: 1.5rem;
-}
-.h-screen {
-	height: 100vh;
 }
 .h-auto {
 	height: auto;
@@ -693,6 +687,19 @@ video {
 .max-w-7xl {
 	max-width: 80rem;
 }
+.transform {
+	--tw-translate-x: 0;
+	--tw-translate-y: 0;
+	--tw-rotate: 0;
+	--tw-skew-x: 0;
+	--tw-skew-y: 0;
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
+	transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.resize {
+	resize: both;
+}
 .grid-cols-1 {
 	grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -701,6 +708,9 @@ video {
 }
 .flex-row {
 	flex-direction: row;
+}
+.flex-wrap {
+	flex-wrap: wrap;
 }
 .items-center {
 	align-items: center;
@@ -716,6 +726,9 @@ video {
 }
 .justify-evenly {
 	justify-content: space-evenly;
+}
+.justify-start {
+	justify-content: flex-start;
 }
 .gap-5 {
 	gap: 1.25rem;
@@ -763,6 +776,14 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
+.bg-green-500 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
+}
+.bg-purple-500 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(139, 92, 246, var(--tw-bg-opacity));
+}
 .bg-gray-100 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
@@ -790,6 +811,10 @@ video {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 }
+.py-2 {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
 .py-10 {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
@@ -800,16 +825,25 @@ video {
 .pb-3 {
 	padding-bottom: 0.75rem;
 }
+.pt-10 {
+	padding-top: 2.5rem;
+}
+.pb-5 {
+	padding-bottom: 1.25rem;
+}
 .text-center {
 	text-align: center;
+}
+.text-left {
+	text-align: left;
 }
 .text-sm {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 }
-.text-5xl {
-	font-size: 3rem;
-	line-height: 1;
+.text-3xl {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
 }
 .text-7xl {
 	font-size: 4.5rem;
@@ -836,6 +870,14 @@ video {
 .text-gray-400 {
 	--tw-text-opacity: 1;
 	color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+.text-gray-100 {
+	--tw-text-opacity: 1;
+	color: rgba(243, 244, 246, var(--tw-text-opacity));
+}
+.text-gray-200 {
+	--tw-text-opacity: 1;
+	color: rgba(229, 231, 235, var(--tw-text-opacity));
 }
 .text-yellow-400 {
 	--tw-text-opacity: 1;
@@ -926,15 +968,38 @@ video {
 	background-color: rgba(76, 29, 149, var(--tw-bg-opacity));
 }
 
+.hover\:bg-green-400:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(52, 211, 153, var(--tw-bg-opacity));
+}
+
+.hover\:bg-purple-400:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(167, 139, 250, var(--tw-bg-opacity));
+}
+
 .hover\:text-gray-900:hover {
 	--tw-text-opacity: 1;
 	color: rgba(17, 24, 39, var(--tw-text-opacity));
 }
 
+.hover\:text-white:hover {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
+
+	.sm\:m-10 {
+		margin: 2.5rem;
+	}
 
 	.sm\:w-2\/3 {
 		width: 66.666667%;
+	}
+
+	.sm\:grid-cols-1 {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 
 	.sm\:text-3xl {
@@ -953,113 +1018,14 @@ video {
 		display: none;
 	}
 
-	.md\:grid-cols-2 {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+	.md\:grid-cols-1 {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 }
 
+@media (min-width: 1280px) {
 
-body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
-
-  }
-
-  img {
-    user-select: none;
-  }
-
-  #container {
-    position: relative;
-    background: yellow;
-    user-select: none;
-  }
-
-  p {
-    user-select: none;
-  }
-
-  .menu,
-  .menuFin {
-    width: 26vw;
-    height: 12vw;
-    position: absolute;
-    background-color: grey;
-    text-align: center;
-    font-size: 4vw;
-  }
-
-  #salud,
-  #municion {
-    padding-right: 18vw;
-  }
-
-  #ronda,
-  #municion,
-  #salud {
-    font-size: 2vw;
-  }
-
-  .botonContinuar,
-  .botonReiniciar {
-    font-size: 2vw;
-    margin: 8px;
-  }
-
-  #personaje {
-    transform: rotate(0deg);
-  }
-
-  #arma {
-    position: absolute;
-    display: block;
-    width: 0.5vw;
-    height: 0.5vw;
-  }
-
-  #armaActual {
-    width: 80%;
-  }
-
-  .PISTOLA1 {
-    width: 1vw;
-    height: 1vw;
-    position: absolute;
-    border-radius: 25px;
-    background-color: black;
-    display: block;
-  }
-
-  .zombieTipo1 {
-    width: 1.5vw;
-    height: 1.5vw;
-    position: absolute;
-    border-radius: 0px;
-    display: block;
-  }
-
-  .zombieTipo2 {
-    width: 2.2vw;
-    height: 2.2vw;
-    position: absolute;
-    border-radius: 0px;
-    display: block;
-    background-color: red;
-  }
-
-  .BulletZ {
-    width:1.4vw;
-    height: 1.4vw;
-    position: absolute;
-    border-radius: 25px;
-    background-color: red;
-    display: block;
-  }
-
-  .BOTIQUIN{
-	width:1.2vw;
-    height: 1.2vw;
-    position: absolute;
-	display: block;
-  }
+	.xl\:grid-cols-2 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
