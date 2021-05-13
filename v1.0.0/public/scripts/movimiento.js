@@ -36,14 +36,14 @@ function myMove(container, elem) {
             y = y + direccionY;
 
             if (x > limiteX) {
-                x = limiteX;
+                x = limiteX + limiteX * 0.00001;
             } else if (x < 0) {
-                x = 0;
+                x = 0.01;
             }
             if (y > limiteY) {
-                y = limiteY;
+                y = limiteY + limiteY * 0.00001;
             } else if (y < 0) {
-                y = 0;
+                y = 0.01;
             }
 
             Jugador.porcentajeX = x / rectanguloContainer.width;

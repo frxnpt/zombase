@@ -9,6 +9,8 @@ function cambiarArma() {// cambio de imagen Para el cambio de arma con la ruleta
                     document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO.png");
                 } else if (Jugador.arma2.nombreArma2 == "PISTOLA1") {
                     document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_PISTOLA1.png");
+                } else if (Jugador.arma2.nombreArma2 == "ESCOPETA1") {
+                    document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_ESCOPETA1.png");
                 }
             }
             break;
@@ -19,6 +21,8 @@ function cambiarArma() {// cambio de imagen Para el cambio de arma con la ruleta
                 document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_PISTOLA1.png");
             } else if (Jugador.arma1.nombreArma1 == "none") {
                 document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO.png");
+            } else if (Jugador.arma1.nombreArma1 == "ESCOPETA1") {
+                document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_ESCOPETA1.png");
             }
             break;
         default:
