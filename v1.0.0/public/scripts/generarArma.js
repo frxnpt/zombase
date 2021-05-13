@@ -7,12 +7,12 @@ function generarArma(i) {//i es el indice del zombie que ha muerto
 
     var idArma = "PISTOLA1";
 
-    switch (Math.floor(Math.random() * 20) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
-        case 5:
+    switch (Math.floor(Math.random() * 10) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
+        case 1:
             idArma = "ESCOPETA1";
             break;
 
-        case 10://TODO:AÑADIR MAS
+        case 2://TODO:AÑADIR MAS
             idArma = "ESCOPETA1";
             break;
         default:

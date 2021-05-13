@@ -4,24 +4,26 @@ function disparar() {
         var cargador = 0;
         var velocidad = 0;
         var impacto = 0;
+        var onCooldown = false;
         switch (Jugador.armaActual) {
             case 1:
                 clase = Jugador.arma1.nombre;
                 cargador = Jugador.arma1.cargador;
                 velocidad = Jugador.arma1.velocidad;
                 impacto = Jugador.arma1.impacto;
+                onCooldown = Jugador.arma1.onCooldown;
                 break;
             case 2:
                 clase = Jugador.arma2.nombre;
                 cargador = Jugador.arma2.cargador;
                 velocidad = Jugador.arma2.velocidad;
                 impacto = Jugador.arma2.impacto;
+                onCooldown = Jugador.arma2.onCooldown;
                 break;
             default:
                 break;
         }
-        if (cargador > 0 && Jugador.recargando == false) {
-
+        if (cargador > 0 && Jugador.recargando == false && onCooldown == false) {
 
             balasDisparadas++;
             contadorIntervalos++;
@@ -61,7 +63,7 @@ function disparar() {
             var porcentajeYBullet = posYBulletInicial / container.getBoundingClientRect().height;
 
             //TODO: Añadir diferentes clases con diferentes daños y velocidades.
-            objetoBullet = {
+            var objetoBullet = {
                 nombre: "bullet" + balasDisparadas,
                 impactoBullet: impacto,
                 velocidadBullet: velocidad,
@@ -107,6 +109,60 @@ function disparar() {
             movimientoY = (yRatonCliente - yBulletCliente) / (document.body.clientWidth);
 
             var moverBala = setInterval(movimientoBala, 5, movimientoX, movimientoY, balasDisparadas, objetoBullet.velocidadBullet, objetoBullet.impactoBullet);
+            if (clase == "ESCOPETA1") {//Disparo escopeta
+                for (let i = 0; i < 7; i++) {
+                    balasDisparadas++;
+                    contadorIntervalos++;
+                    var bulletEscopeta = document.createElement("div");
+                    bulletEscopeta.setAttribute("id", "bullet" + balasDisparadas);
+                    bulletEscopeta.setAttribute("class", clase);
+                    container.appendChild(bulletEscopeta);
+                    document.getElementById("bullet" + balasDisparadas).style.left = posXBulletInicial + "px";
+                    document.getElementById("bullet" + balasDisparadas).style.top = posYBulletInicial + "px";
+
+                    var objetoBulletEscopeta = {
+                        nombre: "bullet" + balasDisparadas,
+                        impactoBullet: impacto,
+                        velocidadBullet: velocidad,
+                        porcX: porcentajeXBullet,
+                        porcY: porcentajeYBullet,
+                        intervalo: contadorIntervalos
+                    }
+                    Balas.push(objetoBulletEscopeta);
+                    var movimientoXsemirandomizado = movimientoX + ((Math.floor(Math.random() * 40) - 20) / 100)//desviación de hasta +- 0.2 en movimiento
+                    var movimientoYsemirandomizado = movimientoY + ((Math.floor(Math.random() * 40) - 20) / 100)
+                    if (movimientoXsemirandomizado > 1) {
+                        movimientoXsemirandomizado = 1;
+                    } else if (movimientoXsemirandomizado < -1) {
+                        movimientoXsemirandomizado = -1;
+                    }
+
+                    if (movimientoYsemirandomizado > 1) {
+                        movimientoYsemirandomizado = 1;
+                    } else if (movimientoYsemirandomizado < -1) {
+                        movimientoYsemirandomizado = -1;
+                    }
+                    setInterval(movimientoBala, 5, movimientoXsemirandomizado, movimientoYsemirandomizado, balasDisparadas, objetoBullet.velocidadBullet, objetoBullet.impactoBullet);
+                }
+                switch (Jugador.armaActual) {
+                    case 1:
+                        Jugador.arma1.onCooldown = true;
+                        contadorIntervalos++;
+                        setTimeout(() => {
+                            Jugador.arma1.onCooldown = false;
+                        }, Jugador.arma1.cadencia);
+                        break;
+                    case 2:
+                        Jugador.arma2.onCooldown = true;
+                        contadorIntervalos++;
+                        setTimeout(() => {
+                            Jugador.arma2.onCooldown = false;
+                        }, Jugador.arma2.cadencia);
+                        break;
+                    default:
+                        break;
+                }
+            }
         } else if (pausa == false && cargador == 0 && Jugador.recargando == false) {
             recargar(Jugador.armaActual);
         }

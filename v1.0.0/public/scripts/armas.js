@@ -5,19 +5,32 @@ const listadoArmas = [
         tamanoCargador: 8,
         municion: 120,
         recarga: 2000,
-        cadencia: 0,
+        cadencia: 0,//--> semiautomatico
         velocidad: 1,
-        impacto: 20
+        impacto: 30,
+        onCooldown: false
     },
     {
         nombre: "ESCOPETA1",
-        cargador: 4,
-        tamanoCargador: 4,
-        municion: 60,
-        recarga: 3200,
-        cadencia: 0,
-        velocidad: 2,
-        impacto: 5//8 BALLAS ESPARCIDAS
+        cargador: 6,
+        tamanoCargador: 6,
+        municion: 84,
+        recarga: 3000,
+        cadencia: 800,//cooldown timer
+        velocidad: 1.5,
+        impacto: 35,//8 BALLAS ESPARCIDAS
+        onCooldown: false//funcion disparo
     },
+    {
+        nombre: "RIFLEASALTO1",
+        cargador: 30,
+        tamanoCargador: 30,
+        municion: 360,
+        recarga: 2400,
+        cadencia: 40,//cooldown timer
+        velocidad: 2,
+        impacto: 2,
+        onCooldown: false//funcion disparo
+    }
 
 ]

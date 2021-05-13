@@ -167,8 +167,8 @@
         var container = document.getElementById("container");
         document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_PISTOLA1.png");
         container.style.width = "70vw";
-        container.style.height = "83vh";
-        container.style.marginTop = document.body.clientHeight / 2 - container.clientHeight / 1.78 + "px";
+        container.style.height = "42vw";
+        container.style.marginTop = "2vh";
         container.style.marginLeft = document.body.clientWidth / 2 - container.clientWidth / 2 + "px";
         var elem = document.getElementById("animate");
         var xInicial = container.clientWidth / 2;
@@ -199,7 +199,8 @@
                 recarga: 2000,
                 cadencia: 0,
                 velocidad: 1,
-                impacto: 20
+                impacto: 30,
+                onCooldown: false
             },
             arma2:
             {
@@ -210,7 +211,8 @@
                 recarga: 0,
                 cadencia: 0,
                 velocidad: 0,
-                impacto: 0
+                impacto: 0,
+                onCooldown: false
             },
             velocidad: 1,
             porcentajeX: 0.5,//Empieza en el centro del contenedor

@@ -6,6 +6,9 @@ function myMove(container, elem) {
             pausar();
         } else if (keysPressed['KeyA'] || keysPressed['KeyW'] || keysPressed['KeyD'] ||
             keysPressed['KeyS']) {
+            if (keysPressed['KeyR']) {//poder recargar mientras te mueves
+                recargar(Jugador.armaActual);
+            }
             var rectanguloContainer = container.getBoundingClientRect();
             var rectanguloObjeto = elem.getBoundingClientRect();
 
@@ -52,7 +55,7 @@ function myMove(container, elem) {
             var rot = (rad * (180 / Math.PI) * -1) + 180;
             document.getElementById("personaje").style = "transform: rotate(" + rot + "deg);"
 
-        } else if (keysPressed['KeyR']) {
+        } else if (keysPressed['KeyR']) {//poder recargar sin movimiento
             recargar(Jugador.armaActual);
         }
 
