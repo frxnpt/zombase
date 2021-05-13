@@ -7,18 +7,18 @@ function disparar() {
         var onCooldown = false;
         switch (Jugador.armaActual) {
             case 1:
-                clase = Jugador.arma1.nombre;
-                cargador = Jugador.arma1.cargador;
-                velocidad = Jugador.arma1.velocidad;
-                impacto = Jugador.arma1.impacto;
-                onCooldown = Jugador.arma1.onCooldown;
+                clase = Jugador.arma1.nombreArma1;
+                cargador = Jugador.arma1.cargadorArma1;
+                velocidad = Jugador.arma1.velocidadArma1;
+                impacto = Jugador.arma1.impactoArma1;
+                onCooldown = Jugador.arma1.onCooldownArma1;
                 break;
             case 2:
-                clase = Jugador.arma2.nombre;
-                cargador = Jugador.arma2.cargador;
-                velocidad = Jugador.arma2.velocidad;
-                impacto = Jugador.arma2.impacto;
-                onCooldown = Jugador.arma2.onCooldown;
+                clase = Jugador.arma2.nombreArma2;
+                cargador = Jugador.arma2.cargadorArma2;
+                velocidad = Jugador.arma2.velocidadArma2;
+                impacto = Jugador.arma2.impactoArma2;
+                onCooldown = Jugador.arma2.onCooldownArma2;
                 break;
             default:
                 break;
@@ -29,12 +29,12 @@ function disparar() {
             contadorIntervalos++;
             switch (Jugador.armaActual) {
                 case 1:
-                    Jugador.arma1.cargador--;
-                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargador + " / " + Jugador.arma1.municion;
+                    Jugador.arma1.cargadorArma1--;
+                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
                     break;
                 case 2:
-                    Jugador.arma2.cargador--;
-                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargador + " / " + Jugador.arma2.municion;
+                    Jugador.arma2.cargadorArma2--;
+                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
                     break;
                 default:
                     break;
@@ -142,22 +142,22 @@ function disparar() {
                     } else if (movimientoYsemirandomizado < -1) {
                         movimientoYsemirandomizado = -1;
                     }
-                    setInterval(movimientoBala, 5, movimientoXsemirandomizado, movimientoYsemirandomizado, balasDisparadas, objetoBullet.velocidadBullet, objetoBullet.impactoBullet);
+                    setInterval(movimientoBala, 5, movimientoXsemirandomizado, movimientoYsemirandomizado, balasDisparadas, objetoBulletEscopeta.velocidadBullet, objetoBulletEscopeta.impactoBullet);
                 }
                 switch (Jugador.armaActual) {
                     case 1:
-                        Jugador.arma1.onCooldown = true;
+                        Jugador.arma1.onCooldownArma1 = true;
                         contadorIntervalos++;
                         setTimeout(() => {
-                            Jugador.arma1.onCooldown = false;
-                        }, Jugador.arma1.cadencia);
+                            Jugador.arma1.onCooldownArma1 = false;
+                        }, Jugador.arma1.cadenciaArma1);
                         break;
                     case 2:
-                        Jugador.arma2.onCooldown = true;
+                        Jugador.arma2.onCooldownArma2 = true;
                         contadorIntervalos++;
                         setTimeout(() => {
-                            Jugador.arma2.onCooldown = false;
-                        }, Jugador.arma2.cadencia);
+                            Jugador.arma2.onCooldownArma2 = false;
+                        }, Jugador.arma2.cadenciaArma2);
                         break;
                     default:
                         break;

@@ -192,27 +192,27 @@
             armaActual: 1,
             arma1:
             {
-                nombre: "PISTOLA1",
-                cargador: 8,
-                tamanoCargador: 8,
-                municion: 120,
-                recarga: 2000,
-                cadencia: 0,
-                velocidad: 1,
-                impacto: 30,
-                onCooldown: false
+                nombreArma1: "PISTOLA1",
+                cargadorArma1: 8,
+                tamanoCargadorArma1: 8,
+                municionArma1: 120,
+                recargaArma1: 2000,
+                cadenciaArma1: 0,
+                velocidadArma1: 1,
+                impactoArma1: 30,
+                onCooldownArma1: false
             },
             arma2:
             {
-                nombre: "none",
-                cargador: 0,
-                tamanoCargador: 0,
-                municion: 0,
-                recarga: 0,
-                cadencia: 0,
-                velocidad: 0,
-                impacto: 0,
-                onCooldown: false
+                nombreArma2: "none",
+                cargadorArma2: 0,
+                tamanoCargadorArma2: 0,
+                municionArma2: 0,
+                recargaArma2: 0,
+                cadenciaArma2: 0,
+                velocidadArma2: 0,
+                impactoArma2: 0,
+                onCooldownArma2: false
             },
             velocidad: 1,
             porcentajeX: 0.5,//Empieza en el centro del contenedor
@@ -239,7 +239,7 @@
             "vw; position: absolute; display: block; left: " +
             xInicial + "px; top: " + yInicial + "px;";
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
-        document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargador + " / " + Jugador.arma1.municion;
+        document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
 
         var ratonX = 0;
         var ratonY = 0;

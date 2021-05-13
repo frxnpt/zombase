@@ -121,14 +121,32 @@ function myMove(container, elem) {
                         if (armas[i].idArma == listadoArmas[j].nombre) {
                             switch (Jugador.armaActual) {
                                 case 1:
-                                    Jugador.arma1 = listadoArmas[j];
+                                    //Jugador.arma1 = listadoArmas[j];asi da problemas de solapamiento?
+                                    Jugador.arma1.nombreArma1 = listadoArmas[j].nombre;
+                                    Jugador.arma1.cargadorArma1 = listadoArmas[j].cargador;
+                                    Jugador.arma1.tamanoCargadorArma1 = listadoArmas[j].tamanoCargador;
+                                    Jugador.arma1.municionArma1 = listadoArmas[j].municion;
+                                    Jugador.arma1.recargaArma1 = listadoArmas[j].recarga;
+                                    Jugador.arma1.cadenciaArma1 = listadoArmas[j].cadencia;
+                                    Jugador.arma1.velocidadArma1 = listadoArmas[j].velocidad;
+                                    Jugador.arma1.impactoArma1 = listadoArmas[j].impacto;
+                                    Jugador.arma1.onCooldownArma1 = listadoArmas[j].onCooldown;
                                     cambiarImagenPersonaje(listadoArmas[j].nombre);
-                                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargador + " / " + Jugador.arma1.municion;
+                                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
                                     break;
                                 case 2:
-                                    Jugador.arma2 = listadoArmas[j];
+                                    //Jugador.arma2 = listadoArmas[j];asi da problemas de solapamiento?
+                                    Jugador.arma2.nombreArma2 = listadoArmas[j].nombre;
+                                    Jugador.arma2.cargadorArma2 = listadoArmas[j].cargador;
+                                    Jugador.arma2.tamanoCargadorArma2 = listadoArmas[j].tamanoCargador;
+                                    Jugador.arma2.municionArma2 = listadoArmas[j].municion;
+                                    Jugador.arma2.recargaArma2 = listadoArmas[j].recarga;
+                                    Jugador.arma2.cadenciaArma2 = listadoArmas[j].cadencia;
+                                    Jugador.arma2.velocidadArma2 = listadoArmas[j].velocidad;
+                                    Jugador.arma2.impactoArma2 = listadoArmas[j].impacto;
+                                    Jugador.arma2.onCooldownArma2 = listadoArmas[j].onCooldown;
                                     cambiarImagenPersonaje(listadoArmas[j].nombre);
-                                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargador + " / " + Jugador.arma2.municion;
+                                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
                                     break;
 
                                 default:
