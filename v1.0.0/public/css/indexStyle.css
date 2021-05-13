@@ -71,6 +71,15 @@ body {
     display: block;
   }
 
+  .ESCOPETA1 {
+    width: 0.5vw;
+    height: 0.5vw;
+    position: absolute;
+    border-radius: 25px;
+    background-color: black;
+    display: block;
+  }
+
   .zombieTipo1 {
     width: 1.5vw;
     height: 1.5vw;
@@ -97,7 +106,7 @@ body {
     display: block;
   }
 
-  .BOTIQUIN{
+  .BOTIQUIN, .ArmaDrop{
 	width:2.2vw;
     height: 2.2vw;
     position: absolute;

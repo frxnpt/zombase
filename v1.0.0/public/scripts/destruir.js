@@ -21,5 +21,7 @@ function destruir(nombre, tipo, indice) {
         BalasZombie.splice(indice, 1);
     } else if (tipo == "BOTIQUIN") {
         items.splice(indice, 1);
+    } else if (tipo == "ARMA") {
+        armas.splice(indice, 1);
     }
 }

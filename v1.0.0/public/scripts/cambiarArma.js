@@ -1,4 +1,4 @@
-function cambiarArma() {
+function cambiarArma() {// cambio de imagen Para el cambio de arma con la ruleta del raton
     event.preventDefault();
     switch (Jugador.armaActual) {
         case 1:
