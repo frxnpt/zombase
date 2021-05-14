@@ -52,7 +52,7 @@ function resetear() {
         "vw; position: absolute; border-radius: 25px; display: block; left: " +
         xInicial + "px; top: " + yInicial + "px;";
     document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
-    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargador + " / " + Jugador.arma1.municion;
+    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
 
     document.getElementById("ronda").innerHTML = "Ronda: ";
     myMove();
