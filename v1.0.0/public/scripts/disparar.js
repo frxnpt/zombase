@@ -24,7 +24,6 @@ function disparar() {
                 break;
         }
         if (cargador > 0 && Jugador.recargando == false && onCooldown == false) {
-
             balasDisparadas++;
             contadorIntervalos++;
             switch (Jugador.armaActual) {
@@ -85,8 +84,8 @@ function disparar() {
 
 
             //Posicion2 (indicador de direccion)
-            var xRatonCliente = event.clientX;
-            var yRatonCliente = event.clientY;
+            var xRatonCliente = ratonX;//Variables que se van actualizando en index con el
+            var yRatonCliente = ratonY;//movimiento del ratón
 
             //Distancia recorrida del Punto 1 (P1 - Bullet) al Punto 2 (P2 - Ratón)
             //Utilizo clienWidth en los dos pq quiero que la distancia total a recorrer sea similar para X e Y
@@ -144,24 +143,24 @@ function disparar() {
                     }
                     setInterval(movimientoBala, 5, movimientoXsemirandomizado, movimientoYsemirandomizado, balasDisparadas, objetoBulletEscopeta.velocidadBullet, objetoBulletEscopeta.impactoBullet);
                 }
-                switch (Jugador.armaActual) {
-                    case 1:
-                        Jugador.arma1.onCooldownArma1 = true;
-                        contadorIntervalos++;
-                        setTimeout(() => {
-                            Jugador.arma1.onCooldownArma1 = false;
-                        }, Jugador.arma1.cadenciaArma1);
-                        break;
-                    case 2:
-                        Jugador.arma2.onCooldownArma2 = true;
-                        contadorIntervalos++;
-                        setTimeout(() => {
-                            Jugador.arma2.onCooldownArma2 = false;
-                        }, Jugador.arma2.cadenciaArma2);
-                        break;
-                    default:
-                        break;
-                }
+            }
+            switch (Jugador.armaActual) {
+                case 1:
+                    Jugador.arma1.onCooldownArma1 = true;
+                    contadorIntervalos++;
+                    setTimeout(() => {
+                        Jugador.arma1.onCooldownArma1 = false;
+                    }, Jugador.arma1.cadenciaArma1);
+                    break;
+                case 2:
+                    Jugador.arma2.onCooldownArma2 = true;
+                    contadorIntervalos++;
+                    setTimeout(() => {
+                        Jugador.arma2.onCooldownArma2 = false;
+                    }, Jugador.arma2.cadenciaArma2);
+                    break;
+                default:
+                    break;
             }
         } else if (pausa == false && cargador == 0 && Jugador.recargando == false) {
             recargar(Jugador.armaActual);

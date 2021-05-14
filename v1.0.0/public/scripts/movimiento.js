@@ -121,7 +121,7 @@ function myMove(container, elem) {
                         if (armas[i].idArma == listadoArmas[j].nombre) {
                             switch (Jugador.armaActual) {
                                 case 1:
-                                    //Jugador.arma1 = listadoArmas[j];asi da problemas de solapamiento?
+                                    //Jugador.arma1 = listadoArmas[j];asi daba problemas de solapamiento
                                     Jugador.arma1.nombreArma1 = listadoArmas[j].nombre;
                                     Jugador.arma1.cargadorArma1 = listadoArmas[j].cargador;
                                     Jugador.arma1.tamanoCargadorArma1 = listadoArmas[j].tamanoCargador;
@@ -135,7 +135,7 @@ function myMove(container, elem) {
                                     document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
                                     break;
                                 case 2:
-                                    //Jugador.arma2 = listadoArmas[j];asi da problemas de solapamiento?
+                                    //Jugador.arma2 = listadoArmas[j];asi daba problemas de solapamiento
                                     Jugador.arma2.nombreArma2 = listadoArmas[j].nombre;
                                     Jugador.arma2.cargadorArma2 = listadoArmas[j].cargador;
                                     Jugador.arma2.tamanoCargadorArma2 = listadoArmas[j].tamanoCargador;

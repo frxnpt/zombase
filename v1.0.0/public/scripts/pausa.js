@@ -1,4 +1,6 @@
 function pausar() {
+    pausa = true;
+    clearInterval(disparoAutomatico);
     var menuPausa = document.createElement("div");
     menuPausa.setAttribute("id", "menu");
     menuPausa.setAttribute("class", "menu");
@@ -22,5 +24,4 @@ function pausar() {
         menu.getBoundingClientRect().width / 2 + "px";
     menu.style.top = container.getBoundingClientRect().height / 2 -
         menu.getBoundingClientRect().height / 2 + "px";
-    pausa = true;
 }

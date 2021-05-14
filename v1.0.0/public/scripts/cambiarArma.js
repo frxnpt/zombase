@@ -1,28 +1,32 @@
-function cambiarArma() {// cambio de imagen Para el cambio de arma con la ruleta del raton
+function cambiarArma() {// cambio de imagen (y modo disparo!) Para el cambio de arma con la ruleta del raton
     event.preventDefault();
     switch (Jugador.armaActual) {
         case 1:
             Jugador.armaActual = 2;
+            armaAutomatica = false;//default
             document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
-            if (Jugador.skinActual == "RAMBO") {//hacer diferentes IF para futuras skins
-                if (Jugador.arma2.nombreArma2 == "none") {
-                    document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO.png");
-                } else if (Jugador.arma2.nombreArma2 == "PISTOLA1") {
-                    document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_PISTOLA1.png");
-                } else if (Jugador.arma2.nombreArma2 == "ESCOPETA1") {
-                    document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_ESCOPETA1.png");
-                }
+            if (Jugador.arma2.nombreArma2 == "none") {
+                document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO.png");
+            } else if (Jugador.arma2.nombreArma2 == "PISTOLA1") {
+                cambiarImagenPersonaje("PISTOLA1");
+            } else if (Jugador.arma2.nombreArma2 == "ESCOPETA1") {
+                cambiarImagenPersonaje("ESCOPETA1");
+            } else if (Jugador.arma2.nombreArma2 == "RIFLEASALTO1") {
+                cambiarImagenPersonaje("RIFLEASALTO1");
             }
             break;
         case 2:
             Jugador.armaActual = 1;
+            armaAutomatica = false;//default
             document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
             if (Jugador.arma1.nombreArma1 == "PISTOLA1") {
-                document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_PISTOLA1.png");
+                cambiarImagenPersonaje("PISTOLA1");
             } else if (Jugador.arma1.nombreArma1 == "none") {
                 document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO.png");
             } else if (Jugador.arma1.nombreArma1 == "ESCOPETA1") {
-                document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_ESCOPETA1.png");
+                cambiarImagenPersonaje("ESCOPETA1");
+            } else if (Jugador.arma1.nombreArma1 == "RIFLEASALTO1") {
+                cambiarImagenPersonaje("RIFLEASALTO1");
             }
             break;
         default:

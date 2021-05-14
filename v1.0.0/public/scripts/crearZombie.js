@@ -30,6 +30,7 @@ function crearZombie() {
         imagen.setAttribute("src", fondo);
         imagen.setAttribute("height", "100%");
         imagen.setAttribute("id", "zombie");
+        imagen.setAttribute("draggable", "false");
         zombie.appendChild(imagen);
         container.appendChild(zombie);
 

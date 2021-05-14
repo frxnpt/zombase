@@ -34,6 +34,7 @@ function colision(X, Y, impacto) {
                                 var imagen = document.createElement("img");
                                 imagen.setAttribute("src", "./resources/items/BOTIQUIN.png");
                                 imagen.setAttribute("height", "100%");
+                                imagen.setAttribute("draggable", "false");
                                 botiquin.appendChild(imagen);
                                 container.appendChild(botiquin);
 
@@ -67,7 +68,7 @@ function colision(X, Y, impacto) {
                     }
 
                     if (drop == false) {
-                        switch (Math.floor(Math.random() * 6) + 1) {//Probabilidad de dropear un arma de un zombie cuando muere por disparo
+                        switch (Math.floor(Math.random() * 2) + 1) {//Probabilidad de dropear un arma de un zombie cuando muere por disparo
                             case 2:
                                 generarArma(i);
                                 drop = true;

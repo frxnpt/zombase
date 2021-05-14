@@ -5,7 +5,7 @@ const listadoArmas = [
         tamanoCargador: 8,
         municion: 120,
         recarga: 2000,
-        cadencia: 0,//--> semiautomatico
+        cadencia: 150,//--> semiautomatico
         velocidad: 1,
         impacto: 30,
         onCooldown: false
@@ -25,11 +25,11 @@ const listadoArmas = [
         nombre: "RIFLEASALTO1",
         cargador: 30,
         tamanoCargador: 30,
-        municion: 360,
+        municion: 560,
         recarga: 2400,
         cadencia: 40,//cooldown timer
         velocidad: 2,
-        impacto: 2,
+        impacto: 25,
         onCooldown: false//funcion disparo
     }
 

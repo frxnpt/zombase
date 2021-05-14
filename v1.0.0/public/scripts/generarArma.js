@@ -4,16 +4,17 @@ function generarArma(i) {//i es el indice del zombie que ha muerto
     arma.setAttribute("id", "arma" + contadorArmas);
     arma.setAttribute("class", "ArmaDrop");
     var imagen = document.createElement("img");
+    imagen.setAttribute("draggable", "false");
 
     var idArma = "PISTOLA1";
 
-    switch (Math.floor(Math.random() * 10) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
+    switch (Math.floor(Math.random() * 3) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
         case 1:
             idArma = "ESCOPETA1";
             break;
 
         case 2://TODO:AÑADIR MAS
-            idArma = "ESCOPETA1";
+            idArma = "RIFLEASALTO1";
             break;
         default:
             break;
@@ -26,6 +27,9 @@ function generarArma(i) {//i es el indice del zombie que ha muerto
             break;
         case "ESCOPETA1":
             imagen.setAttribute("src", "./resources/armas/ESCOPETA1DROP.png");
+
+        case "RIFLEASALTO1":
+            imagen.setAttribute("src", "./resources/armas/RIFLEASALTO1DROP.png");
 
             break;//añadir mas con formen haya mas
         default:

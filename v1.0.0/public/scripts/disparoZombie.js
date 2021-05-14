@@ -10,6 +10,7 @@ function disparoZombie(indice) {
         var imagen = document.createElement("img");
         imagen.setAttribute("src", "./resources/zombies/PROYECTILZOMBIE.png");//se ejecuta desde el index realmente por lo que la ruta es asi
         imagen.setAttribute("height", "100%");
+        imagen.setAttribute("draggable", "false");
         bulletZombie.appendChild(imagen);
         container.appendChild(bulletZombie);
 

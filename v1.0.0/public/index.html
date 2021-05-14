@@ -71,7 +71,7 @@
     <!--Container-->
     <div id="container">
         <div id="animate">
-            <img height="100%" id="personaje">
+            <img height="100%" id="personaje" draggable="false">
         </div>
     </div>
 
@@ -122,7 +122,7 @@
     <script src="./scripts/generarArma.js"></script>
     <!--Función de recarga del arma actual-->
     <script src="./scripts/recargar.js"></script>
-    <!--Cambia la imagen actual del personaje al recoger un arma-->
+    <!--Cambia la imagen actual del personaje al recoger un arma y activa modo de disparo automatico en ciertos casos-->
     <script src="./scripts/cambiarImagenPersonaje.js"></script>
     <!--Función para resetear la partida-->
     <script src="./scripts/resetear.js"></script>
@@ -132,7 +132,7 @@
     <script src="./scripts/reanudar.js"></script>
     <!--Función de destrucción de un elemento en el DOM y su correspondiente array-->
     <script src="./scripts/destruir.js"></script>
-    <!--Función de colision de las balas disparadas por el jugador-->
+    <!--Función de colision de las balas disparadas por el jugador y drop rates-->
     <script src="./scripts/colision.js"></script>
     <!--Función de colision de las balas disparadas por el zombie-->
     <script src="./scripts/colisionBalaZ.js"></script>
@@ -160,7 +160,7 @@
     <script src="./scripts/nuevaRonda.js"></script>
     <!--Función de fin de partida cuando la salud llega a 0-->
     <script src="./scripts/finalPartida.js"></script>
-    <!--Función para cambiar armas con la ruleta del raton-->
+    <!--Función para cambiar armas con la ruleta del raton (modo de disparo seteado a default)-->
     <script src="./scripts/cambiarArma.js"></script>
     <script>
         var pausa = false;
@@ -197,7 +197,7 @@
                 tamanoCargadorArma1: 8,
                 municionArma1: 120,
                 recargaArma1: 2000,
-                cadenciaArma1: 0,
+                cadenciaArma1: 200,
                 velocidadArma1: 1,
                 impactoArma1: 30,
                 onCooldownArma1: false
@@ -272,10 +272,28 @@
         window.addEventListener("resize", reposicionDeObjetos);//A veces falla al pulsar maximizar?
         document.addEventListener("click", disparar);
 
+        var disparoAutomatico;
+        var armaAutomatica = false;
+        document.addEventListener("mousedown", function () {
+            if (pausa == false && armaAutomatica == true) {
+                contadorIntervalos++;
+                disparoAutomatico = setInterval(function () {
+                    disparar();
+                }, 20);
+            }
+        });
+
+        document.addEventListener("mouseup", function () {
+            if (pausa == false && armaAutomatica == true) {
+                clearInterval(disparoAutomatico);
+            }
+        });
+
         myMove();
         var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
         var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
         var generarZombie = 0;
+
     </script>
 
     <script>

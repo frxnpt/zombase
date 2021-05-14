@@ -103,6 +103,14 @@ body {
     border-radius: 25px;
     display: block;
   }
+  .RIFLEASALTO1{
+    width: 0.8vw;
+    height: 0.8vw;
+    position: absolute;
+    border-radius: 25px;
+    background-color: black;
+    display: block;
+  }
 
   .BOTIQUIN, .ArmaDrop{
 	width:2.4vw;

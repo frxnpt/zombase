@@ -5,5 +5,9 @@ function cambiarImagenPersonaje(nombre) {//Cambio de imagen cuando el jugador co
         } else if (nombre == "ESCOPETA1") {
             document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_ESCOPETA1.png");
         }
+        else if (nombre == "RIFLEASALTO1") {
+            armaAutomatica = true;//modo de disparo automatico permitido
+            document.getElementById("personaje").setAttribute("src", "../public/resources/personajes/RAMBO_RIFLEASALTO1.png");
+        }
     }//Añadir mas armas en el futuro y skins del personaje si hay
 }
