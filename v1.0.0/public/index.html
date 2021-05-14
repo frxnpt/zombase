@@ -177,33 +177,31 @@
         var heightInicial = 2;
         var balasDisparadas = 0;
         var balasDisparadasZombie = 0;
-        var contadorItems = 0;//para Ids Items en el suelo
-        var contadorArmas = 0;//para Ids Armas en el suelo
+        var contadorItems = 0; //para Ids Items en el suelo
+        var contadorArmas = 0; //para Ids Armas en el suelo
         var ronda = 1;
         var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
 
         //Será necesario hacer lo mismo o algo parecido para los elementos que se destruyen (o buscar otra solucion)
-        var zombies = 0;//Nombre de los zombies
-        var contadorZombies = 0;//Contador de zombies para la ronda(reseteado a 0 despues de cada ronda)
+        var zombies = 0; //Nombre de los zombies
+        var contadorZombies = 0; //Contador de zombies para la ronda(reseteado a 0 despues de cada ronda)
         //Guardamos de forma inicial la %pos relativa de la X y la Y para redimensionar luego (0.5 inicial)
         var Jugador = {
             salud: 100,
             skinActual: "RAMBO",
             armaActual: 1,
-            arma1:
-            {
+            arma1: {
                 nombreArma1: "PISTOLA1",
                 cargadorArma1: 8,
                 tamanoCargadorArma1: 8,
                 municionArma1: 120,
                 recargaArma1: 2000,
-                cadenciaArma1: 200,
-                velocidadArma1: 1,
+                cadenciaArma1: 0,
+                velocidadArma1: 0.75,
                 impactoArma1: 30,
                 onCooldownArma1: false
             },
-            arma2:
-            {
+            arma2: {
                 nombreArma2: "none",
                 cargadorArma2: 0,
                 tamanoCargadorArma2: 0,
@@ -214,17 +212,17 @@
                 impactoArma2: 0,
                 onCooldownArma2: false
             },
-            velocidad: 1,
-            porcentajeX: 0.5,//Empieza en el centro del contenedor
+            velocidad: 0.5,
+            porcentajeX: 0.5, //Empieza en el centro del contenedor
             porcentajeY: 0.5,
             recargando: false
-        }//Valores iniciales del jugador
+        } //Valores iniciales del jugador
         //TODO: importar variables (objetos de armas y zombies) desde fichero
 
         //Contador para ver el orden de los intervalos, y luego poder eliminarlos detenidamente. Empieza (actualmente)en 2 porque es el 
         //asignado directamente al movimiento nada más empezar y a la ronda. Al añadir zombies, bullets, etc, se le asignarán un valor de intervalo.
         var contadorIntervalos = 2;
-        var intervalosAnteriores = 1;//1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
+        var intervalosAnteriores = 1; //1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
         //Lista de objetos a parte del personaje, container y balas, utilizados para ver si hay colision/redimensión.
         //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
         var listaZombies = [];
@@ -269,7 +267,7 @@
         //que en un 400 x 400. Esto es para futuro tamaño responsive del container. 0.01 velocidad sería 1% del container por ejecución.
         //Este valor nos servirá de referencia
         var factorVelocidad = container.clientWidth * 0.025;
-        window.addEventListener("resize", reposicionDeObjetos);//A veces falla al pulsar maximizar?
+        window.addEventListener("resize", reposicionDeObjetos); //A veces falla al pulsar maximizar?
         document.addEventListener("click", disparar);
 
         var disparoAutomatico;
