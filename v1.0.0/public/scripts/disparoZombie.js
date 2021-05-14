@@ -7,10 +7,6 @@ function disparoZombie(indice) {
         var bulletZombie = document.createElement("div");
         bulletZombie.setAttribute("id", "BalaZ" + balasDisparadasZombie);
         bulletZombie.setAttribute("class", "BulletZ");
-        var imagen = document.createElement("img");
-        imagen.setAttribute("src", "./resources/zombies/PROYECTILZOMBIE.png");//se ejecuta desde el index realmente por lo que la ruta es asi
-        imagen.setAttribute("height", "100%");
-        bulletZombie.appendChild(imagen);
         container.appendChild(bulletZombie);
 
         var rectanguloBulletZombie = document.getElementById("BalaZ" + balasDisparadasZombie);

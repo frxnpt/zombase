@@ -5,8 +5,8 @@ function reposicionDeObjetos() {
     }
     pausar();
     //ajuste de margenes del container
-    container.style.marginTop = "2vh";
-    container.style.marginLeft = document.body.clientWidth / 2 - document.getElementById("container").clientWidth / 2 + "px";
+    document.getElementById("container").style.marginTop = document.body.clientHeight / 2 - document.getElementById("container").clientHeight / 2 + "px";
+    document.getElementById("container").style.marginLeft = document.body.clientWidth / 2 - document.getElementById("container").clientWidth / 2 + "px";
     //La reposición de objetos se realizará con % del contenedor, es decir, 
     //si el objeto está en el centro, será reposicionado en el 50%x 50%y del siguiente tamaño del contenedor.
     factorVelocidad = document.getElementById("container").clientWidth * 0.025;
