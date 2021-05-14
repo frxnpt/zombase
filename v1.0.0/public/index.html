@@ -196,7 +196,7 @@
                 tamanoCargadorArma1: 8,
                 municionArma1: 120,
                 recargaArma1: 2000,
-                cadenciaArma1: 0,
+                cadenciaArma1: 200,
                 velocidadArma1: 0.75,
                 impactoArma1: 30,
                 onCooldownArma1: false
@@ -272,8 +272,8 @@
 
         var disparoAutomatico;
         var armaAutomatica = false;
-        document.addEventListener("mousedown", function () {
-            if (pausa == false && armaAutomatica == true) {
+        document.addEventListener("mousedown", function (e) {
+            if (pausa == false && armaAutomatica == true && e.button == 0) {
                 contadorIntervalos++;
                 disparoAutomatico = setInterval(function () {
                     disparar();
