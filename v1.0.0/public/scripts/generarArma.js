@@ -27,10 +27,9 @@ function generarArma(i) {//i es el indice del zombie que ha muerto
             break;
         case "ESCOPETA1":
             imagen.setAttribute("src", "./resources/armas/ESCOPETA1DROP.png");
-
+            break;
         case "RIFLEASALTO1":
             imagen.setAttribute("src", "./resources/armas/RIFLEASALTO1DROP.png");
-
             break;//añadir mas con formen haya mas
         default:
             break;

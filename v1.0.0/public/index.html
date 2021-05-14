@@ -287,6 +287,12 @@
             }
         });
 
+        document.addEventListener("dragend", function () {
+            if (pausa == false && armaAutomatica == true) {
+                clearInterval(disparoAutomatico);
+            }
+        });
+
         myMove();
         var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
         var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
