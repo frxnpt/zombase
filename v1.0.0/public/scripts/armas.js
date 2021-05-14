@@ -4,7 +4,7 @@ const listadoArmas = [{
         tamanoCargador: 8,
         municion: 120,
         recarga: 2000,
-        cadencia: 0, //--> semiautomatico
+        cadencia: 200, //--> semiautomatico
         velocidad: 1,
         impacto: 30,
         onCooldown: false
@@ -26,9 +26,9 @@ const listadoArmas = [{
         tamanoCargador: 30,
         municion: 560,
         recarga: 2400,
-        cadencia: 40, //cooldown timer
+        cadencia: 40, //automatico
         velocidad: 2,
-        impacto: 2,
+        impacto: 25,
         onCooldown: false //funcion disparo
 }
 
