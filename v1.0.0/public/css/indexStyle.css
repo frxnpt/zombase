@@ -1,116 +1,116 @@
-
 body {
     width: 100vw;
     height: 100vh;
     margin: 0px;
+}
 
-  }
-
-  img {
+img {
     user-select: none;
-  }
+}
 
-  #container {
+#container {
     position: relative;
-    background: yellow;
+    background: #E5E5E5;
     user-select: none;
-  }
+}
 
-  #container div, p {
+#container div,
+p {
     user-select: none;
-  }
+}
 
-  .menu,
-  .menuFin {
+.menu,
+.menuFin {
     width: 26vw;
     height: 12vw;
     position: absolute;
     background-color: grey;
     text-align: center;
     font-size: 4vw;
-  }
+}
 
-  #salud,
-  #municion {
+#salud,
+#municion {
     padding-right: 18vw;
-  }
+}
 
-  #ronda,
-  #municion,
-  #salud {
+#ronda,
+#municion,
+#salud {
     font-size: 2vw;
-  }
+}
 
-  .botonContinuar,
-  .botonReiniciar {
+.botonContinuar,
+.botonReiniciar {
     font-size: 2vw;
     margin: 8px;
-  }
+}
 
-  #personaje {
+#personaje {
     transform: rotate(0deg);
-  }
+}
 
-  #arma {
+#arma {
     position: absolute;
     display: block;
     width: 0.5vw;
     height: 0.5vw;
-  }
+}
 
-  #armaActual {
+#armaActual {
     width: 80%;
-  }
+}
 
-  .PISTOLA1 {
+.PISTOLA1 {
     width: 1vw;
     height: 1vw;
     position: absolute;
     border-radius: 25px;
     background-color: black;
     display: block;
-  }
+}
 
-  .ESCOPETA1 {
+.ESCOPETA1 {
     width: 0.5vw;
     height: 0.5vw;
     position: absolute;
     border-radius: 25px;
     background-color: black;
     display: block;
-  }
+}
 
-  .zombieTipo1 {
+.zombieTipo1 {
     width: 1.7vw;
     height: 1.7vw;
     position: absolute;
     border-radius: 0px;
     display: block;
-  }
+}
 
-  .zombieTipo2 {
+.zombieTipo2 {
     width: 2.2vw;
     height: 2.2vw;
     position: absolute;
     border-radius: 0px;
     display: block;
-  }
+}
 
-  .BulletZ {
-    width:1.4vw;
+.BulletZ {
+    width: 1.4vw;
     height: 1.4vw;
     position: absolute;
     border-radius: 25px;
     display: block;
-  }
+}
 
-  .BOTIQUIN, .ArmaDrop{
-	width:2.4vw;
+.BOTIQUIN,
+.ArmaDrop {
+    width: 2.4vw;
     height: 2.4vw;
     position: absolute;
-	display: block;
-  }
+    display: block;
+}
 
-  footer{
+footer {
     margin-top: 3vh;
-  }
+}
