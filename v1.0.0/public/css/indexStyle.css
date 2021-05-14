@@ -16,7 +16,7 @@ body {
     user-select: none;
   }
 
-  p {
+  #container div, p {
     user-select: none;
   }
 
@@ -71,9 +71,18 @@ body {
     display: block;
   }
 
+  .ESCOPETA1 {
+    width: 0.5vw;
+    height: 0.5vw;
+    position: absolute;
+    border-radius: 25px;
+    background-color: black;
+    display: block;
+  }
+
   .zombieTipo1 {
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1.7vw;
+    height: 1.7vw;
     position: absolute;
     border-radius: 0px;
     display: block;
@@ -85,7 +94,6 @@ body {
     position: absolute;
     border-radius: 0px;
     display: block;
-    background-color: red;
   }
 
   .BulletZ {
@@ -93,13 +101,16 @@ body {
     height: 1.4vw;
     position: absolute;
     border-radius: 25px;
-    background-color: red;
     display: block;
   }
 
-  .BOTIQUIN{
-	width:2.2vw;
-    height: 2.2vw;
+  .BOTIQUIN, .ArmaDrop{
+	width:2.4vw;
+    height: 2.4vw;
     position: absolute;
 	display: block;
+  }
+
+  footer{
+    margin-top: 3vh;
   }

@@ -23,44 +23,61 @@ function colision(X, Y, impacto) {
             if ((X >= limiteObjetoXizda && X <= limiteObjetoXdcha) && (Y >= limiteObjetoYtop && Y <= limiteObjetoYbot)) {
                 listaZombies[i].salud = listaZombies[i].salud - impacto;
                 if (listaZombies[i].salud <= 0) {
-                    switch (Math.floor(Math.random() * 2) + 1) {//Probabilidad de dropear un botiquin de un zombie cuando muere
-                        case 2://TODO: Hacer algo similar con las armas, y ademas que sea necesario pulsar una tecla para cambiar el arma actual.
-                            contadorItems++;
-                            var botiquin = document.createElement("div");
-                            botiquin.setAttribute("id", "botiquin" + contadorItems);
-                            botiquin.setAttribute("class", "BOTIQUIN");
-                            var imagen = document.createElement("img");
-                            imagen.setAttribute("src", "./resources/items/BOTIQUIN.png");
-                            imagen.setAttribute("height", "100%");
-                            botiquin.appendChild(imagen);
-                            container.appendChild(botiquin);
+                    var drop = false;//Variable para controlar 1 drop por zombie
+                    if (drop == false) {
+                        switch (Math.floor(Math.random() * 15) + 1) {//Probabilidad de dropear un botiquin de un zombie cuando muere
+                            case 2://TODO: Hacer algo similar con las armas, y ademas que sea necesario pulsar una tecla para cambiar el arma actual.
+                                contadorItems++;
+                                var botiquin = document.createElement("div");
+                                botiquin.setAttribute("id", "botiquin" + contadorItems);
+                                botiquin.setAttribute("class", "BOTIQUIN");
+                                var imagen = document.createElement("img");
+                                imagen.setAttribute("src", "./resources/items/BOTIQUIN.png");
+                                imagen.setAttribute("height", "100%");
+                                botiquin.appendChild(imagen);
+                                container.appendChild(botiquin);
 
-                            var rectanguloBotiquin = document.getElementById("botiquin" + contadorItems);
+                                var rectanguloBotiquin = document.getElementById("botiquin" + contadorItems);
 
-                            var posXBotiquin = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().left +
-                                document.getElementById(listaZombies[i].nombre).getBoundingClientRect().width / 2) - container.getBoundingClientRect().left;
+                                var posXBotiquin = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().left +
+                                    document.getElementById(listaZombies[i].nombre).getBoundingClientRect().width / 2) - container.getBoundingClientRect().left;
 
-                            var posYBotiquin = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().top +
-                                document.getElementById(listaZombies[i].nombre).getBoundingClientRect().height / 2) - container.getBoundingClientRect().top;
+                                var posYBotiquin = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().top +
+                                    document.getElementById(listaZombies[i].nombre).getBoundingClientRect().height / 2) - container.getBoundingClientRect().top;
 
-                            var porcentajeXBotiquin = posXBotiquin / container.getBoundingClientRect().width;//Para reposicionamiento del botiquin
-                            var porcentajeYBotiquin = posYBotiquin / container.getBoundingClientRect().height;
+                                var porcentajeXBotiquin = posXBotiquin / container.getBoundingClientRect().width;//Para reposicionamiento del botiquin
+                                var porcentajeYBotiquin = posYBotiquin / container.getBoundingClientRect().height;
 
-                            objetoBotiquin = {
-                                nombre: "botiquin" + contadorItems,
-                                porcX: porcentajeXBotiquin,
-                                porcY: porcentajeYBotiquin
-                            }
+                                objetoBotiquin = {
+                                    nombre: "botiquin" + contadorItems,
+                                    porcX: porcentajeXBotiquin,
+                                    porcY: porcentajeYBotiquin
+                                }
 
-                            items.push(objetoBotiquin);
+                                items.push(objetoBotiquin);
 
-                            rectanguloBotiquin.style.left = posXBotiquin + "px";
-                            rectanguloBotiquin.style.top = posYBotiquin + "px";
-                            break;
+                                rectanguloBotiquin.style.left = posXBotiquin + "px";
+                                rectanguloBotiquin.style.top = posYBotiquin + "px";
+                                drop = true;
+                                break;
 
-                        default:
-                            break;
+                            default:
+                                break;
+                        }
                     }
+
+                    if (drop == false) {
+                        switch (Math.floor(Math.random() * 6) + 1) {//Probabilidad de dropear un arma de un zombie cuando muere por disparo
+                            case 2:
+                                generarArma(i);
+                                drop = true;
+                                break;
+
+                            default:
+                                break;
+                        }
+                    }
+
                     destruir(listaZombies[i].nombre, "zombie", i);
                 }
                 return true;

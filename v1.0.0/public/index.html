@@ -116,35 +116,59 @@
         </div>
     </footer>
 
-
+    <!--Listado de Armas-->
+    <script src="./scripts/armas.js"></script>
+    <!--Generación de drop de armas aleatorio-->
+    <script src="./scripts/generarArma.js"></script>
+    <!--Función de recarga del arma actual-->
     <script src="./scripts/recargar.js"></script>
+    <!--Cambia la imagen actual del personaje al recoger un arma-->
+    <script src="./scripts/cambiarImagenPersonaje.js"></script>
+    <!--Función para resetear la partida-->
     <script src="./scripts/resetear.js"></script>
+    <!--Función de pausa-->
     <script src="./scripts/pausa.js"></script>
+    <!--Función de reanudación-->
     <script src="./scripts/reanudar.js"></script>
+    <!--Función de destrucción de un elemento en el DOM y su correspondiente array-->
     <script src="./scripts/destruir.js"></script>
+    <!--Función de colision de las balas disparadas por el jugador-->
     <script src="./scripts/colision.js"></script>
+    <!--Función de colision de las balas disparadas por el zombie-->
     <script src="./scripts/colisionBalaZ.js"></script>
+    <!--Función de reposicion  de todos los objetos en pantalla-->
     <script src="./scripts/reposicionDeObjeto.js"></script>
+    <!--Función de movimiento del jugador y detección de TECLAS PULSADAS, items y armas-->
     <script src="./scripts/movimiento.js"></script>
+    <!--Función de disparo del jugador-->
     <script src="./scripts/disparar.js"></script>
+    <!--Función de disparo del zombie-->
     <script src="./scripts/disparoZombie.js"></script>
+    <!--Función que controla el intervalo de las balas del jugador-->
     <script src="./scripts/movimientoBala.js"></script>
+    <!--Función que controla el intervalo de las balas del zombie-->
     <script src="./scripts/movimientoBalaZombie.js"></script>
+    <!--Función que controla la generación de zombies-->
     <script src="./scripts/crearZombie.js"></script>
+    <!--Función que controla el intervalo del movimiento del zombie-->
     <script src="./scripts/movimientoZombie.js"></script>
+    <!--Función que controla la colision del zombie con jugador y paredes y cooldown-->
     <script src="./scripts/colisionZombie.js"></script>
-    <script src="./scripts/disparoZombie.js"></script>
+    <!--Función que reestablece el movimiento del zombie-->
     <script src="./scripts/reestablecerMovimiento.js"></script>
+    <!--Función para el control de rondas-->
     <script src="./scripts/nuevaRonda.js"></script>
+    <!--Función de fin de partida cuando la salud llega a 0-->
     <script src="./scripts/finalPartida.js"></script>
+    <!--Función para cambiar armas con la ruleta del raton-->
     <script src="./scripts/cambiarArma.js"></script>
-    <script>//TODO: Mirar decorator pattern javascript
+    <script>
         var pausa = false;
         var container = document.getElementById("container");
         document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_PISTOLA1.png");
         container.style.width = "70vw";
-        container.style.height = "83vh";
-        container.style.marginTop = document.body.clientHeight / 2 - container.clientHeight / 1.78 + "px";
+        container.style.height = "42vw";
+        container.style.marginTop = "2vh";
         container.style.marginLeft = document.body.clientWidth / 2 - container.clientWidth / 2 + "px";
         var elem = document.getElementById("animate");
         var xInicial = container.clientWidth / 2;
@@ -153,7 +177,8 @@
         var heightInicial = 2;
         var balasDisparadas = 0;
         var balasDisparadasZombie = 0;
-        var contadorItems = 0;
+        var contadorItems = 0;//para Ids Items en el suelo
+        var contadorArmas = 0;//para Ids Armas en el suelo
         var ronda = 1;
         var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
 
@@ -167,25 +192,27 @@
             armaActual: 1,
             arma1:
             {
-                nombre: "PISTOLA1",
-                cargador: 8,
-                tamanoCargador: 8,
-                municion: 120,
-                recarga: 2000,
-                cadencia: 0,
-                velocidad: 1,
-                impacto: 20
+                nombreArma1: "PISTOLA1",
+                cargadorArma1: 8,
+                tamanoCargadorArma1: 8,
+                municionArma1: 120,
+                recargaArma1: 2000,
+                cadenciaArma1: 0,
+                velocidadArma1: 1,
+                impactoArma1: 30,
+                onCooldownArma1: false
             },
             arma2:
             {
-                nombre: "none",
-                cargador: 0,
-                tamanoCargador: 0,
-                municion: 0,
-                recarga: 0,
-                cadencia: 0,
-                velocidad: 0,
-                impacto: 0
+                nombreArma2: "none",
+                cargadorArma2: 0,
+                tamanoCargadorArma2: 0,
+                municionArma2: 0,
+                recargaArma2: 0,
+                cadenciaArma2: 0,
+                velocidadArma2: 0,
+                impactoArma2: 0,
+                onCooldownArma2: false
             },
             velocidad: 1,
             porcentajeX: 0.5,//Empieza en el centro del contenedor
@@ -206,12 +233,13 @@
         var Balas = [];
         var BalasZombie = [];
         var items = [];
+        var armas = [];
 
         elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
             "vw; position: absolute; display: block; left: " +
             xInicial + "px; top: " + yInicial + "px;";
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
-        document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargador + " / " + Jugador.arma1.municion;
+        document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
 
         var ratonX = 0;
         var ratonY = 0;
@@ -234,7 +262,7 @@
                 document.getElementById("personaje").style = "transform: rotate(" + rot + "deg);";
             }
         });
-
+        //TODO: AÑADIR EVENT LISTENER PARA CUANDO SE PIERDA EL FOCO SE PONGA EN PAUSA
         container.addEventListener("wheel", cambiarArma)
         //Movimiento basado en % del tamaño del contedor, de forma que a tamaños de container mas grandes, tenga una velocidad similar
         //En caso de un cuadrado 1000 x 1000, yendo de 3 en 3 de forma estática por ejemplo, tomaría mucho mas tiempo llegar a las esquinas
