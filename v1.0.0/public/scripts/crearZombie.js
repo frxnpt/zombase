@@ -14,6 +14,15 @@ function crearZombie() {
             case "zombieTipo2":
                 fondo = "./resources/zombies/ZOMBIE2.png";
                 break;
+            /*case "zombieTipo3":
+                fondo = "./resources/zombies/ZOMBIE3.png";
+                break;
+            case "zombieTipo4":
+                fondo = "./resources/zombies/ZOMBIE4.png";
+                break;
+            case "zombieTipo5":
+                fondo = "./resources/zombies/ZOMBIE5.png";
+                break;*/
             default:
                 break;
         }
@@ -60,9 +69,9 @@ function crearZombie() {
         listaZombies.push(objetoZombie);
 
         if (objetoZombie.tipoZombie == "zombieTipo2") {
-            var moverZombie = setInterval(movimientoZombie, objetoZombie.cooldown, zombies, objetoZombie.tipoZombie);
+            setInterval(movimientoZombie, objetoZombie.cooldown, zombies, objetoZombie.tipoZombie);
         } else {
-            var moverZombie = setInterval(movimientoZombie, 25, zombies, objetoZombie.tipoZombie);//ajustar velocidad y milisegundos para reducir zigzag
+            setInterval(movimientoZombie, 25, zombies, objetoZombie.tipoZombie);//ajustar velocidad y milisegundos para reducir zigzag
         }
     }
 
