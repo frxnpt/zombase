@@ -59,6 +59,8 @@ function colision(X, Y, impacto) {
 
                                 rectanguloBotiquin.style.left = posXBotiquin + "px";
                                 rectanguloBotiquin.style.top = posYBotiquin + "px";
+
+                                desvanecerItem(1, "botiquin" + contadorItems);//Devanece el botiquin a los 30s
                                 drop = true;
                                 break;
 

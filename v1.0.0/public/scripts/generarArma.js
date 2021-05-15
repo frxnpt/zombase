@@ -46,7 +46,7 @@ function generarArma(i) {//i es el indice del zombie que ha muerto
     var posYArma = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().top +
         document.getElementById(listaZombies[i].nombre).getBoundingClientRect().height / 2) - container.getBoundingClientRect().top;
 
-    var porcentajeXArma = posXArma / container.getBoundingClientRect().width;//Para reposicionamiento del botiquin
+    var porcentajeXArma = posXArma / container.getBoundingClientRect().width;
     var porcentajeYArma = posYArma / container.getBoundingClientRect().height;
 
     objetoArmaDrop = {
@@ -57,7 +57,7 @@ function generarArma(i) {//i es el indice del zombie que ha muerto
     }
 
     armas.push(objetoArmaDrop);
-
+    desvanecerItem(2, "arma" + contadorArmas);//Devanece el arma a los 30s
     rectanguloArma.style.left = posXArma + "px";
     rectanguloArma.style.top = posYArma + "px";
 }

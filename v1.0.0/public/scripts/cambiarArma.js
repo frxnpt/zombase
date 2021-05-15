@@ -13,7 +13,11 @@ function cambiarArma() {// cambio de imagen (y modo disparo!) Para el cambio de 
                 cambiarImagenPersonaje("ESCOPETA1");
             } else if (Jugador.arma2.nombreArma2 == "RIFLEASALTO1") {
                 cambiarImagenPersonaje("RIFLEASALTO1");
-            }
+            }/* else if (Jugador.arma2.nombreArma2 == "PISTOLA2") {
+                cambiarImagenPersonaje("PISTOLA2");
+            } else if (Jugador.arma2.nombreArma2 == "ARMARAYOS") {
+                cambiarImagenPersonaje("ARMARAYOS");
+            }*/
             break;
         case 2:
             Jugador.armaActual = 1;
@@ -27,7 +31,11 @@ function cambiarArma() {// cambio de imagen (y modo disparo!) Para el cambio de 
                 cambiarImagenPersonaje("ESCOPETA1");
             } else if (Jugador.arma1.nombreArma1 == "RIFLEASALTO1") {
                 cambiarImagenPersonaje("RIFLEASALTO1");
-            }
+            }/* else if (Jugador.arma1.nombreArma1 == "PISTOLA2") {
+                cambiarImagenPersonaje("PISTOLA2");
+            } else if (Jugador.arma1.nombreArma1 == "ARMARAYOS") {
+                cambiarImagenPersonaje("ARMARAYOS");
+            }*/
             break;
         default:
             break;
