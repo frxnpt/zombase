@@ -150,6 +150,8 @@
     <script src="./scripts/movimientoBalaZombie.js"></script>
     <!--Función que controla la generación de zombies-->
     <script src="./scripts/crearZombie.js"></script>
+    <!--Función que controla la generación de distintos tipos de zombies-->
+    <script src="./scripts/generarTipoZombie.js"></script>
     <!--Función que controla el intervalo del movimiento del zombie-->
     <script src="./scripts/movimientoZombie.js"></script>
     <!--Función que controla la colision del zombie con jugador y paredes y cooldown-->
@@ -162,7 +164,7 @@
     <script src="./scripts/finalPartida.js"></script>
     <!--Función para cambiar armas con la ruleta del raton (modo de disparo seteado a default)-->
     <script src="./scripts/cambiarArma.js"></script>
-    <script>
+    <script>//TODO: Mirar WEBPACK comprobar si da fallos
         var pausa = false;
         var container = document.getElementById("container");
         document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_PISTOLA1.png");
