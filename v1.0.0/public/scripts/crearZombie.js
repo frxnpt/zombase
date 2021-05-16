@@ -38,7 +38,7 @@ function crearZombie() {
             case 1://izda
                 document.getElementById("zombie" + zombies).style.left = 0 + "px";
                 document.getElementById("zombie" + zombies).style.top = container.getBoundingClientRect().height / 2 + "px";
-                objetoZombie.porcX = 0;
+                objetoZombie.porcX = 0.01;//Evitamos 0 para que no aparezcan en el límite y sus drops sean un poco mas accesibles
                 objetoZombie.porcY = 0.5;
                 //% Posicion relativa inicial (sitio de spawn) respecto al container, para su posterior redimension.
                 break;
@@ -46,13 +46,13 @@ function crearZombie() {
                 document.getElementById("zombie" + zombies).style.left = container.getBoundingClientRect().width / 2 + "px";
                 document.getElementById("zombie" + zombies).style.top = 0 + "px";
                 objetoZombie.porcX = 0.5;
-                objetoZombie.porcY = 0;
+                objetoZombie.porcY = 0.01;
                 break;
             case 3://derecha
                 document.getElementById("zombie" + zombies).style.left = (container.getBoundingClientRect().width -
                     document.getElementById("zombie" + zombies).getBoundingClientRect().width) + "px";
                 document.getElementById("zombie" + zombies).style.top = container.getBoundingClientRect().height / 2 + "px";
-                objetoZombie.porcX = 1;
+                objetoZombie.porcX = 0.99;//Evitamos 1 para que no aparezcan en el límite y sus drops sean un poco mas accesibles
                 objetoZombie.porcY = 0.5;
                 break;
             case 4://bot
@@ -60,7 +60,7 @@ function crearZombie() {
                 document.getElementById("zombie" + zombies).style.top = (container.getBoundingClientRect().height -
                     document.getElementById("zombie" + zombies).getBoundingClientRect().height) + "px";
                 objetoZombie.porcX = 0.5;
-                objetoZombie.porcY = 1;
+                objetoZombie.porcY = 0.99;
                 break;
             default:
                 break;

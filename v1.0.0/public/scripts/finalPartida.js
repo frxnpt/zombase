@@ -1,4 +1,7 @@
 function finalPartida() {
+    if (document.getElementById("menu")) {
+        document.getElementById("menu").remove();
+    }
     var menuFin = document.createElement("div");
     menuFin.setAttribute("id", "menuFin");
     menuFin.setAttribute("class", "menuFin");

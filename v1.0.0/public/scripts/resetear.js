@@ -11,43 +11,50 @@ function resetear() {
     }
     pausa = false;
     balasDisparadas = 0;
+    balasDisparadasZombie = 0;
+    contadorItems = 0;
+    contadorArmas = 0;
     ronda = 1;
     limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
     zombies = 0;
     contadorZombies = 0;
     Jugador = {
         salud: 100,
+        skinActual: "RAMBO",
         armaActual: 1,
-        arma1:
-        {
-            nombre: "Tipo1",
-            cargador: 8,
-            tamanoCargador: 8,
-            municion: Infinity,
-            recarga: 2000,
-            cadencia: 0,
-            velocidad: 1,
-            impacto: 20
+        arma1: {
+            nombreArma1: "PISTOLA1",
+            cargadorArma1: 8,
+            tamanoCargadorArma1: 8,
+            municionArma1: 120,
+            recargaArma1: 2000,
+            cadenciaArma1: 200,
+            velocidadArma1: 0.75,
+            impactoArma1: 30,
+            onCooldownArma1: false
         },
-        arma2:
-        {
-            nombre: "none",
-            cargador: 0,
-            tamanoCargador: 8,
-            municion: 0,
-            recarga: 0,
-            cadencia: 0,
-            velocidad: 0,
-            impacto: 20
+        arma2: {
+            nombreArma2: "none",
+            cargadorArma2: 0,
+            tamanoCargadorArma2: 0,
+            municionArma2: 0,
+            recargaArma2: 0,
+            cadenciaArma2: 0,
+            velocidadArma2: 0,
+            impactoArma2: 0,
+            onCooldownArma2: false
         },
-        velocidad: 1,
-        porcentajeX: 0.5,
+        velocidad: 0.5,
+        porcentajeX: 0.5, //Empieza en el centro del contenedor
         porcentajeY: 0.5,
         recargando: false
     }
     contadorIntervalos += 2;//Sumamos los dos intervalos base que vamos a añadir.
     listaZombies = [];
     Balas = [];
+    BalasZombie = [];
+    items = [];
+    armas = [];
     elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
         "vw; position: absolute; border-radius: 25px; display: block; left: " +
         xInicial + "px; top: " + yInicial + "px;";
@@ -55,6 +62,7 @@ function resetear() {
     document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
 
     document.getElementById("ronda").innerHTML = "Ronda: ";
+    armaAutomatica = false;
     myMove();
     timer = setInterval(myMove, 20, container, elem);
     empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
