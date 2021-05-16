@@ -146,3 +146,18 @@ p {
 footer {
     margin-top: 3vh;
 }
+
+#Scoreboard {
+    position: absolute;
+    background: bisque;
+    user-select: none;
+    width: 12vw;
+    height: 2vw;
+    left: 86vw;
+}
+
+#Scoreboard-data{
+    font-size: 1.4vw;
+    margin-right: 2.8%;
+    text-align: right;
+}

@@ -22,11 +22,33 @@ function colision(X, Y, impacto) {
 
             if ((X >= limiteObjetoXizda && X <= limiteObjetoXdcha) && (Y >= limiteObjetoYtop && Y <= limiteObjetoYbot)) {
                 listaZombies[i].salud = listaZombies[i].salud - impacto;
-                if (listaZombies[i].salud <= 0) {
+                if (listaZombies[i].salud <= 0) {//Caso en el que el zombie muere
+
+                    switch (listaZombies[i].tipoZombie) {
+                        case "zombieTipo1":
+                            score += Math.round(2 + ronda / 3);
+                            document.getElementById("Scoreboard-data").innerHTML = score;
+                            break;
+                        case "zombieTipo2":
+                            score += Math.round(3.3 + ronda / 3);
+                            document.getElementById("Scoreboard-data").innerHTML = score;
+                            break;
+                        /*case "zombieTipo3":
+                            score += Math.round(1.5 + ronda / 3);
+                            document.getElementById("Scoreboard-data").innerHTML = score;
+                            break;
+                        case "zombieTipo4":
+                            score += Math.round(4 + ronda / 3);
+                            document.getElementById("Scoreboard-data").innerHTML = score;
+                            break;*/
+                        default:
+                            break;
+                    }
+
                     var drop = false;//Variable para controlar 1 drop por zombie
                     if (drop == false) {
                         switch (Math.floor(Math.random() * 15) + 1) {//Probabilidad de dropear un botiquin de un zombie cuando muere
-                            case 2://TODO: Hacer algo similar con las armas, y ademas que sea necesario pulsar una tecla para cambiar el arma actual.
+                            case 2:
                                 contadorItems++;
                                 var botiquin = document.createElement("div");
                                 botiquin.setAttribute("id", "botiquin" + contadorItems);

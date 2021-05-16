@@ -19,9 +19,6 @@ function crearZombie() {
                 break;
             case "zombieTipo4":
                 fondo = "./resources/zombies/ZOMBIE4.png";
-                break;
-            case "zombieTipo5":
-                fondo = "./resources/zombies/ZOMBIE5.png";
                 break;*/
             default:
                 break;

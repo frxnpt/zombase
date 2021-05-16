@@ -18,6 +18,8 @@ function resetear() {
     limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
     zombies = 0;
     contadorZombies = 0;
+    score = 0;
+    document.getElementById("Scoreboard-data").innerHTML = score;
     Jugador = {
         salud: 100,
         skinActual: "RAMBO",
@@ -63,6 +65,7 @@ function resetear() {
 
     document.getElementById("ronda").innerHTML = "Ronda: ";
     armaAutomatica = false;
+    cambiarImagenPersonaje("PISTOLA1");
     myMove();
     timer = setInterval(myMove, 20, container, elem);
     empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);

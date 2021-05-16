@@ -20,6 +20,8 @@ function reposicionDeObjetos() {
     document.getElementById("animate").style.left = Math.round(posNuevaX) + "px";
     document.getElementById("animate").style.top = Math.round(posNuevaY) + "px";
 
+    document.getElementById("Scoreboard").style.top = document.getElementsByTagName("nav")[0].clientHeight * 1.3 + "px";
+
     //Reposicion de balas
     for (let i = 0; i < Balas.length; i++) {
 
