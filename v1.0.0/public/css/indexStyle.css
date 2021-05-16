@@ -122,13 +122,26 @@ p {
 }
 
 @keyframes animate {
-    from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      } 
+    83%{opacity: 0.2;}
+    84%{opacity: 1;}
+    85%{opacity: 0;}
+    86%{opacity: 1;}
+    87%{opacity: 0;}
+    88%{opacity: 1;}
+    89%{opacity: 0;}
+    90%{opacity: 1;}
+    91%{opacity: 0;}
+    92%{opacity: 1;}
+    93%{opacity: 0;}
+    94%{opacity: 1;}
+    95%{opacity: 0;}
+    96%{opacity: 1;}
+    97%{opacity: 0;}
+    98%{opacity: 1;}
+    99%{opacity: 0;}
+    100% {opacity: 1;}
 }
+
 
 footer {
     margin-top: 3vh;
