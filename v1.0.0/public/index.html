@@ -86,6 +86,17 @@
         <p id="Scoreboard-data"></p>
     </div>
 
+    <!-- arma1 (temporal)-->
+    <div id="armamano1" class="armamano1">
+        <img id="armamano1-img" draggable="false">
+        <p style="text-align: center;" id="armamano1-data"></p>
+    </div>
+    <!-- arma2 (temporal)-->
+    <div id="armamano2" class="armamano2">
+        <img id="armamano2-img" draggable="false">
+        <p style="text-align: center;" id="armamano2-data"></p>
+    </div>
+
     </div>
     <footer class="bg-gray-900 flex justify-center">
         <div class="container mx-auto px-6">
@@ -192,6 +203,7 @@
         var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
 
         document.getElementById("Scoreboard").style.top = document.getElementsByTagName("nav")[0].clientHeight * 1.3 + "px";//ajuste altura score
+
         var score = 0;
         document.getElementById("Scoreboard-data").innerHTML = score;
         var zombies = 0; //Nombre de los zombies
@@ -249,7 +261,8 @@
             xInicial + "px; top: " + yInicial + "px;";
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
         document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
-
+        document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
+        document.getElementById("armamano1-img").setAttribute("src", "../public/resources/armas_frame/PISTOLA1_FRAME.png");
         var ratonX = 0;
         var ratonY = 0;
 

@@ -18,6 +18,9 @@ function cambiarArma() {// cambio de imagen (y modo disparo!) Para el cambio de 
             } else if (Jugador.arma2.nombreArma2 == "ARMARAYOS") {
                 cambiarImagenPersonaje("ARMARAYOS");
             }*/
+
+            document.getElementById("armamano2").style.opacity = 1;
+            document.getElementById("armamano1").style.opacity = 0.4;
             break;
         case 2:
             Jugador.armaActual = 1;
@@ -36,6 +39,9 @@ function cambiarArma() {// cambio de imagen (y modo disparo!) Para el cambio de 
             } else if (Jugador.arma1.nombreArma1 == "ARMARAYOS") {
                 cambiarImagenPersonaje("ARMARAYOS");
             }*/
+
+            document.getElementById("armamano1").style.opacity = 1;
+            document.getElementById("armamano2").style.opacity = 0.4;
             break;
         default:
             break;

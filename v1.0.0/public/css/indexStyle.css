@@ -161,3 +161,40 @@ footer {
     margin-right: 2.8%;
     text-align: right;
 }
+
+#armamano1{
+    position: absolute;
+    background: bisque;
+    user-select: none;
+    width: 13vw;
+    height: 5vw;
+    left: 0.85vw;
+    top: 20vw;
+}
+
+#armamano2{
+    position: absolute;
+    background: bisque;
+    user-select: none;
+    width: 13vw;
+    height: 5vw;
+    left: 0.85vw;
+    top: 28.5vw;
+    opacity: 0.4;
+}
+
+#armamano1-img{
+    max-height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#armamano2-img{
+    max-height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#armamano1-data, #armamano2-data {
+    font-size: 1vw;
+}
