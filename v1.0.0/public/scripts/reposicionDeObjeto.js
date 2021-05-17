@@ -80,4 +80,14 @@ function reposicionDeObjetos() {
         document.getElementById(municiones[i].nombre).style.top = posYNuevaItem + "px";
     }
 
+    //Reposicion de sangre
+    for (let i = 0; i < listaAssets.length; i++) {
+
+        var posXNuevaItem = recContainer.width * listaAssets[i].porcX;
+        var posYNuevaItem = recContainer.height * listaAssets[i].porcY;
+
+        document.getElementById(listaAssets[i].nombre).style.left = posXNuevaItem + "px";
+        document.getElementById(listaAssets[i].nombre).style.top = posYNuevaItem + "px";
+    }
+
 }

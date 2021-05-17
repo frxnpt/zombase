@@ -1,4 +1,4 @@
-function generarArma(i) {//i es el indice del zombie que ha muerto
+function generarArma(ZombieX, ZombieY, perX, perY) {
     contadorArmas++;
     var arma = document.createElement("div");
     arma.setAttribute("id", "arma" + contadorArmas);
@@ -33,25 +33,16 @@ function generarArma(i) {//i es el indice del zombie que ha muerto
     container.appendChild(arma);
 
     var rectanguloArma = document.getElementById("arma" + contadorArmas);
-    //Creamos el arma en donde ha muerto el zombie
-    var posXArma = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().left +
-        document.getElementById(listaZombies[i].nombre).getBoundingClientRect().width / 2) - container.getBoundingClientRect().left;
 
-    var posYArma = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().top +
-        document.getElementById(listaZombies[i].nombre).getBoundingClientRect().height / 2) - container.getBoundingClientRect().top;
-
-    var porcentajeXArma = posXArma / container.getBoundingClientRect().width;
-    var porcentajeYArma = posYArma / container.getBoundingClientRect().height;
-
-    objetoArmaDrop = {
+    var objetoArmaDrop = {
         nombre: "arma" + contadorArmas,
         idArma: idArma,
-        porcX: porcentajeXArma,
-        porcY: porcentajeYArma
+        porcX: perX,
+        porcY: perY
     }
 
     armas.push(objetoArmaDrop);
     desvanecerItem(2, "arma" + contadorArmas);//Devanece el arma a los 30s
-    rectanguloArma.style.left = posXArma + "px";
-    rectanguloArma.style.top = posYArma + "px";
+    rectanguloArma.style.left = ZombieX + "px";
+    rectanguloArma.style.top = ZombieY + "px";
 }

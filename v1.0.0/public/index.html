@@ -197,8 +197,9 @@
         var heightInicial = 2;
         var balasDisparadas = 0;
         var balasDisparadasZombie = 0;
-        var contadorItems = 0; //para Ids Items en el suelo
+        var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
         var contadorArmas = 0; //para Ids Armas en el suelo
+        var contadorAssets = 0;
         var ronda = 1;
         var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
 
@@ -256,6 +257,7 @@
         var botiquines = [];
         var municiones = [];
         var armas = [];
+        var listaAssets = [];
 
         elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
             "vw; position: absolute; display: block; left: " +

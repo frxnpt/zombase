@@ -151,9 +151,35 @@ p {
     100% {opacity: 1;}
 }
 
+.SANGRE {
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    display: block;
+    opacity: 1;
+    animation: animate2 30s linear;
+}
+
+@keyframes animate2 {
+    100% {opacity: 0;}
+}
 
 footer {
     margin-top: 3vh;
+}
+#animate{
+    z-index: 9999999999;
+}
+
+.zombieTipo1,
+.zombieTipo2,
+.zombieTipo3,
+.zombieTipo4{
+    z-index: 9999999999999;
+}
+
+#menu, #menuFin {
+    z-index: 9999999999999999;
 }
 
 #Scoreboard {

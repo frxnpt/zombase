@@ -14,6 +14,7 @@ function resetear() {
     balasDisparadasZombie = 0;
     contadorItems = 0;
     contadorArmas = 0;
+    contadorAssets = 0;
     ronda = 1;
     limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
     zombies = 0;
@@ -58,6 +59,7 @@ function resetear() {
     botiquines = [];
     municiones = [];
     armas = [];
+    listaAssets = [];
     elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
         "vw; position: absolute; border-radius: 25px; display: block; left: " +
         xInicial + "px; top: " + yInicial + "px;";

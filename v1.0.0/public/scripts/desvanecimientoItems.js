@@ -36,6 +36,18 @@ function desvanecerItem(tipo, nombre) {
                 }
             }, 30000);//30s
             break;
+        case 4://Sangre
+            contadorIntervalos++;
+            setTimeout(function () {
+                if (document.getElementById(nombre)) {//Comprobamos que existe
+                    for (let i = 0; i < listaAssets.length; i++) {//Buscamos su posicion en el array y lo destruimos
+                        if (nombre == listaAssets[i].nombre) {
+                            destruir(nombre, "SANGRE", i);
+                        }
+                    }
+                }
+            }, 30000);//30s
+            break;
         default:
             break;
     }
