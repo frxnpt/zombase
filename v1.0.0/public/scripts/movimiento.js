@@ -53,7 +53,7 @@ function myMove(container, elem) {
 
             var rad = Math.atan2(ratonX - rectanguloObjeto.x, ratonY - rectanguloObjeto.y);
             var rot = (rad * (180 / Math.PI) * -1) + 180;
-            document.getElementById("personaje").style = "transform: rotate(" + rot + "deg);"
+            document.getElementById("personaje").style.transform = "rotate(" + rot + "deg)"
 
         } else if (keysPressed['KeyR']) {//poder recargar sin movimiento
             recargar(Jugador.armaActual);
@@ -84,6 +84,10 @@ function myMove(container, elem) {
                     Jugador.salud = Jugador.salud + 20;
                     if (Jugador.salud > 100) {
                         Jugador.salud = 100;
+                    }
+                    if (Jugador.salud > 20) {
+                        document.getElementById('personaje').style.animation = "none";
+                        document.getElementById("personaje").style.animationIterationCount = "0";
                     }
                     document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
                     destruir(botiquines[i].nombre, "BOTIQUIN", i);

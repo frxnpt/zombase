@@ -21,6 +21,9 @@ function colisionBalaZ(X, Y, impacto) {
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
         if (Jugador.salud <= 0) {//Cambiar quiza tipo "zombie" por otro contenido en el array (este valor es estatico de prueba)
             finalPartida();
+        } else if (Jugador.salud <= 20) {
+            document.getElementById('personaje').style.animation = "saludCritica 1s";
+            document.getElementById("personaje").style.animationIterationCount = "infinite";
         }
         return true;
     }

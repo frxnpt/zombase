@@ -50,6 +50,11 @@ p {
     transform: rotate(0deg);
 }
 
+@keyframes saludCritica {
+    50%{filter: brightness(0.5) sepia(1) hue-rotate(-52deg) saturate(5);}
+    100%{filter: none;}
+}
+
 #arma {
     position: absolute;
     display: block;

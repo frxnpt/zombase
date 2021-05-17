@@ -268,7 +268,6 @@
         document.getElementById("armamano1-img").setAttribute("src", "../public/resources/armas_frame/PISTOLA1_FRAME.png");
         var ratonX = 0;
         var ratonY = 0;
-
         let keysPressed = {};
         document.addEventListener('keydown', (event) => {
             keysPressed[event.code] = true;
@@ -284,7 +283,7 @@
                 ratonY = event.clientY;
                 var rad = Math.atan2(ratonX - elem.getBoundingClientRect().x, ratonY - elem.getBoundingClientRect().y);
                 var rot = (rad * (180 / Math.PI) * -1) + 180;
-                document.getElementById("personaje").style = "transform: rotate(" + rot + "deg);";
+                document.getElementById("personaje").style.transform = "rotate(" + rot + "deg)";
             }
         });
         //TODO: AÑADIR EVENT LISTENER PARA CUANDO SE PIERDA EL FOCO SE PONGA EN PAUSA
