@@ -30,18 +30,18 @@ const listadoArmas = [{
         velocidad: 2,
         impacto: 35,
         onCooldown: false //funcion disparo
-}/*,
+},
 {
         nombre: "ARMARAYOS",//Clasica
         cargador: 20,
         tamanoCargador: 20,
-        municion: 160,
+        municion: 200,
         recarga: 2800,
         cadencia: 200,
         velocidad: 2,
-        impacto: 750 + ronda * 5,//Arma especial, daño escalado
+        impacto: 850,//Arma especial
         onCooldown: false
-},
+}/*,
 {
         nombre: "PISTOLA2",//Tipo desert eagle, lenta y potente
         cargador: 7,

@@ -1,5 +1,5 @@
 function cambiarArma() {// cambio de imagen (y modo disparo!) Para el cambio de arma con la ruleta del raton
-    event.preventDefault();
+    event.preventDefault();//TODO: Actualizar a cambio con variable para evitar repetición de código
     switch (Jugador.armaActual) {
         case 1:
             Jugador.armaActual = 2;
@@ -15,9 +15,9 @@ function cambiarArma() {// cambio de imagen (y modo disparo!) Para el cambio de 
                 cambiarImagenPersonaje("RIFLEASALTO1");
             }/* else if (Jugador.arma2.nombreArma2 == "PISTOLA2") {
                 cambiarImagenPersonaje("PISTOLA2");
-            } else if (Jugador.arma2.nombreArma2 == "ARMARAYOS") {
+            }*/ else if (Jugador.arma2.nombreArma2 == "ARMARAYOS") {
                 cambiarImagenPersonaje("ARMARAYOS");
-            }*/
+            }
 
             document.getElementById("armamano2").style.opacity = 1;
             document.getElementById("armamano1").style.opacity = 0.4;
@@ -36,9 +36,9 @@ function cambiarArma() {// cambio de imagen (y modo disparo!) Para el cambio de 
                 cambiarImagenPersonaje("RIFLEASALTO1");
             }/* else if (Jugador.arma1.nombreArma1 == "PISTOLA2") {
                 cambiarImagenPersonaje("PISTOLA2");
-            } else if (Jugador.arma1.nombreArma1 == "ARMARAYOS") {
+            }*/ else if (Jugador.arma1.nombreArma1 == "ARMARAYOS") {
                 cambiarImagenPersonaje("ARMARAYOS");
-            }*/
+            }
 
             document.getElementById("armamano1").style.opacity = 1;
             document.getElementById("armamano2").style.opacity = 0.4;

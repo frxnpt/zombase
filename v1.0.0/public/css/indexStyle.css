@@ -70,6 +70,15 @@ p {
     display: block;
 }
 
+.ARMARAYOS {
+    width: 0.8vw;
+    height: 0.8vw;
+    position: absolute;
+    border-radius: 25px;
+    background-color: blue;
+    display: block;
+}
+
 .ESCOPETA1 {
     width: 0.5vw;
     height: 0.5vw;
