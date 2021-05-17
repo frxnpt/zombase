@@ -1,11 +1,11 @@
 function desvanecerItem(tipo, nombre) {
     switch (tipo) {
-        case 1://Botiquines (items)
+        case 1://Botiquines
             contadorIntervalos++;
             setTimeout(function () {
                 if (document.getElementById(nombre)) {//Comprobamos que existe
-                    for (let i = 0; i < items.length; i++) {//Buscamos su posicion en el array y lo destruimos
-                        if (nombre == items[i].nombre) {
+                    for (let i = 0; i < botiquines.length; i++) {//Buscamos su posicion en el array y lo destruimos
+                        if (nombre == botiquines[i].nombre) {
                             destruir(nombre, "BOTIQUIN", i);
                         }
                     }
@@ -19,6 +19,18 @@ function desvanecerItem(tipo, nombre) {
                     for (let i = 0; i < armas.length; i++) {//Buscamos su posicion en el array y lo destruimos
                         if (nombre == armas[i].nombre) {
                             destruir(nombre, "ARMA", i);
+                        }
+                    }
+                }
+            }, 30000);//30s
+            break;
+        case 3://Municiones
+            contadorIntervalos++;
+            setTimeout(function () {
+                if (document.getElementById(nombre)) {//Comprobamos que existe
+                    for (let i = 0; i < municiones.length; i++) {//Buscamos su posicion en el array y lo destruimos
+                        if (nombre == municiones[i].nombre) {
+                            destruir(nombre, "MUNICION", i);
                         }
                     }
                 }

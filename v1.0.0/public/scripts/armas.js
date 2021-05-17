@@ -37,7 +37,7 @@ const listadoArmas = [{
         tamanoCargador: 20,
         municion: 200,
         recarga: 2800,
-        cadencia: 200,
+        cadencia: 350,
         velocidad: 2,
         impacto: 950,//Arma especial
         onCooldown: false

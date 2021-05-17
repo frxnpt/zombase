@@ -20,8 +20,10 @@ function destruir(nombre, tipo, indice) {
         clearInterval(BalasZombie[indice].intervalo);
         BalasZombie.splice(indice, 1);
     } else if (tipo == "BOTIQUIN") {
-        items.splice(indice, 1);
+        botiquines.splice(indice, 1);
     } else if (tipo == "ARMA") {
         armas.splice(indice, 1);
+    } else if (tipo == "MUNICION") {
+        municiones.splice(indice, 1);
     }
 }

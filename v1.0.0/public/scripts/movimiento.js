@@ -59,24 +59,24 @@ function myMove(container, elem) {
             recargar(Jugador.armaActual);
         }
 
-        if (items.length > 0) {
+        if (botiquines.length > 0) {
 
             var xPersonajeHitbox = (elem.getBoundingClientRect().left + elem.getBoundingClientRect().width / 2) -
                 document.getElementById("container").getBoundingClientRect().left;
             var yPersonajeHitbox = (elem.getBoundingClientRect().top + elem.getBoundingClientRect().height / 2) -
                 document.getElementById("container").getBoundingClientRect().top;
 
-            for (let i = 0; i < items.length; i++) {
-                var limiteItemXizda = document.getElementById(items[i].nombre).getBoundingClientRect().left -
+            for (let i = 0; i < botiquines.length; i++) {
+                var limiteItemXizda = document.getElementById(botiquines[i].nombre).getBoundingClientRect().left -
                     document.getElementById("container").getBoundingClientRect().left;
 
-                var limiteItemXdcha = document.getElementById(items[i].nombre).getBoundingClientRect().right -
+                var limiteItemXdcha = document.getElementById(botiquines[i].nombre).getBoundingClientRect().right -
                     document.getElementById("container").getBoundingClientRect().left;
 
-                var limiteItemYtop = document.getElementById(items[i].nombre).getBoundingClientRect().top -
+                var limiteItemYtop = document.getElementById(botiquines[i].nombre).getBoundingClientRect().top -
                     document.getElementById("container").getBoundingClientRect().top;
 
-                var limiteItemYbot = document.getElementById(items[i].nombre).getBoundingClientRect().bottom -
+                var limiteItemYbot = document.getElementById(botiquines[i].nombre).getBoundingClientRect().bottom -
                     document.getElementById("container").getBoundingClientRect().top;
 
                 if ((xPersonajeHitbox >= limiteItemXizda && xPersonajeHitbox <= limiteItemXdcha) &&
@@ -86,7 +86,7 @@ function myMove(container, elem) {
                         Jugador.salud = 100;
                     }
                     document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
-                    destruir(items[i].nombre, "BOTIQUIN", i);
+                    destruir(botiquines[i].nombre, "BOTIQUIN", i);
                 }
 
             }
@@ -95,7 +95,7 @@ function myMove(container, elem) {
         }
 
         if (armas.length > 0) {
-            if (items.length == 0) {//Si hay un botiquin, estas variables ya están instanciadas
+            if (botiquines.length == 0) {//Si hay un botiquin, estas variables ya están instanciadas
                 var xPersonajeHitbox = (elem.getBoundingClientRect().left + elem.getBoundingClientRect().width / 2) -
                     document.getElementById("container").getBoundingClientRect().left;
                 var yPersonajeHitbox = (elem.getBoundingClientRect().top + elem.getBoundingClientRect().height / 2) -
@@ -159,6 +159,63 @@ function myMove(container, elem) {
                         }
                     }
                     destruir(armas[i].nombre, "ARMA", i);
+                }
+
+            }
+
+
+        }
+
+        if (municiones.length > 0) {
+            if (botiquines.length == 0 && armas.length == 0) {//Si hay un botiquin o arma, estas variables ya están instanciadas
+                var xPersonajeHitbox = (elem.getBoundingClientRect().left + elem.getBoundingClientRect().width / 2) -
+                    document.getElementById("container").getBoundingClientRect().left;
+                var yPersonajeHitbox = (elem.getBoundingClientRect().top + elem.getBoundingClientRect().height / 2) -
+                    document.getElementById("container").getBoundingClientRect().top;
+            }
+
+            for (let i = 0; i < municiones.length; i++) {
+                var limiteItemXizda = document.getElementById(municiones[i].nombre).getBoundingClientRect().left -
+                    document.getElementById("container").getBoundingClientRect().left;
+
+                var limiteItemXdcha = document.getElementById(municiones[i].nombre).getBoundingClientRect().right -
+                    document.getElementById("container").getBoundingClientRect().left;
+
+                var limiteItemYtop = document.getElementById(municiones[i].nombre).getBoundingClientRect().top -
+                    document.getElementById("container").getBoundingClientRect().top;
+
+                var limiteItemYbot = document.getElementById(municiones[i].nombre).getBoundingClientRect().bottom -
+                    document.getElementById("container").getBoundingClientRect().top;
+
+                if ((xPersonajeHitbox >= limiteItemXizda && xPersonajeHitbox <= limiteItemXdcha) &&
+                    (yPersonajeHitbox >= limiteItemYtop && yPersonajeHitbox <= limiteItemYbot)) {
+
+                    for (let j = 0; j < listadoArmas.length; j++) {
+                        if (Jugador.arma1.nombreArma1 == listadoArmas[j].nombre) {
+                            Jugador.arma1.cargadorArma1 = listadoArmas[j].cargador;
+                            Jugador.arma1.tamanoCargadorArma1 = listadoArmas[j].tamanoCargador;
+                            Jugador.arma1.municionArma1 = listadoArmas[j].municion;
+                        }
+
+                        if (Jugador.arma2.nombreArma2 == listadoArmas[j].nombre) {
+                            Jugador.arma2.cargadorArma2 = listadoArmas[j].cargador;
+                            Jugador.arma2.tamanoCargadorArma2 = listadoArmas[j].tamanoCargador;
+                            Jugador.arma2.municionArma2 = listadoArmas[j].municion;
+                        }
+
+                        switch (Jugador.armaActual) {
+                            case 1:
+                                document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
+                                break;
+                            case 2:
+                                document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    destruir(municiones[i].nombre, "MUNICION", i);
                 }
 
             }

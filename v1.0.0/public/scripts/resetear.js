@@ -55,7 +55,8 @@ function resetear() {
     listaZombies = [];
     Balas = [];
     BalasZombie = [];
-    items = [];
+    botiquines = [];
+    municiones = [];
     armas = [];
     elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
         "vw; position: absolute; border-radius: 25px; display: block; left: " +

@@ -77,7 +77,7 @@ function colision(X, Y, impacto) {
                                     porcY: porcentajeYBotiquin
                                 }
 
-                                items.push(objetoBotiquin);
+                                botiquines.push(objetoBotiquin);
 
                                 rectanguloBotiquin.style.left = posXBotiquin + "px";
                                 rectanguloBotiquin.style.top = posYBotiquin + "px";
@@ -90,6 +90,52 @@ function colision(X, Y, impacto) {
                                 break;
                         }
                     }
+
+                    if (drop == false) {
+                        switch (Math.floor(Math.random() * 5) + 1) {//Probabilidad de dropear una municion de un zombie cuando muere
+                            case 1:
+                                contadorItems++;
+                                var municion = document.createElement("div");
+                                municion.setAttribute("id", "municion" + contadorItems);
+                                municion.setAttribute("class", "MUNICION");
+                                var imagen = document.createElement("img");
+                                imagen.setAttribute("src", "./resources/items/MUNICION.png");
+                                imagen.setAttribute("height", "100%");
+                                imagen.setAttribute("draggable", "false");
+                                municion.appendChild(imagen);
+                                container.appendChild(municion);
+
+                                var rectanguloMunicion = document.getElementById("municion" + contadorItems);
+
+                                var posXMunicion = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().left +
+                                    document.getElementById(listaZombies[i].nombre).getBoundingClientRect().width / 2) - container.getBoundingClientRect().left;
+
+                                var posYMunicion = (document.getElementById(listaZombies[i].nombre).getBoundingClientRect().top +
+                                    document.getElementById(listaZombies[i].nombre).getBoundingClientRect().height / 2) - container.getBoundingClientRect().top;
+
+                                var porcentajeXMunicion = posXMunicion / container.getBoundingClientRect().width;//Para reposicionamiento del Municion
+                                var porcentajeYMunicion = posYMunicion / container.getBoundingClientRect().height;
+
+                                objetoMunicion = {
+                                    nombre: "municion" + contadorItems,
+                                    porcX: porcentajeXMunicion,
+                                    porcY: porcentajeYMunicion
+                                }
+
+                                municiones.push(objetoMunicion);
+
+                                rectanguloMunicion.style.left = posXMunicion + "px";
+                                rectanguloMunicion.style.top = posYMunicion + "px";
+
+                                desvanecerItem(3, "municion" + contadorItems);//Devanece la municion a los 30s
+                                drop = true;
+                                break;
+
+                            default:
+                                break;
+                        }
+                    }
+
 
                     if (drop == false) {
                         switch (Math.floor(Math.random() * 2) + 1) {//Probabilidad de dropear un arma de un zombie cuando muere por disparo

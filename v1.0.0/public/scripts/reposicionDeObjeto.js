@@ -41,14 +41,14 @@ function reposicionDeObjetos() {
         document.getElementById(listaZombies[i].nombre).style.top = posYNuevaZombie + "px";
     }
 
-    //Reposicion de items
-    for (let i = 0; i < items.length; i++) {
+    //Reposicion de botiquines
+    for (let i = 0; i < botiquines.length; i++) {
 
-        var posXNuevaItem = recContainer.width * items[i].porcX;
-        var posYNuevaItem = recContainer.height * items[i].porcY;
+        var posXNuevaItem = recContainer.width * botiquines[i].porcX;
+        var posYNuevaItem = recContainer.height * botiquines[i].porcY;
 
-        document.getElementById(items[i].nombre).style.left = posXNuevaItem + "px";
-        document.getElementById(items[i].nombre).style.top = posYNuevaItem + "px";
+        document.getElementById(botiquines[i].nombre).style.left = posXNuevaItem + "px";
+        document.getElementById(botiquines[i].nombre).style.top = posYNuevaItem + "px";
     }
 
     //Reposicion de armas
@@ -68,6 +68,16 @@ function reposicionDeObjetos() {
 
         document.getElementById(BalasZombie[i].nombre).style.left = posXNuevaBalaZ + "px";
         document.getElementById(BalasZombie[i].nombre).style.top = posYNuevaBalaZ + "px";
+    }
+
+    //Reposicion de municiones
+    for (let i = 0; i < municiones.length; i++) {
+
+        var posXNuevaItem = recContainer.width * municiones[i].porcX;
+        var posYNuevaItem = recContainer.height * municiones[i].porcY;
+
+        document.getElementById(municiones[i].nombre).style.left = posXNuevaItem + "px";
+        document.getElementById(municiones[i].nombre).style.top = posYNuevaItem + "px";
     }
 
 }

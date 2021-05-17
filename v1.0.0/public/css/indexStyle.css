@@ -121,7 +121,7 @@ p {
   }
 
 .BOTIQUIN,
-.ArmaDrop {
+.ArmaDrop, .MUNICION {
     width: 2.4vw;
     height: 2.4vw;
     position: absolute;
