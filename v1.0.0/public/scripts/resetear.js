@@ -65,8 +65,13 @@ function resetear() {
         xInicial + "px; top: " + yInicial + "px;";
     document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
     document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
-
     document.getElementById("ronda").innerHTML = "Ronda: ";
+    document.getElementById('personaje').style.animation = "none";
+    document.getElementById("personaje").style.animationIterationCount = "0";
+    document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
+    document.getElementById("armamano1-img").setAttribute("src", "../public/resources/armas_frame/PISTOLA1_FRAME.png");
+    document.getElementById("armamano2-img").removeAttribute("src");
+    document.getElementById("armamano2-data").innerHTML = "";
     armaAutomatica = false;
     cambiarImagenPersonaje("PISTOLA1");
     myMove();
