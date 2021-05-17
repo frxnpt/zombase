@@ -39,19 +39,19 @@ const listadoArmas = [{
         recarga: 2800,
         cadencia: 200,
         velocidad: 2,
-        impacto: 850,//Arma especial
+        impacto: 950,//Arma especial
         onCooldown: false
-}/*,
+},
 {
         nombre: "PISTOLA2",//Tipo desert eagle, lenta y potente
         cargador: 7,
         tamanoCargador: 7,
         municion: 94,
         recarga: 2000,
-        cadencia: 500,
-        velocidad: 1.3,
+        cadencia: 700,
+        velocidad: 1.4,
         impacto: 400,
         onCooldown: false
-}*/
+}
 
 ]

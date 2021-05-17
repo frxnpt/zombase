@@ -61,7 +61,7 @@ p {
     width: 80%;
 }
 
-.PISTOLA1 {
+.PISTOLA1, .PISTOLA2 {
     width: 1vw;
     height: 1vw;
     position: absolute;
