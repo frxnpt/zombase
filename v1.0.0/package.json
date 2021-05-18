@@ -1,7 +1,8 @@
 {
     "name": "zombase",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "app.js",
+    "description": "",
     "scripts": {
         "build:css": "postcss  ./src/tailwind.css -o ./public/css/main.css",
         "build": "NODE_ENV=production postcss  ./src/tailwind.css -o ./public/css/main.css",
@@ -21,6 +22,5 @@
         "postcss-cli": "^8.3.1",
         "tailwindcss": "^2.1.2",
         "win-node-env": "^0.4.0"
-    },
-    "description": ""
+    }
 }
