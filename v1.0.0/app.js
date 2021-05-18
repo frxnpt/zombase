@@ -18,6 +18,10 @@ const publicDirectory = path.join(__dirname, './public');
 console.log(__dirname);
 app.use(express.static(publicDirectory));
 
+//Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded({ extended: false }))
+
+//Parse JSON bodies
 app.set('view engine', 'hbs');
 
 db.connect((error) => {
@@ -31,6 +35,7 @@ db.connect((error) => {
 
 app.use('/', require('./routes/pages'));
 app.use('/auth/', require('./routes/auth'));
+
 
 app.listen(5069, () => {
     console.log("Server started on Port 5069")
