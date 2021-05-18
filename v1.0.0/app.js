@@ -35,6 +35,12 @@ app.get("/", (req, res) => {
 app.get("/about-us", (req, res) => {
     res.render("about-us");
 });
+app.get("/login", (req, res) => {
+    res.render("login");
+});
+app.get("/top-players", (req, res) => {
+    res.render("top-players");
+});
 app.listen(5069, () => {
     console.log("Server started on Port 5069")
 })
