@@ -1,6 +1,6 @@
 module.exports = {
     purge: [
-        './public/**/*.html',
+        './views/**/*.hbs',
     ],
     darkMode: false, //or 'media' or 'class'
     theme: {
