@@ -124,7 +124,8 @@ function myMove(container, elem) {
                     document.getElementById("container").getBoundingClientRect().top;
 
                 if (((xPersonajeHitbox >= limiteItemXizda && xPersonajeHitbox <= limiteItemXdcha) &&
-                    (yPersonajeHitbox >= limiteItemYtop && yPersonajeHitbox <= limiteItemYbot)) && keysPressed['KeyE']) {
+                    (yPersonajeHitbox >= limiteItemYtop && yPersonajeHitbox <= limiteItemYbot)) &&
+                    keysPressed['KeyE'] && recogerArma == false) {
                     for (let j = 0; j < listadoArmas.length; j++) {//Listado armas viene de armas.js que carga un array
                         if (armas[i].idArma == listadoArmas[j].nombre) {
                             switch (Jugador.armaActual) {
@@ -164,6 +165,8 @@ function myMove(container, elem) {
                                 default:
                                     break;
                             }
+                            recogerArma = true;//Solo se pondra false de nuevo al levantar la tecla E
+                            break;
                         }
                     }
                     destruir(armas[i].nombre, "ARMA", i);
