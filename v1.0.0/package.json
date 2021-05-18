@@ -4,7 +4,8 @@
     "main": "index.js",
     "scripts": {
         "build:css": "postcss  ./src/tailwind.css -o ./public/css/main.css",
-        "build": "NODE_ENV=production postcss  ./src/tailwind.css -o ./public/css/main.css"
+        "build": "NODE_ENV=production postcss  ./src/tailwind.css -o ./public/css/main.css",
+        "start": "nodemon app.js"
     },
     "keywords": [],
     "author": "",
