@@ -7,7 +7,9 @@ function myMove(container, elem) {
         } else if (keysPressed['KeyA'] || keysPressed['KeyW'] || keysPressed['KeyD'] ||
             keysPressed['KeyS']) {
             if (keysPressed['KeyR']) {//poder recargar mientras te mueves
-                recargar(Jugador.armaActual);
+                if (Jugador.recargando == false) {
+                    recargar(Jugador.armaActual);
+                }
             }
             var rectanguloContainer = container.getBoundingClientRect();
             var rectanguloObjeto = elem.getBoundingClientRect();
@@ -56,7 +58,9 @@ function myMove(container, elem) {
             document.getElementById("personaje").style.transform = "rotate(" + rot + "deg)"
 
         } else if (keysPressed['KeyR']) {//poder recargar sin movimiento
-            recargar(Jugador.armaActual);
+            if (Jugador.recargando == false) {
+                recargar(Jugador.armaActual);
+            }
         }
 
         if (botiquines.length > 0) {

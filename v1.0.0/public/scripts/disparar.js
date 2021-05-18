@@ -74,6 +74,9 @@ function disparar() {
 
             rectanguloBullet.style.left = posXBulletInicial + "px";
             rectanguloBullet.style.top = posYBulletInicial + "px";
+            var sound = new Audio("./resources/sounds/armas/" + clase + "_DISPARO1.wav");//De momento solo 1 sonido por arma
+            sound.volume = volumen;
+            sound.play();//Encontrar mas que no desentonen para todas las armas es muy dificil
 
             var xBulletCliente = rectanguloBullet.getBoundingClientRect().left +
                 (rectanguloBullet.getBoundingClientRect().right -

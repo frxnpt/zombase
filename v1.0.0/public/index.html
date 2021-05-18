@@ -199,10 +199,10 @@
         var balasDisparadasZombie = 0;
         var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
         var contadorArmas = 0; //para Ids Armas en el suelo
-        var contadorAssets = 0;
+        var contadorAssets = 0;//Ids sangre
         var ronda = 1;
         var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
-
+        var volumen = 1;//No resetear
         document.getElementById("Scoreboard").style.top = document.getElementsByTagName("nav")[0].clientHeight * 1.3 + "px";//ajuste altura score
 
         var score = 0;
