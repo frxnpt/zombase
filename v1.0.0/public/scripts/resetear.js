@@ -2,7 +2,7 @@ function resetear() {
     for (let i = intervalosAnteriores; i <= contadorIntervalos; i++) {
         clearInterval(i);
     }
-    intervalosAnteriores = contadorIntervalos;//Intervalos de la partida anterior no se tendrán en cuenta.
+    intervalosAnteriores = contadorIntervalos; //Intervalos de la partida anterior no se tendrán en cuenta.
     var elementos = document.getElementById("container").getElementsByTagName("div").length;
     if (elementos > 1) {
         for (let j = 1; j < elementos; j++) {
@@ -52,7 +52,7 @@ function resetear() {
         porcentajeY: 0.5,
         recargando: false
     }
-    contadorIntervalos += 2;//Sumamos los dos intervalos base que vamos a añadir.
+    contadorIntervalos += 2; //Sumamos los dos intervalos base que vamos a añadir.
     listaZombies = [];
     Balas = [];
     BalasZombie = [];
@@ -69,7 +69,7 @@ function resetear() {
     document.getElementById('personaje').style.animation = "none";
     document.getElementById("personaje").style.animationIterationCount = "0";
     document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
-    document.getElementById("armamano1-img").setAttribute("src", "../public/resources/armas_frame/PISTOLA1_FRAME.png");
+    document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/PISTOLA1_FRAME.png");
     document.getElementById("armamano2-img").removeAttribute("src");
     document.getElementById("armamano2-data").innerHTML = "";
     armaAutomatica = false;
