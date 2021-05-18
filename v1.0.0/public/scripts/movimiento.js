@@ -6,7 +6,7 @@ function myMove(container, elem) {
             pausar();
         } else if (keysPressed['KeyA'] || keysPressed['KeyW'] || keysPressed['KeyD'] ||
             keysPressed['KeyS']) {
-            if (keysPressed['KeyR']) {//poder recargar mientras te mueves
+            if (keysPressed['KeyR']) { //poder recargar mientras te mueves
                 if (Jugador.recargando == false) {
                     recargar(Jugador.armaActual);
                 }
@@ -26,11 +26,14 @@ function myMove(container, elem) {
             //TODO: PASAR A SWITCH DE MANERA ELEGANTE SI ES POSIBLE, ENCAPSULAR EN FUNCION
             if (keysPressed['KeyA'] && x >= 0) {
                 direccionX -= factorVelocidad * Jugador.velocidad / 3;
-            } if (keysPressed['KeyW'] && y >= 0) {
+            }
+            if (keysPressed['KeyW'] && y >= 0) {
                 direccionY -= factorVelocidad * Jugador.velocidad / 3;
-            } if (keysPressed['KeyS'] && y <= limiteY) {
+            }
+            if (keysPressed['KeyS'] && y <= limiteY) {
                 direccionY += factorVelocidad * Jugador.velocidad / 3;
-            } if (keysPressed['KeyD'] && x <= limiteX) {
+            }
+            if (keysPressed['KeyD'] && x <= limiteX) {
                 direccionX += factorVelocidad * Jugador.velocidad / 3;
             }
 
@@ -57,7 +60,7 @@ function myMove(container, elem) {
             var rot = (rad * (180 / Math.PI) * -1) + 180;
             document.getElementById("personaje").style.transform = "rotate(" + rot + "deg)"
 
-        } else if (keysPressed['KeyR']) {//poder recargar sin movimiento
+        } else if (keysPressed['KeyR']) { //poder recargar sin movimiento
             if (Jugador.recargando == false) {
                 recargar(Jugador.armaActual);
             }
@@ -103,7 +106,7 @@ function myMove(container, elem) {
         }
 
         if (armas.length > 0) {
-            if (botiquines.length == 0) {//Si hay un botiquin, estas variables ya están instanciadas
+            if (botiquines.length == 0) { //Si hay un botiquin, estas variables ya están instanciadas
                 var xPersonajeHitbox = (elem.getBoundingClientRect().left + elem.getBoundingClientRect().width / 2) -
                     document.getElementById("container").getBoundingClientRect().left;
                 var yPersonajeHitbox = (elem.getBoundingClientRect().top + elem.getBoundingClientRect().height / 2) -
@@ -124,8 +127,8 @@ function myMove(container, elem) {
                     document.getElementById("container").getBoundingClientRect().top;
 
                 if (((xPersonajeHitbox >= limiteItemXizda && xPersonajeHitbox <= limiteItemXdcha) &&
-                    (yPersonajeHitbox >= limiteItemYtop && yPersonajeHitbox <= limiteItemYbot)) && keysPressed['KeyE']) {
-                    for (let j = 0; j < listadoArmas.length; j++) {//Listado armas viene de armas.js que carga un array
+                        (yPersonajeHitbox >= limiteItemYtop && yPersonajeHitbox <= limiteItemYbot)) && keysPressed['KeyE']) {
+                    for (let j = 0; j < listadoArmas.length; j++) { //Listado armas viene de armas.js que carga un array
                         if (armas[i].idArma == listadoArmas[j].nombre) {
                             switch (Jugador.armaActual) {
                                 case 1:
@@ -141,7 +144,7 @@ function myMove(container, elem) {
                                     Jugador.arma1.onCooldownArma1 = listadoArmas[j].onCooldown;
                                     cambiarImagenPersonaje(listadoArmas[j].nombre);
                                     document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
-                                    document.getElementById("armamano1-img").setAttribute("src", "../public/resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
+                                    document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
                                     document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
                                     break;
                                 case 2:
@@ -157,7 +160,7 @@ function myMove(container, elem) {
                                     Jugador.arma2.onCooldownArma2 = listadoArmas[j].onCooldown;
                                     cambiarImagenPersonaje(listadoArmas[j].nombre);
                                     document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
-                                    document.getElementById("armamano2-img").setAttribute("src", "../public/resources/armas_frame/" + Jugador.arma2.nombreArma2 + "_FRAME.png");
+                                    document.getElementById("armamano2-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma2.nombreArma2 + "_FRAME.png");
                                     document.getElementById("armamano2-data").innerHTML = Jugador.arma2.nombreArma2;
                                     break;
 
@@ -175,7 +178,7 @@ function myMove(container, elem) {
         }
 
         if (municiones.length > 0) {
-            if (botiquines.length == 0 && armas.length == 0) {//Si hay un botiquin o arma, estas variables ya están instanciadas
+            if (botiquines.length == 0 && armas.length == 0) { //Si hay un botiquin o arma, estas variables ya están instanciadas
                 var xPersonajeHitbox = (elem.getBoundingClientRect().left + elem.getBoundingClientRect().width / 2) -
                     document.getElementById("container").getBoundingClientRect().left;
                 var yPersonajeHitbox = (elem.getBoundingClientRect().top + elem.getBoundingClientRect().height / 2) -
