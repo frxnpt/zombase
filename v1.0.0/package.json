@@ -12,6 +12,11 @@
     "dependencies": {
         "@tailwindcss/jit": "^0.1.18",
         "autoprefixer": "^10.2.5",
+        "dotenv": "^9.0.2",
+        "express": "^4.17.1",
+        "hbs": "^4.1.2",
+        "mysql": "^2.18.1",
+        "nodemon": "^2.0.7",
         "postcss-cli": "^8.3.1",
         "tailwindcss": "^2.1.2",
         "win-node-env": "^0.4.0"
