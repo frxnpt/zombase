@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const session = require("express-session");
 const saltRounds = 10;
 let hashedPassword;
 
@@ -23,12 +24,12 @@ exports.register = (req, res) => {
         }
         if (results.length > 0) {
             return res.render('login', {
-                messageReg: 'That email is already in use'
+                errorReg: 'That email is already in use'
             });
 
         } else if (passReg != passRegConfirm) {
             return res.render('login', {
-                messageReg: 'Passwords do not match'
+                errorReg: 'Passwords do not match'
             });
         }
         bcrypt.genSalt(saltRounds, function(err, salt) {
@@ -43,7 +44,7 @@ exports.register = (req, res) => {
                         req.session.loggedin = true;
                         req.session.save();
                         return res.render('login', {
-                            messageReg: 'User Registered successfully'
+                            successReg: 'User Registered successfully'
                         });
 
                     }
@@ -98,7 +99,9 @@ exports.logout = (req, res) => {
     try {
         res.clearCookie('jwt');
         req.session.jwt = "";
-        return res.status(200).redirect('/');
+
+
+        return res.status(200).redirect('/login');
     } catch (error) {
         console.log(error)
     }
