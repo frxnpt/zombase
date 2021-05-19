@@ -269,11 +269,16 @@
         var ratonX = 0;
         var ratonY = 0;
         let keysPressed = {};
+        var recogerArma = false;
         document.addEventListener('keydown', (event) => {
             keysPressed[event.code] = true;
         });
 
         document.addEventListener('keyup', (event) => {
+            if (event.code == 'KeyE') {
+                recogerArma = false;//Sistema para que no coja 2 armas de 1 pulsación
+            }//ya que al estar a 20ms aunque pulsemos una vez, detectara gran cantidad de keydown
+            //De esta forma, solo cuando se haya levantado la tecla E se podra recoger otra arma
             delete keysPressed[event.code];
         });
 
