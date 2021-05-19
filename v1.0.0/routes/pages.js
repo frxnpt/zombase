@@ -2,16 +2,26 @@ const express = require('express');
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render("index", { jwt: req.session.jwt });
+    res.render("index", { jwt: req.cookies.jwt });
 });
 router.get("/about-us", (req, res) => {
     res.render("about-us");
 });
 router.get("/login", (req, res) => {
-    res.render("login");
+    if (!req.cookies.jwt) {
+        res.render("login");
+    } else {
+        res.status(200).redirect('/');
+    }
 });
 router.get("/top-players", (req, res) => {
     res.render("top-players");
 });
-
+router.get("/profile", (req, res) => {
+    if (!req.session.jwt) {
+        res.status(200).redirect('/login');
+    } else {
+        res.render("profile");
+    }
+});
 module.exports = router;
