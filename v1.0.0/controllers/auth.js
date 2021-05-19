@@ -94,3 +94,12 @@ exports.login = (req, res) => {
         console.log(error)
     }
 }
+exports.logout = (req, res) => {
+    try {
+        res.clearCookie('jwt');
+        req.session.jwt = "";
+        return res.status(200).redirect('/');
+    } catch (error) {
+        console.log(error)
+    }
+}
