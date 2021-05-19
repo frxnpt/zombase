@@ -97,54 +97,62 @@
                         <div class="flex flex-row justify-between flex-wrap gap-5 xs:gap-5">
                             <div>
                                 <label for="name" class="text-sm text-left block mx-5">Nombre</label>
-                                <input type="text" placeholder="Fran" id="name" name="name" class="mx-5">
+                                <input type="text" placeholder="Fran" id="name" name="name" class="mx-5" required>
                             </div>
                             <div>
                                 <label for="surname" class="text-sm block text-left mx-5">Apellidos</label>
-                                <input type="text" placeholder="Rivera" id="surname" name="surname" class="mx-5">
+                                <input type="text" placeholder="Rivera" id="surname" name="surname" class="mx-5" required>
                             </div>
                         </div>
 
                         <div>
                             <label for="phone" class="text-sm block text-left mx-5">Nº de teléfono</label>
                             <div class="flex flex-col">
-                                <input type="text" placeholder="+34 656213123" id="phone" name="phone" class="mx-5">
+                                <input type="text" placeholder="+34 656213123" id="phone" name="phone" class="mx-5" required>
                             </div>
 
                         </div>
                         <div>
                             <label for="emailReg" class="text-sm block text-left mx-5">Correo electrónico</label>
                             <div class="flex flex-col">
-                                <input type="text" placeholder="example@example.com" id="emailReg" name="emailReg" class="mx-5 ">
+                                <input type="text" placeholder="example@example.com" id="emailReg" name="emailReg" class="mx-5" required>
                             </div>
                         </div>
 
                         <div>
                             <label for="passReg" class="text-sm block text-left mx-5">Contraseña</label>
                             <div class="flex flex-col">
-                                <input type="password" placeholder="password" id="passReg" name="passReg" class="mx-5 ">
+                                <input type="password" placeholder="password" id="passReg" name="passReg" class="mx-5 " required>
                             </div>
                         </div>
                         <div>
                             <label for="passRegConfirm" class="text-sm block text-left mx-5">Confirmar contraseña</label>
                             <div class="flex flex-col">
-                                <input type="password" placeholder="password" id="passRegConfirm" name="passRegConfirm" class="mx-5 ">
+                                <input type="password" placeholder="password" id="passRegConfirm" name="passRegConfirm" class="mx-5 " required>
                             </div>
                         </div>
                         <div class="flex flex-row justify-start flex-wrap">
                             <div>
-                                <input type="checkbox" class="ml-5" id="acepto" name="acepto" value="acepto">
+                                <input type="checkbox" class="ml-5" id="acepto" name="acepto" value="acepto" required>
                                 <label class="mr-5" for="acepto">Acepto los terminos y condiciones</label>
                             </div>
                         </div>
                         <div class="flex">
                             <button type="submit" class="bg-purple-500 font-semibold text-gray-200  hover:bg-purple-400 hover:text-white mx-5 rounded-md w-full py-2">Registrarme</button>
                         </div>
-                        {{#if messageReg}}
+                        {{#if errorReg}}
                         <div class="flex">
                             <div class="bg-red-300 border mx-5 rounded-md w-full py-2" role="alert">
-                                <strong class="font-bold">Error</strong>
-                                <span class="block sm:inline">{{messageReg}}</span>
+                                <strong class="font-bold">Error:</strong>
+                                <span class="block sm:inline">{{errorReg}}</span>
+                            </div>
+                        </div>
+                        {{/if}}
+                        {{#if successReg}}
+                        <div class="flex">
+                            <div class="bg-green-300 border mx-5 rounded-md w-full py-2" role="alert">
+                                <strong class="font-bold">Success!</strong>
+                                <span class="block sm:inline">{{successReg}}</span>
                             </div>
                         </div>
                         {{/if}}
