@@ -34,12 +34,10 @@
                 </div>
 
                 <!-- menu login -->
-                <div class="hidden md:flex flex-row items-center space-x-5 pt-8">
+                <div class="hidden md:flex flex-row items-center space-x-5">
                     {{#if jwt}}
-                    <form action="/auth/logout" method="POST" class="h-full align-middle">
-                        <button type="submit" class="link-nav">Perfil</button>
-                    </form>
-                    <form action="/auth/logout" method="POST" class="h-full align-middle">
+                    <a href="/profile" class="link-nav">Perfil</a>
+                    <form action="/auth/logout" method="POST" class="h-full align-middle pt-8">
                         <button href="/login" class="font-semibold px-2 py-1 rounded-md bg-red-900 box-border text-white hover:bg-red-700 transition duration-500 shadow">Desconectar</a>
                     </form>
    
@@ -141,7 +139,6 @@
             </div>
         </div>
     </footer>
-
     <!--Listado de Armas-->
     <script src="./scripts/armas.js"></script>
     <!--Generación de drop de armas aleatorio-->
