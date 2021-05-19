@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="./img/favicon.png">
@@ -20,7 +20,7 @@
                     <!-- logo -->
                     <div>
                         <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-                            <img src="./img/logo.png" width="200" alt="">
+                            <img src="/img/logo.png" width="200" alt="">
                         </a>
                     </div>
 
@@ -58,18 +58,18 @@
             <div class="grid grid-cols-1 xl:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 w-full items-baseline">
                 <div class="login bg-white m-5 sm:m-10 pt-10 pb-5 h-auto text-center">
                     <h1 class="text-3xl mb-5">Inicia Sesión</h1>
-                    <form class="flex flex-col gap-5" action="">
+                    <form class="flex flex-col gap-5" action="/auth/login" method="POST">
                         <div>
-                            <label class="text-sm block text-left mx-5">Correo electrónico</label>
+                            <label for="emailLog" class="text-sm block text-left mx-5">Correo electrónico</label>
                             <div class="flex flex-col">
-                                <input type="text" placeholder="example@example.com" class="mx-5 ">
+                                <input type="text" placeholder="example@example.com" id="emailLog" name="emailLog" class="mx-5 ">
                             </div>
                         </div>
 
                         <div>
-                            <label class="text-sm block text-left mx-5">Contraseña</label>
+                            <label for="passLog" class="text-sm block text-left mx-5">Contraseña</label>
                             <div class="flex flex-col">
-                                <input type="password" placeholder="password" class="mx-5 ">
+                                <input type="password" placeholder="password" id="passLog" name="passLog" class="mx-5 ">
                             </div>
                         </div>
                         <div class="flex flex-row justify-start flex-wrap">
@@ -79,53 +79,83 @@
                             </div>
                         </div>
                         <div class="flex">
-                            <button class="bg-green-500 font-semibold mx-5 text-gray-100 hover:text-white hover:bg-green-400 rounded-md w-full py-2">Iniciar Sesión</button>
+                            <button type="submit" class="bg-green-500 font-semibold mx-5 text-gray-100 hover:text-white hover:bg-green-400 rounded-md w-full py-2">Iniciar Sesión</button>
                         </div>
+                        {{#if messageLog}}
+                        <div class="flex">
+                            <div class="bg-red-300 border mx-5 rounded-md w-full py-2" role="alert">
+                                <strong class="font-bold">Error:</strong>
+                                <span class="block sm:inline">{{messageLog}}</span>
+                            </div>
+                        </div>
+                        {{/if}}
                     </form>
                 </div>
                 <div class="register bg-white m-5 sm:m-10 pt-10 pb-5 h-auto text-center">
                     <h1 class="text-3xl mb-5">Regístrate</h1>
-                    <form class="flex flex-col gap-5" action="">
+                    <form class="flex flex-col gap-5" action="/auth/register" method="POST">
                         <div class="flex flex-row justify-between flex-wrap gap-5 xs:gap-5">
                             <div>
-                                <label for="nombre" class="text-sm text-left block mx-5">Nombre</label>
-                                <input type="text" placeholder="Fran" id="nombre" class="mx-5">
+                                <label for="name" class="text-sm text-left block mx-5">Nombre</label>
+                                <input type="text" placeholder="Fran" id="name" name="name" class="mx-5" required>
                             </div>
                             <div>
-                                <label class="text-sm block text-left mx-5">Apellidos</label>
-                                <input type="text" placeholder="Rivera" class="mx-5">
+                                <label for="surname" class="text-sm block text-left mx-5">Apellidos</label>
+                                <input type="text" placeholder="Rivera" id="surname" name="surname" class="mx-5" required>
                             </div>
                         </div>
 
                         <div>
-                            <label class="text-sm block text-left mx-5">Nº de teléfono</label>
+                            <label for="phone" class="text-sm block text-left mx-5">Nº de teléfono</label>
                             <div class="flex flex-col">
-                                <input type="text" placeholder="+34 656213123" class="mx-5">
+                                <input type="text" placeholder="+34 656213123" id="phone" name="phone" class="mx-5" required>
                             </div>
 
                         </div>
                         <div>
-                            <label class="text-sm block text-left mx-5">Correo electrónico</label>
+                            <label for="emailReg" class="text-sm block text-left mx-5">Correo electrónico</label>
                             <div class="flex flex-col">
-                                <input type="text" placeholder="example@example.com" class="mx-5 ">
+                                <input type="text" placeholder="example@example.com" id="emailReg" name="emailReg" class="mx-5" required>
                             </div>
                         </div>
 
                         <div>
-                            <label class="text-sm block text-left mx-5">Contraseña</label>
+                            <label for="passReg" class="text-sm block text-left mx-5">Contraseña</label>
                             <div class="flex flex-col">
-                                <input type="password" placeholder="password" class="mx-5 ">
+                                <input type="password" placeholder="password" id="passReg" name="passReg" class="mx-5 " required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="passRegConfirm" class="text-sm block text-left mx-5">Confirmar contraseña</label>
+                            <div class="flex flex-col">
+                                <input type="password" placeholder="password" id="passRegConfirm" name="passRegConfirm" class="mx-5 " required>
                             </div>
                         </div>
                         <div class="flex flex-row justify-start flex-wrap">
                             <div>
-                                <input type="checkbox" class="ml-5" id="acepto" value="acepto">
+                                <input type="checkbox" class="ml-5" id="acepto" name="acepto" value="acepto" required>
                                 <label class="mr-5" for="acepto">Acepto los terminos y condiciones</label>
                             </div>
                         </div>
                         <div class="flex">
-                            <button class="bg-purple-500 font-semibold text-gray-200  hover:bg-purple-400 hover:text-white mx-5 rounded-md w-full py-2">Registrarme</button>
+                            <button type="submit" class="bg-purple-500 font-semibold text-gray-200  hover:bg-purple-400 hover:text-white mx-5 rounded-md w-full py-2">Registrarme</button>
                         </div>
+                        {{#if errorReg}}
+                        <div class="flex">
+                            <div class="bg-red-300 border mx-5 rounded-md w-full py-2" role="alert">
+                                <strong class="font-bold">Error:</strong>
+                                <span class="block sm:inline">{{errorReg}}</span>
+                            </div>
+                        </div>
+                        {{/if}}
+                        {{#if successReg}}
+                        <div class="flex">
+                            <div class="bg-green-300 border mx-5 rounded-md w-full py-2" role="alert">
+                                <strong class="font-bold">Success!</strong>
+                                <span class="block sm:inline">{{successReg}}</span>
+                            </div>
+                        </div>
+                        {{/if}}
                     </form>
                 </div>
             </div>
@@ -136,7 +166,7 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col items-center ">
                 <div class="sm:w-2/3 pt-5 ">
-                    <img src="./img/vigade.png" class="w-10 mx-auto" alt="">
+                    <img src="/img/vigade.png" class="w-10 mx-auto" alt="">
                 </div>
                 <div class="sm:w-2/3 pt-5">
                     <p class="text-sm text-gray-400 mb-2 text-center">
