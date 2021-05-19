@@ -34,8 +34,16 @@
 
                 <!-- menu login -->
                 <div class="hidden md:flex items-center space-x-5">
+                    {{#if jwt}}
+                    <a href="/profile" class="link-nav">Perfil</a>
+                    <form action="/auth/logout" method="POST" class="h-full align-middle pt-8">
+                        <button href="/login" class="font-semibold px-2 py-1 rounded-md bg-red-900 box-border text-white hover:bg-red-700 transition duration-500 shadow">Desconectar</a>
+                    </form>
+   
+                    {{else}}
                     <a href="/login" class="link-nav">Iniciar Sesión</a>
                     <a href="/login" class="font-semibold px-2 py-1 rounded-md bg-blue-900 box-border text-white hover:bg-purple-900 transition duration-500 shadow">Registrar</a>
+                    {{/if}}
                 </div>
 
                 <div class="md:hidden flex items-center">
