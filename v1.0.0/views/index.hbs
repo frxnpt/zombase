@@ -27,18 +27,28 @@
 
                     <!-- menu principal -->
                     <div class="hidden md:flex items-center space-x-5">
-                        <a href="/"
-                            class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Inicio</a>
+                        <a href="/" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Inicio</a>
                         <a href="/about-us" class="link-nav">Sobre nosotros</a>
                         <a href="/top-players" class="link-nav">Top Jugadores</a>
                     </div>
                 </div>
 
                 <!-- menu login -->
-                <div class="hidden md:flex items-center space-x-5">
+                <div class="hidden md:flex flex-row items-center space-x-5 pt-8">
+                    {{#if jwt}}
+                    <form action="/auth/logout" method="POST" class="h-full align-middle">
+                        <button type="submit" class="link-nav">Perfil</button>
+                    </form>
+                    <form action="/auth/logout" method="POST" class="h-full align-middle">
+                        <button href="/login" class="font-semibold px-2 py-1 rounded-md bg-red-900 box-border text-white hover:bg-red-700 transition duration-500 shadow">Desconectar</a>
+                    </form>
+   
+                    {{else}}
                     <a href="/login" class="link-nav">Iniciar Sesión</a>
-                    <a href="/login"
-                        class="font-semibold px-2 py-1 rounded-md bg-blue-900 box-border text-white hover:bg-purple-900 transition duration-500 shadow">Registrar</a>
+                    <a href="/login" class="font-semibold px-2 py-1 rounded-md bg-blue-900 box-border text-white hover:bg-purple-900 transition duration-500 shadow">Registrar</a>
+                    {{/if}}
+                       
+                    
                 </div>
 
 
@@ -182,7 +192,8 @@
     <script src="./scripts/cambiarArma.js"></script>
     <!--Función para eliminar items del suelo con el tiempo (30s) -->
     <script src="./scripts/desvanecimientoItems.js"></script>
-    <script>//TODO: Mirar WEBPACK comprobar si da fallos
+    <script>
+        //TODO: Mirar WEBPACK comprobar si da fallos
         var pausa = false;
         var container = document.getElementById("container");
         document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_PISTOLA1.png");
@@ -199,11 +210,11 @@
         var balasDisparadasZombie = 0;
         var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
         var contadorArmas = 0; //para Ids Armas en el suelo
-        var contadorAssets = 0;//Ids sangre
+        var contadorAssets = 0; //Ids sangre
         var ronda = 1;
         var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
-        var volumen = 1;//No resetear
-        document.getElementById("Scoreboard").style.top = document.getElementsByTagName("nav")[0].clientHeight * 1.3 + "px";//ajuste altura score
+        var volumen = 1; //No resetear
+        document.getElementById("Scoreboard").style.top = document.getElementsByTagName("nav")[0].clientHeight * 1.3 + "px"; //ajuste altura score
 
         var score = 0;
         document.getElementById("Scoreboard-data").innerHTML = score;
@@ -211,37 +222,37 @@
         var contadorZombies = 0; //Contador de zombies para la ronda(reseteado a 0 despues de cada ronda)
         //Guardamos de forma inicial la %pos relativa de la X y la Y para redimensionar luego (0.5 inicial)
         var Jugador = {
-            salud: 100,
-            skinActual: "RAMBO",
-            armaActual: 1,
-            arma1: {
-                nombreArma1: "PISTOLA1",
-                cargadorArma1: 8,
-                tamanoCargadorArma1: 8,
-                municionArma1: 120,
-                recargaArma1: 2000,
-                cadenciaArma1: 200,
-                velocidadArma1: 0.75,
-                impactoArma1: 30,
-                onCooldownArma1: false
-            },
-            arma2: {
-                nombreArma2: "none",
-                cargadorArma2: 0,
-                tamanoCargadorArma2: 0,
-                municionArma2: 0,
-                recargaArma2: 0,
-                cadenciaArma2: 0,
-                velocidadArma2: 0,
-                impactoArma2: 0,
-                onCooldownArma2: false
-            },
-            velocidad: 0.5,
-            porcentajeX: 0.5, //Empieza en el centro del contenedor
-            porcentajeY: 0.5,
-            recargando: false
-        } //Valores iniciales del jugador
-        //TODO: importar variables (objetos de armas y zombies) desde fichero
+                salud: 100,
+                skinActual: "RAMBO",
+                armaActual: 1,
+                arma1: {
+                    nombreArma1: "PISTOLA1",
+                    cargadorArma1: 8,
+                    tamanoCargadorArma1: 8,
+                    municionArma1: 120,
+                    recargaArma1: 2000,
+                    cadenciaArma1: 200,
+                    velocidadArma1: 0.75,
+                    impactoArma1: 30,
+                    onCooldownArma1: false
+                },
+                arma2: {
+                    nombreArma2: "none",
+                    cargadorArma2: 0,
+                    tamanoCargadorArma2: 0,
+                    municionArma2: 0,
+                    recargaArma2: 0,
+                    cadenciaArma2: 0,
+                    velocidadArma2: 0,
+                    impactoArma2: 0,
+                    onCooldownArma2: false
+                },
+                velocidad: 0.5,
+                porcentajeX: 0.5, //Empieza en el centro del contenedor
+                porcentajeY: 0.5,
+                recargando: false
+            } //Valores iniciales del jugador
+            //TODO: importar variables (objetos de armas y zombies) desde fichero
 
         //Contador para ver el orden de los intervalos, y luego poder eliminarlos detenidamente. Empieza (actualmente)en 2 porque es el 
         //asignado directamente al movimiento nada más empezar y a la ronda. Al añadir zombies, bullets, etc, se le asignarán un valor de intervalo.
@@ -288,32 +299,32 @@
         });
         //TODO: AÑADIR EVENT LISTENER PARA CUANDO SE PIERDA EL FOCO SE PONGA EN PAUSA
         container.addEventListener("wheel", cambiarArma)
-        //Movimiento basado en % del tamaño del contedor, de forma que a tamaños de container mas grandes, tenga una velocidad similar
-        //En caso de un cuadrado 1000 x 1000, yendo de 3 en 3 de forma estática por ejemplo, tomaría mucho mas tiempo llegar a las esquinas
-        //que en un 400 x 400. Esto es para futuro tamaño responsive del container. 0.01 velocidad sería 1% del container por ejecución.
-        //Este valor nos servirá de referencia
+            //Movimiento basado en % del tamaño del contedor, de forma que a tamaños de container mas grandes, tenga una velocidad similar
+            //En caso de un cuadrado 1000 x 1000, yendo de 3 en 3 de forma estática por ejemplo, tomaría mucho mas tiempo llegar a las esquinas
+            //que en un 400 x 400. Esto es para futuro tamaño responsive del container. 0.01 velocidad sería 1% del container por ejecución.
+            //Este valor nos servirá de referencia
         var factorVelocidad = container.clientWidth * 0.025;
         window.addEventListener("resize", reposicionDeObjetos); //A veces falla al pulsar maximizar?
         document.addEventListener("click", disparar);
 
         var disparoAutomatico;
         var armaAutomatica = false;
-        document.addEventListener("mousedown", function (e) {
+        document.addEventListener("mousedown", function(e) {
             if (pausa == false && armaAutomatica == true && e.button == 0) {
                 contadorIntervalos++;
-                disparoAutomatico = setInterval(function () {
+                disparoAutomatico = setInterval(function() {
                     disparar();
                 }, 20);
             }
         });
 
-        document.addEventListener("mouseup", function () {
+        document.addEventListener("mouseup", function() {
             if (pausa == false && armaAutomatica == true) {
                 clearInterval(disparoAutomatico);
             }
         });
 
-        document.addEventListener("dragend", function () {
+        document.addEventListener("dragend", function() {
             if (pausa == false && armaAutomatica == true) {
                 clearInterval(disparoAutomatico);
             }
@@ -323,7 +334,6 @@
         var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
         var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
         var generarZombie = 0;
-
     </script>
 
     <script>
