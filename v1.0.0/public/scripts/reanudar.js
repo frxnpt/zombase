@@ -1,4 +1,5 @@
 function reanudar() {
-    document.getElementById("menu").remove();
+    var menuPausa = document.getElementById("menuPausa");
+    menuPausa.style.display = "none"
     pausa = false;
 }
