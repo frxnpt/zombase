@@ -14,12 +14,12 @@ function crearZombie() {
             case "zombieTipo2":
                 fondo = "./resources/zombies/ZOMBIE2.png";
                 break;
-            /*case "zombieTipo3":
+            case "zombieTipo3":
                 fondo = "./resources/zombies/ZOMBIE3.png";
                 break;
             case "zombieTipo4":
                 fondo = "./resources/zombies/ZOMBIE4.png";
-                break;*/
+                break;
             default:
                 break;
         }

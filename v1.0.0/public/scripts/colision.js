@@ -39,14 +39,14 @@ function colision(X, Y, impacto) {
                             score += Math.round(3.3 + ronda / 3);
                             document.getElementById("Scoreboard-data").innerHTML = score;
                             break;
-                        /*case "zombieTipo3":
+                        case "zombieTipo3":
                             score += Math.round(1.5 + ronda / 3);
                             document.getElementById("Scoreboard-data").innerHTML = score;
                             break;
                         case "zombieTipo4":
                             score += Math.round(4 + ronda / 3);
                             document.getElementById("Scoreboard-data").innerHTML = score;
-                            break;*/
+                            break;
                         default:
                             break;
                     }

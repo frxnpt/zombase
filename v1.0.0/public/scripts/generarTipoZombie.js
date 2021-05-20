@@ -8,14 +8,13 @@ function generarTipoZombie() {
         porcY: 0,
         numeroZombie: contadorZombies,
         intervalo: contadorIntervalos,
-        velocidad: 1,
+        velocidad: 1.2,
         cooldown: 800
     }
 
-    /*var boss = false;
     if ((ronda % 10) == 0 && boss == false) {
         objetoZombie.tipoZombie = "ZOMBIEBOSS";
-        objetoZombie.velocidad = 1.3;
+        objetoZombie.velocidad = 2;
         objetoZombie.cooldown = 1000;
         objetoZombie.salud = 3000 + 150 * ronda;
         objetoZombie.impacto = 10 + 0.5 * ronda;
@@ -25,9 +24,9 @@ function generarTipoZombie() {
         sound.play();
         boss = true
         return objetoZombie;
-    } else if ((ronda % 10) != 0) {
+    } else if (boss == true && (ronda % 10) != 0) {
         boss = false;
-    }*/
+    }
 
     switch (Math.floor(Math.random() * 6) + 1) {//Modificar rango conforme los añada. Quizá separar en diferentes switchs(dentro de cada caso?) para jugar con posibilidades individuales
         case 2://Cambiamos campos necesarios. Zombie Lento que dispara
@@ -41,9 +40,9 @@ function generarTipoZombie() {
             sound.volume = volumen;
             sound.play();
             break;
-        /*case 4://Zombie Rápido poca salud
+        case 4://Zombie Rápido poca salud
             objetoZombie.tipoZombie = "zombieTipo3";
-            objetoZombie.velocidad = 2.2;
+            objetoZombie.velocidad = 2.4;
             objetoZombie.cooldown = 400;
             objetoZombie.salud = 40 + 8 * ronda;
             objetoZombie.impacto = 2 + ronda;
@@ -54,7 +53,7 @@ function generarTipoZombie() {
             break;
         case 6://Zombie base más fuerte. Hacer que solo salga a partir X rondas
             objetoZombie.tipoZombie = "zombieTipo4";
-            objetoZombie.velocidad = 1.3;
+            objetoZombie.velocidad = 1.5;
             objetoZombie.cooldown = 1100;//Poco más de cooldown para balancear
             objetoZombie.salud = 80 + 55 * ronda;
             objetoZombie.impacto = 8 + ronda;
@@ -62,7 +61,7 @@ function generarTipoZombie() {
             var sound = new Audio("./resources/sounds/zombies/ZOMBIE_SPAWN" + (Math.floor(Math.random() * 3) + 1) + ".wav");
             sound.volume = volumen;
             sound.play();
-            break;*/
+            break;
         default://Zombie tipo1
             //Sonidos de este zombie: SPAWN 7,8,9
             var sound = new Audio("./resources/sounds/zombies/ZOMBIE_SPAWN" + (Math.floor(Math.random() * 3) + 7) + ".wav");

@@ -110,12 +110,38 @@ p {
     display: block;
 }
 
+
 .zombieTipo2 {
     width: 2.2vw;
     height: 2.2vw;
     position: absolute;
     border-radius: 0px;
     display: block;
+}
+
+.zombieTipo3 {
+    width: 0.8vw;
+    height: 0.8vw;
+    position: absolute;
+    border-radius: 0px;
+    display: block;
+}
+
+.zombieTipo4 {
+    width: 2.1vw;
+    height: 2.1vw;
+    position: absolute;
+    border-radius: 0px;
+    display: block;
+}
+
+.ZOMBIEBOSS{
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    border-radius: 0px;
+    display: block;
+    filter:hue-rotate(-52deg) saturate(5);
 }
 
 .BulletZ {
@@ -127,8 +153,8 @@ p {
 }
 
 .RIFLEASALTO1 {
-    width: 0.8vw;
-    height: 0.8vw;
+    width: 0.9vw;
+    height: 0.9vw;
     position: absolute;
     border-radius: 25px;
     background-color: black;
