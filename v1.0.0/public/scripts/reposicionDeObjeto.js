@@ -1,6 +1,7 @@
 function reposicionDeObjetos() {
-    if (document.getElementById("menu")) {
-        document.getElementById("menu").remove();
+    if (document.getElementById("menuPausa")) {
+        document.getElementById("menuPausa").style.display = "none";
+        pausar();
     }
     if (document.getElementById("menuFin")) {
         document.getElementById("menuFin").remove();
@@ -11,7 +12,7 @@ function reposicionDeObjetos() {
     container.style.marginLeft = document.body.clientWidth / 2 - document.getElementById("container").clientWidth / 2 + "px";
     //La reposición de objetos se realizará con % del contenedor, es decir, 
     //si el objeto está en el centro, será reposicionado en el 50%x 50%y del siguiente tamaño del contenedor.
-    factorVelocidad = document.getElementById("container").clientWidth * 0.025;//Re-calculo de la velocidad
+    factorVelocidad = document.getElementById("container").clientWidth * 0.025; //Re-calculo de la velocidad
 
     var recContainer = document.getElementById("container").getBoundingClientRect();
     var posNuevaX = (recContainer.width * Jugador.porcentajeX);
