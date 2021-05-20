@@ -1,20 +1,26 @@
 function movimientoZombie(zombies, tipoZombie) {
     if (pausa == false) {
 
-        var xZombieInicial = document.getElementById("zombie" + zombies).getBoundingClientRect().left
+        var recZombie = document.getElementById("zombie" + zombies).getBoundingClientRect();
+
+        var xZombieInicial = recZombie.left
             - container.getBoundingClientRect().left;
-        var yZombieInicial = document.getElementById("zombie" + zombies).getBoundingClientRect().top
+        var yZombieInicial = recZombie.top
             - container.getBoundingClientRect().top;
 
-        var xJugador = elem.getBoundingClientRect().left - container.getBoundingClientRect().left;
-        var yJugador = elem.getBoundingClientRect().top - container.getBoundingClientRect().top;
+        var xZombieCentro = (recZombie.left + recZombie.width / 2)
+            - container.getBoundingClientRect().left;
+        var yZombieCentro = (recZombie.top + recZombie.height / 2)
+            - container.getBoundingClientRect().top;
+        var xJugador = (elem.getBoundingClientRect().left + elem.getBoundingClientRect().width / 2) - container.getBoundingClientRect().left;
+        var yJugador = (elem.getBoundingClientRect().top + elem.getBoundingClientRect().height / 2) - container.getBoundingClientRect().top;
 
         //P2 (pos jugador) - P1 (pos zombie)
-        var movimientoXzombie = (xJugador - xZombieInicial) / Math.abs(xJugador - xZombieInicial);
+        var movimientoXzombie = (xJugador - xZombieCentro) / Math.abs(xJugador - xZombieCentro);
         if (Number.isNaN(movimientoXzombie)) {
             movimientoXzombie = 0;
         }
-        var movimientoYzombie = (yJugador - yZombieInicial) / Math.abs(yJugador - yZombieInicial);
+        var movimientoYzombie = (yJugador - yZombieCentro) / Math.abs(yJugador - yZombieCentro);
         if (Number.isNaN(movimientoYzombie)) {
             movimientoYzombie = 0;
         }
@@ -34,9 +40,10 @@ function movimientoZombie(zombies, tipoZombie) {
         listaZombies[posArrayZombie].porcX = xZombieFinal / container.getBoundingClientRect().width;
         listaZombies[posArrayZombie].porcY = yZombieFinal / container.getBoundingClientRect().height;
 
-        var rad = Math.atan2(elem.getBoundingClientRect().x - document.getElementById("zombie" + zombies).getBoundingClientRect().x,
-            elem.getBoundingClientRect().y - document.getElementById("zombie" + zombies).getBoundingClientRect().y);
-        var rot = (rad * (180 / Math.PI) * -1) + 180;
+        var rad = Math.atan2((elem.getBoundingClientRect().x + elem.getBoundingClientRect().width / 2) - (recZombie.x + recZombie.width / 2),
+            (elem.getBoundingClientRect().y + elem.getBoundingClientRect().height / 2) - (recZombie.y + recZombie.height / 2));
+        var rot = (rad * (180 / Math.PI) * -1) + 180;//La rotación aqui se hara con los centros de zombie y jugador, 
+        //por lo que los zombies rotaran en referencia al centro del jugador
         document.getElementById("zombie" + zombies).childNodes.item(0).style = "transform: rotate(" + rot + "deg);";
         document.getElementById("zombie" + zombies).style.left = xZombieFinal + "px";
         document.getElementById("zombie" + zombies).style.top = yZombieFinal + "px";
@@ -45,9 +52,9 @@ function movimientoZombie(zombies, tipoZombie) {
             disparoZombie(posArrayZombie);
         } else {
 
-            var posXHitboxZ = xZombieFinal + document.getElementById("zombie" + zombies).getBoundingClientRect().width / 2;
-            var posYHitboxZ = yZombieFinal + document.getElementById("zombie" + zombies).getBoundingClientRect().height / 2;
-            colisionZombie(posXHitboxZ, posYHitboxZ, posArrayZombie);
+            var posXHitboxZ = xZombieFinal + recZombie.width / 2;
+            var posYHitboxZ = yZombieFinal + recZombie.height / 2;
+            colisionZombie(posXHitboxZ, posYHitboxZ, posArrayZombie, recZombie.width / 2, recZombie.height / 2);
         }
     }
 }

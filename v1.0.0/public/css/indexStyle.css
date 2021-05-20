@@ -103,8 +103,8 @@ p {
 }
 
 .zombieTipo1 {
-    width: 1.7vw;
-    height: 1.7vw;
+    width: 1.9vw;
+    height: 1.9vw;
     position: absolute;
     border-radius: 0px;
     display: block;
@@ -120,24 +120,24 @@ p {
 }
 
 .zombieTipo3 {
-    width: 0.8vw;
-    height: 0.8vw;
+    width: 0.9vw;
+    height: 0.9vw;
     position: absolute;
     border-radius: 0px;
     display: block;
 }
 
 .zombieTipo4 {
-    width: 2.1vw;
-    height: 2.1vw;
+    width: 2.4vw;
+    height: 2.4vw;
     position: absolute;
     border-radius: 0px;
     display: block;
 }
 
 .ZOMBIEBOSS{
-    width: 3vw;
-    height: 3vw;
+    width: 6.5vw;
+    height: 6.5vw;
     position: absolute;
     border-radius: 0px;
     display: block;
