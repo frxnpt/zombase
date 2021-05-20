@@ -5,7 +5,7 @@ function resetear() {
     intervalosAnteriores = contadorIntervalos; //Intervalos de la partida anterior no se tendrán en cuenta.
     var elementos = document.getElementById("container").getElementsByTagName("div").length;
     if (elementos > 1) {
-        for (let j = 1; j < elementos; j++) {
+        for (let j = 3; j < elementos; j++) {
             document.getElementById("container").removeChild(document.getElementById("container").lastChild);
         }
     }
