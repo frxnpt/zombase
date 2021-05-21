@@ -93,7 +93,8 @@
                 <div class="text-center bg-yellow-300 w-[26vw] h-auto rounded-xl">
                     <p class="text-[1.5vw] m-[2vw] font_game">PAUSA</p>
                     <p class="font_game text-[0.75vw]"> El juego se encuentra en pausa, toma un descanso y vuelve a la
-                        batalla!</p>
+                        batalla!
+                    </p>
                     <div class="flex flex-row justify-evenly gap-[0.5vw] mx-[1vw] mt-[2vw] mb-[4vw]">
                         <button onclick="reanudar();"
                             class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">PLAY</button>
@@ -284,7 +285,7 @@
 
         //Contador para ver el orden de los intervalos, y luego poder eliminarlos detenidamente. Empieza (actualmente)en 2 porque es el 
         //asignado directamente al movimiento nada más empezar y a la ronda. Al añadir zombies, bullets, etc, se le asignarán un valor de intervalo.
-        var contadorIntervalos = 3;
+        var contadorIntervalos = 2;
         var intervalosAnteriores = 1; //1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
         //Lista de objetos a parte del personaje, container y balas, utilizados para ver si hay colision/redimensión.
         //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
@@ -367,7 +368,6 @@
         var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
         var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
         var generarZombie = 0;
-
     </script>
 
     <script>
