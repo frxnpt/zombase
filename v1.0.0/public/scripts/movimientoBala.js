@@ -1,4 +1,4 @@
-function movimientoBala(movimientoX, movimientoY, numeroBala, velocidadBala, impacto) {
+function movimientoBala(movimientoX, movimientoY, numeroBala, velocidadBala, impacto, tipoArma) {
     if (pausa == false) {//Ajuste de matriz eliminado, calculos hechos con el width para ambos
         //Creando asi una matriz imaginaria con X e Y iguales
         var factorVelocidadBullet = factorVelocidad / 4;
@@ -31,6 +31,9 @@ function movimientoBala(movimientoX, movimientoY, numeroBala, velocidadBala, imp
         var colisionBala = colision(posXHitbox, posYHitbox, impacto);
 
         if (colisionBala == true) {
+            if (tipoArma == "NUKE_LAUNCHER") {
+                explosion(posXBullet, posYBullet, "bullet" + numeroBala, impacto);
+            }
             destruir("bullet" + numeroBala, "bala", posArrayBullet);
         }
     }

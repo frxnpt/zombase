@@ -8,7 +8,7 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
 
     var idArma = "PISTOLA1";
 
-    switch (Math.floor(Math.random() * 5) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
+    switch (Math.floor(Math.random() * 6) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
         case 1:
             idArma = "ESCOPETA1";
             break;
@@ -21,6 +21,9 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
             break;
         case 4:
             idArma = "PISTOLA2";
+            break;
+        case 5:
+            idArma = "NUKE_LAUNCHER";
             break;
         default://pistola1
             break;

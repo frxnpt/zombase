@@ -93,7 +93,7 @@ p {
     display: block;
 }
 
-.ESCOPETA1 {
+.ESCOPETA1, .NUKE_LAUNCHER {
     width: 0.5vw;
     height: 0.5vw;
     position: absolute;
@@ -236,6 +236,13 @@ p {
     display: block;
     opacity: 1;
     animation: animate2 30s linear;
+}
+
+.EXPLOSION {
+    width: 12vw;
+    height: 12vw;
+    position: absolute;
+    display: block;
 }
 
 @keyframes animate2 {

@@ -110,7 +110,7 @@ function disparar() {
             movimientoX = (xRatonCliente - xBulletCliente) / (document.body.clientWidth);
             movimientoY = (yRatonCliente - yBulletCliente) / (document.body.clientWidth);
 
-            var moverBala = setInterval(movimientoBala, 5, movimientoX, movimientoY, balasDisparadas, objetoBullet.velocidadBullet, objetoBullet.impactoBullet);
+            var moverBala = setInterval(movimientoBala, 5, movimientoX, movimientoY, balasDisparadas, objetoBullet.velocidadBullet, objetoBullet.impactoBullet, clase);
             if (clase == "ESCOPETA1") {//Disparo escopeta
                 for (let i = 0; i < 7; i++) {
                     balasDisparadas++;
@@ -144,7 +144,7 @@ function disparar() {
                     } else if (movimientoYsemirandomizado < -1) {
                         movimientoYsemirandomizado = -1;
                     }
-                    setInterval(movimientoBala, 5, movimientoXsemirandomizado, movimientoYsemirandomizado, balasDisparadas, objetoBulletEscopeta.velocidadBullet, objetoBulletEscopeta.impactoBullet);
+                    setInterval(movimientoBala, 5, movimientoXsemirandomizado, movimientoYsemirandomizado, balasDisparadas, objetoBulletEscopeta.velocidadBullet, objetoBulletEscopeta.impactoBullet, clase);
                 }
             }
             switch (Jugador.armaActual) {

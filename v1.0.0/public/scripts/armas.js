@@ -52,6 +52,16 @@ const listadoArmas = [{
         velocidad: 1.4,
         impacto: 400,
         onCooldown: false
+},
+{
+        nombre: "NUKE_LAUNCHER",//RPG O SUPER ROCKET LAUNCHER
+        cargador: 1,
+        tamanoCargador: 1,
+        municion: 25,
+        recarga: 3000,
+        cadencia: 500,
+        velocidad: 0.7,
+        impacto: 2500,
+        onCooldown: false
 }
-
 ]
