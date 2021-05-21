@@ -25,7 +25,7 @@ function destruir(nombre, tipo, indice) {
         armas.splice(indice, 1);
     } else if (tipo == "MUNICION") {
         municiones.splice(indice, 1);
-    } else if (tipo == "SANGRE") {
+    } else if (tipo == "ASSET") {
         listaAssets.splice(indice, 1);
     }
 }

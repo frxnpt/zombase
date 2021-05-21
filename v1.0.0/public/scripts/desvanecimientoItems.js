@@ -42,7 +42,7 @@ function desvanecerItem(tipo, nombre) {
                 if (document.getElementById(nombre)) {//Comprobamos que existe
                     for (let i = 0; i < listaAssets.length; i++) {//Buscamos su posicion en el array y lo destruimos
                         if (nombre == listaAssets[i].nombre) {
-                            destruir(nombre, "SANGRE", i);
+                            destruir(nombre, "ASSET", i);
                         }
                     }
                 }

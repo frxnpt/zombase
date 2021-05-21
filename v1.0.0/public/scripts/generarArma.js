@@ -31,7 +31,7 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
 
     imagen.setAttribute("src", "./resources/armas/" + idArma + "DROP.png");
 
-    imagen.setAttribute("height", "100%");
+    imagen.setAttribute("style", "width: 100%; height: 100%;");
     arma.appendChild(imagen);
     container.appendChild(arma);
 

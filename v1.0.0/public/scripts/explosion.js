@@ -4,7 +4,7 @@ function explosion(X, Y, id, impacto) {
     explosion.setAttribute("class", "EXPLOSION");
     var imagen = document.createElement("img");
     imagen.setAttribute("src", "./resources/gif/EXPLOSION.gif");
-    imagen.setAttribute("width", "100%");
+    imagen.setAttribute("style", "width: 100%; height: 100%;");
     imagen.setAttribute("draggable", "false");
     explosion.appendChild(imagen);
     container.appendChild(explosion);

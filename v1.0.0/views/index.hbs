@@ -215,6 +215,8 @@
     <script src="./scripts/desvanecimientoItems.js"></script>
     <!-- Función para generar explosiones -->
     <script src="./scripts/explosion.js"></script>
+    <!-- Función para generar explosiones desde zombies-->
+    <script src="./scripts/explosionZombie.js"></script>
     <!-- Función para generar drops y puntuacion! -->
     <script src="./scripts/drops.js"></script>
     <script>
@@ -236,7 +238,7 @@
         var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
         var contadorArmas = 0; //para Ids Armas en el suelo
         var contadorAssets = 0; //Ids sangre
-        var ronda = 10;
+        var ronda = 1;
         var boss = false;
         var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
         var volumen = 0.2; //No resetear
@@ -259,7 +261,7 @@
                 recargaArma1: 2000,
                 cadenciaArma1: 200,
                 velocidadArma1: 0.75,
-                impactoArma1: 300,
+                impactoArma1: 30,
                 onCooldownArma1: false
             },
             arma2: {

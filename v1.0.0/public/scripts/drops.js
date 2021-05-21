@@ -1,25 +1,4 @@
-function drops(X, Y, perX, perY, tipoZombie) {
-
-    switch (tipoZombie) {//Puntos para la Score
-        case "zombieTipo1":
-            score += Math.round(2 + ronda / 3);
-            document.getElementById("Scoreboard-data").innerHTML = score;
-            break;
-        case "zombieTipo2":
-            score += Math.round(3.3 + ronda / 3);
-            document.getElementById("Scoreboard-data").innerHTML = score;
-            break;
-        case "zombieTipo3":
-            score += Math.round(1.5 + ronda / 3);
-            document.getElementById("Scoreboard-data").innerHTML = score;
-            break;
-        case "zombieTipo4":
-            score += Math.round(4 + ronda / 3);
-            document.getElementById("Scoreboard-data").innerHTML = score;
-            break;
-        default:
-            break;
-    }
+function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicionar desde el medio y restar la mitad de width y height dividos por 2 como en explosion
 
     var drop = false;//Variable para controlar 1 drop por zombie
     if (drop == false) {
@@ -31,7 +10,7 @@ function drops(X, Y, perX, perY, tipoZombie) {
                 botiquin.setAttribute("class", "BOTIQUIN");
                 var imagen = document.createElement("img");
                 imagen.setAttribute("src", "./resources/items/BOTIQUIN.png");
-                imagen.setAttribute("height", "100%");
+                imagen.setAttribute("style", "width: 100%; height: 100%;");
                 imagen.setAttribute("draggable", "false");
                 botiquin.appendChild(imagen);
                 container.appendChild(botiquin);
@@ -67,7 +46,7 @@ function drops(X, Y, perX, perY, tipoZombie) {
                 municion.setAttribute("class", "MUNICION");
                 var imagen = document.createElement("img");
                 imagen.setAttribute("src", "./resources/items/MUNICION.png");
-                imagen.setAttribute("height", "100%");
+                imagen.setAttribute("style", "width: 100%; height: 100%;");
                 imagen.setAttribute("draggable", "false");
                 municion.appendChild(imagen);
                 container.appendChild(municion);
@@ -116,7 +95,7 @@ function drops(X, Y, perX, perY, tipoZombie) {
         var numeroSangre = (Math.floor(Math.random() * 8) + 1);//1 al 8
 
         imagenAsset.setAttribute("src", "./resources/sangre/BLOOD_" + numeroSangre + ".png");
-        imagenAsset.setAttribute("height", "100%");
+        imagenAsset.setAttribute("style", "width: 100%; height: 100%;");
         imagenAsset.setAttribute("draggable", "false");
         sangre.appendChild(imagenAsset);
         container.appendChild(sangre);
@@ -132,5 +111,61 @@ function drops(X, Y, perX, perY, tipoZombie) {
         document.getElementById("sangre" + contadorAssets).style.left = X + "px"; //No aparecerán con la X centrada del zombie, porque la imagen empezaria a 
         document.getElementById("sangre" + contadorAssets).style.top = Y + "px";//"crecer" desde el centro
         desvanecerItem(4, "sangre" + contadorAssets);
+    }
+
+    switch (tipoZombie) {//Puntos para la Score
+        case "zombieTipo1":
+            score += Math.round(2 + ronda / 3);
+            document.getElementById("Scoreboard-data").innerHTML = score;
+            break;
+        case "zombieTipo2":
+            score += Math.round(3.3 + ronda / 3);
+            document.getElementById("Scoreboard-data").innerHTML = score;
+            break;
+        case "zombieTipo3":
+            score += Math.round(1.5 + ronda / 3);
+            document.getElementById("Scoreboard-data").innerHTML = score;
+            break;
+        case "zombieTipo4":
+            score += Math.round(4 + ronda / 3);
+            document.getElementById("Scoreboard-data").innerHTML = score;
+            break;
+        case "zombieTipo5":
+            score += Math.round(3.5 + ronda / 3);
+            document.getElementById("Scoreboard-data").innerHTML = score;
+            contadorAssets++;
+            var minaZombie = document.createElement("div");
+            minaZombie.setAttribute("id", "minaZombie" + contadorAssets);
+            minaZombie.setAttribute("class", "minaZombie");
+            /*var imagen = document.createElement("img");
+            imagen.setAttribute("src", "./resources/items/minaZombie.png");
+            imagen.setAttribute("style", "width: 100%; height: 100%;");
+            imagen.setAttribute("draggable", "false");
+            minaZombie.appendChild(imagen);*/
+            container.appendChild(minaZombie);
+            var objetoMina = {
+                nombre: "minaZombie" + contadorAssets,
+                porcX: perX,
+                porcY: perY
+            }
+            listaAssets.push(objetoMina);
+            document.getElementById("minaZombie" + contadorAssets).style.left = X + "px";
+            document.getElementById("minaZombie" + contadorAssets).style.top = Y + "px";
+            var recMina = document.getElementById("minaZombie" + contadorAssets).getBoundingClientRect();
+            var minaX = (recMina.left + recMina.width / 2) - container.getBoundingClientRect().left;
+            var minaY = (recMina.top + recMina.height / 2) - container.getBoundingClientRect().top;
+            contadorIntervalos++;
+            setTimeout(function () {
+                explosionZombie(minaX, minaY, objetoMina.nombre);
+                for (let i = 0; i < listaAssets.length; i++) {
+                    if (objetoMina.nombre == listaAssets[i].nombre) {
+                        destruir(objetoMina.nombre, "ASSET", i);
+                        break;
+                    }
+                }
+            }, 3000);
+            break;
+        default:
+            break;
     }
 }

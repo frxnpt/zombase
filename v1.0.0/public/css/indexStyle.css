@@ -134,7 +134,14 @@ p {
     border-radius: 0px;
     display: block;
 }
-
+.zombieTipo5 {
+    width: 3.2vw;
+    height: 3.2vw;
+    position: absolute;
+    border-radius: 0px;
+    background-color: black;
+    display: block;
+}
 .ZOMBIEBOSS{
     width: 6.5vw;
     height: 6.5vw;
@@ -239,10 +246,65 @@ p {
 }
 
 .EXPLOSION {
-    width: 12vw;
-    height: 12vw;
+    width: 14vw;
+    height: 14vw;
     position: absolute;
     display: block;
+}
+
+.EXPLOSIONZ {
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    display: block;
+}
+
+.minaZombie{
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    display: block;
+    border-radius: 20px;
+    background-color: red;
+    animation: explosionInminente 3s linear;
+}
+
+@keyframes explosionInminente {
+    14%{
+        filter: brightness(0);
+    }28%{
+        filter: none;
+    }38%{
+        filter: brightness(0);
+    }48%{
+        filter: none;
+    }56%{
+        filter: brightness(0);
+    }64%{
+        filter: none;
+    }70%{
+        filter: brightness(0);
+    }76%{
+        filter: none;
+    }80%{
+        filter: brightness(0);
+    }84%{
+        filter: none;
+    }87%{
+        filter: brightness(0);
+    }90%{
+        filter: none;
+    }92%{
+        filter: brightness(0);
+    }94%{
+        filter: none;
+    }96%{
+        filter: brightness(0);
+    }98%{
+        filter: none;
+    }100%{
+        filter: brightness(0);
+    }
 }
 
 @keyframes animate2 {
