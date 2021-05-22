@@ -246,8 +246,8 @@ p {
 }
 
 .EXPLOSION {
-    width: 14vw;
-    height: 14vw;
+    width: 20vw;
+    height: 20vw;
     position: absolute;
     display: block;
 }

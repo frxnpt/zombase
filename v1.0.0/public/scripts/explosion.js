@@ -22,21 +22,20 @@ function explosion(X, Y, id, impacto) {
     var limiteExplosionTop = rectanguloExplosion.top;
     var limiteExplosionBot = rectanguloExplosion.bottom;
 
-
     for (let i = 0; i < listaZombies.length; i++) {
 
         var recZombie = document.getElementById(listaZombies[i].nombre).getBoundingClientRect();
 
-        var Xleft = recZombie.left;
-        var Xright = recZombie.right;
+        var Xizda = recZombie.left;
+        var Xdcha = recZombie.right;
         var Ytop = recZombie.top;
         var Ybot = recZombie.bottom;
         var Xcentro = (recZombie.left + recZombie.width / 2);
         var Ycentro = (recZombie.top + recZombie.height / 2);
         //Logica similar a la de colision de zombies! Aqui es necesario calcular el centro tambien
-        if (((Xleft >= limiteExplosionIzda && Xleft <= limiteExplosionDcha) &&//Si X se mantiene en la izda y la y en el centro, y ademas
+        if (((Xizda >= limiteExplosionIzda && Xizda <= limiteExplosionDcha) &&//Si X se mantiene en la izda y la y en el centro, y ademas
             (Ycentro >= limiteExplosionTop && Ycentro <= limiteExplosionBot)) ||//se encuentra en los limites de la Explosion, entra, similar con los demas
-            ((Xright >= limiteExplosionIzda && Xright <= limiteExplosionDcha) &&
+            ((Xdcha >= limiteExplosionIzda && Xdcha <= limiteExplosionDcha) &&
                 (Ycentro >= limiteExplosionTop && Ycentro <= limiteExplosionBot)) ||
             ((Xcentro >= limiteExplosionIzda && Xcentro <= limiteExplosionDcha) &&
                 (Ytop >= limiteExplosionTop && Ytop <= limiteExplosionBot)) ||
@@ -53,13 +52,15 @@ function explosion(X, Y, id, impacto) {
                 var porcentajeX = listaZombies[i].porcX;
                 var porcentajeY = listaZombies[i].porcY;
 
-
                 drops(posXZombie, posYZombie, porcentajeX, porcentajeY, listaZombies[i].tipoZombie);
 
                 destruir(listaZombies[i].nombre, "zombie", i);
+                i = -1;//necesario restablecer la i para que compruebe todo el array de nuevo,
+                //ya que los indices cambian al hacer el splice. -1 para que en la siguiente iteracion empiece por 0!!!!
             }
         }
     }
     contadorIntervalos++;
-    setTimeout(destruir, 1300, "EXP_" + id, "", 0);
+    setTimeout(destruir, 1200, "EXP_" + id, "", 0);
+
 }

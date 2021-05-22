@@ -165,6 +165,9 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
                 }
             }, 3000);
             break;
+        case "ZOMBIEBOSS":
+            score += Math.round(100 + ronda * 2);
+            document.getElementById("Scoreboard-data").innerHTML = score;
         default:
             break;
     }
