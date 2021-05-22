@@ -17,7 +17,7 @@ const listadoArmas = [{
         recarga: 3000,
         cadencia: 800, //cooldown timer
         velocidad: 1,
-        impacto: 55, //8 BALLAS ESPARCIDAS
+        impacto: 60, //8 BALLAS ESPARCIDAS
         onCooldown: false //funcion disparo
 },
 {
@@ -28,7 +28,7 @@ const listadoArmas = [{
         recarga: 2400,
         cadencia: 40,
         velocidad: 2,
-        impacto: 35,
+        impacto: 45,
         onCooldown: false //funcion disparo
 },
 {
@@ -50,7 +50,7 @@ const listadoArmas = [{
         recarga: 2000,
         cadencia: 700,
         velocidad: 1.4,
-        impacto: 400,
+        impacto: 500,
         onCooldown: false
 },
 {
@@ -58,10 +58,10 @@ const listadoArmas = [{
         cargador: 1,
         tamanoCargador: 1,
         municion: 25,
-        recarga: 3000,
+        recarga: 3300,
         cadencia: 500,
         velocidad: 0.5,
-        impacto: 2500,
+        impacto: 3500,
         onCooldown: false
 }
 ]

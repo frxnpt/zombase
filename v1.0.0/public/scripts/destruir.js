@@ -9,7 +9,7 @@ function destruir(nombre, tipo, indice) {
         if (contadorZombies == limiteZombies && listaZombies.length == 0) {
             contadorIntervalos++;
             ronda++;
-            limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));//Necesario reinstanciala para que no quede estatica
+            limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));//Necesario reinstanciala para que no quede estatica
             contadorZombies = 0;
             if (generarZombie != 0) {
                 clearInterval(generarZombie);

@@ -10,6 +10,7 @@ function crearZombie() {
         zombie.setAttribute("id", "zombie" + zombies);
         zombie.setAttribute("class", objetoZombie.tipoZombie);
         var imagen = document.createElement("img");
+        var mecanicaBoss = false;
         switch (objetoZombie.tipoZombie) {
             case "zombieTipo2":
                 fondo = "./resources/zombies/ZOMBIE2.png";
@@ -19,6 +20,10 @@ function crearZombie() {
                 break;
             case "zombieTipo4":
                 fondo = "./resources/zombies/ZOMBIE4.png";
+                break;
+            case "ZOMBIEBOSS":
+                mecanicaBoss = true;
+                //fondo = "./resources/zombies/ZOMBIEBOSS1.png";
                 break;
             default:
                 break;
@@ -69,6 +74,22 @@ function crearZombie() {
             setInterval(movimientoZombie, objetoZombie.cooldown, zombies, objetoZombie.tipoZombie);
         } else {
             setInterval(movimientoZombie, 25, zombies, objetoZombie.tipoZombie);//ajustar velocidad y milisegundos para reducir zigzag
+        }
+
+        if (mecanicaBoss == true) {//Necesario realizar el intervalo despues de asignar su movimiento
+            contadorIntervalos++; //al objeto del zombie. Al aumentarlo antes se producen errores
+            var idIntervalo = contadorIntervalos;
+            setInterval(function () {
+                if (document.getElementById(objetoZombie.nombre)) {
+                    for (let i = 0; i < listaZombies.length; i++) {
+                        if (listaZombies[i].nombre == objetoZombie.nombre) {
+                            disparoZombie(i);
+                        }
+                    }
+                } else {
+                    clearInterval(idIntervalo);//Limpia este intervalo
+                }
+            }, 3500);
         }
     }
 

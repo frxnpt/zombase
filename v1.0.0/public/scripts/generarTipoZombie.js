@@ -22,7 +22,7 @@ function generarTipoZombie() {
         var sound = new Audio("./resources/sounds/zombies/BOSS_SPAWN" + (Math.floor(Math.random() * 2) + 1) + ".wav");
         sound.volume = volumen;
         sound.play();
-        boss = true
+        boss = true;
         return objetoZombie;
     } else if (boss == true && (ronda % 10) != 0) {
         boss = false;

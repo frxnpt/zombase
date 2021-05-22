@@ -239,9 +239,9 @@
         var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
         var contadorArmas = 0; //para Ids Armas en el suelo
         var contadorAssets = 0; //Ids sangre
-        var ronda = 1;
+        var ronda = 10;
         var boss = false;
-        var limiteZombies = Math.round((ronda + 6) * (0.7 * ronda));
+        var limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));
         var volumen = 0.2; //No resetear
         document.getElementById("Scoreboard").style.top = document.getElementsByTagName("nav")[0].clientHeight * 1.3 + "px"; //ajuste altura score
 
@@ -262,7 +262,7 @@
                 recargaArma1: 2000,
                 cadenciaArma1: 200,
                 velocidadArma1: 0.75,
-                impactoArma1: 30,
+                impactoArma1: 30000,
                 onCooldownArma1: false
             },
             arma2: {
