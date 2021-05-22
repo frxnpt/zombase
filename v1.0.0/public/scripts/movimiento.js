@@ -239,7 +239,7 @@ function myMove(container, elem) {
                     document.getElementById('personaje').style.animation = "saludCritica 0.5s";
                     document.getElementById("personaje").style.animationIterationCount = "1";
                     contadorIntervalos++;
-                    setTimeout(function () {
+                    setTimeout(() => {
                         document.getElementById('personaje').style.animation = "none";
                         document.getElementById("personaje").style.animationIterationCount = "0";
                         inmunidadVeneno = false;

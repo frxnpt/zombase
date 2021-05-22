@@ -16,6 +16,7 @@ function resetear() {
     contadorItems = 0;
     contadorArmas = 0;
     contadorAssets = 0;
+    contadorBiohazards = 0;
     ronda = 1;
     limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));
     zombies = 0;
@@ -61,6 +62,8 @@ function resetear() {
     municiones = [];
     armas = [];
     listaAssets = [];
+    listaBiohazards = [];
+    inmunidadVeneno = false;
     elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
         "vw; position: absolute; border-radius: 25px; display: block; left: " +
         xInicial + "px; top: " + yInicial + "px;";
