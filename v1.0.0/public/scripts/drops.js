@@ -165,6 +165,38 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
                 }
             }, 3000);
             break;
+        case "zombieTipo6":
+            score += Math.round(4 + ronda / 3);
+            document.getElementById("Scoreboard-data").innerHTML = score;
+            contadorBiohazards++;
+            var veneno = document.createElement("div");
+            veneno.setAttribute("id", "veneno" + contadorBiohazards);
+            veneno.setAttribute("class", "veneno");
+            /*var imagen = document.createElement("img");
+            imagen.setAttribute("src", "./resources/items/veneno.png");
+            imagen.setAttribute("style", "width: 100%; height: 100%;");
+            imagen.setAttribute("draggable", "false");
+            veneno.appendChild(imagen);*/
+            container.appendChild(veneno);
+            var objetoVeneno = {
+                nombre: "veneno" + contadorBiohazards,
+                porcX: perX,
+                porcY: perY
+            }
+            listaBiohazards.push(objetoVeneno);
+            document.getElementById("veneno" + contadorBiohazards).style.left = X + "px";
+            document.getElementById("veneno" + contadorBiohazards).style.top = Y + "px";
+
+            contadorIntervalos++;
+            setTimeout(function () {
+                for (let i = 0; i < listaBiohazards.length; i++) {
+                    if (objetoVeneno.nombre == listaBiohazards[i].nombre) {
+                        destruir(objetoVeneno.nombre, "BIOHAZ", i);
+                        break;
+                    }
+                }
+            }, 6000);
+            break;
         case "ZOMBIEBOSS":
             score += Math.round(100 + ronda * 2);
             document.getElementById("Scoreboard-data").innerHTML = score;

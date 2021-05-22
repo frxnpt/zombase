@@ -75,9 +75,20 @@ p {
 }
 
 .PISTOLA1,
-.PISTOLA2 {
+.PISTOLA2,
+.PISTOLA3 {
     width: 1vw;
     height: 1vw;
+    position: absolute;
+    border-radius: 25px;
+    background-color: black;
+    display: block;
+}
+
+.SUBFUSIL1,
+.SUBFUSIL2 {
+    width: 0.8vw;
+    height: 0.8vw;
     position: absolute;
     border-radius: 25px;
     background-color: black;
@@ -142,6 +153,14 @@ p {
     background-color: black;
     display: block;
 }
+.zombieTipo6 {
+    width: 2.2vw;
+    height: 2.2vw;
+    position: absolute;
+    border-radius: 0px;
+    background-color: green;
+    display: block;
+}
 .ZOMBIEBOSS{
     width: 6.5vw;
     height: 6.5vw;
@@ -159,7 +178,10 @@ p {
     display: block;
 }
 
-.RIFLEASALTO1 {
+.RIFLEASALTO1,
+.RIFLEASALTO2,
+.RIFLEASALTO3,
+.FRANCOTIRADOR1 {
     width: 0.9vw;
     height: 0.9vw;
     position: absolute;
@@ -264,9 +286,18 @@ p {
     height: 3vw;
     position: absolute;
     display: block;
-    border-radius: 20px;
+    border-radius: 50px;
     background-color: red;
     animation: explosionInminente 3s linear;
+}
+
+.veneno{
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    display: block;
+    border-radius: 0px;
+    background-color: greenyellow;
 }
 
 @keyframes explosionInminente {

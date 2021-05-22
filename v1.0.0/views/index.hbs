@@ -239,6 +239,7 @@
         var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
         var contadorArmas = 0; //para Ids Armas en el suelo
         var contadorAssets = 0; //Ids sangre
+        var contadorBiohazards = 0;//ids para elementos como el veneno
         var ronda = 10;
         var boss = false;
         var limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));
@@ -291,13 +292,17 @@
         //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
         var listaZombies = [];
 
-        //balas, items, armas activas para su reposicionamiento y redimension
+        //balas, items, armas, assets, biohazards activas para su reposicionamiento y redimension
+        //**Separando en diferentes arrays, ahoramos gran cantidad de comprobaciones a multiples funciones**
         var Balas = [];
         var BalasZombie = [];
         var botiquines = [];
         var municiones = [];
         var armas = [];
         var listaAssets = [];
+
+        var listaBiohazards = [];
+        var inmunidadVeneno = false;
 
         elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
             "vw; position: absolute; display: block; left: " +

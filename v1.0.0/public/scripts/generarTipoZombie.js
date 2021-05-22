@@ -28,7 +28,7 @@ function generarTipoZombie() {
         boss = false;
     }
 
-    switch (Math.floor(Math.random() * 7) + 1) {//Modificar rango conforme los añada. Quizá separar en diferentes switchs(dentro de cada caso?) para jugar con posibilidades individuales
+    switch (Math.floor(Math.random() * 10) + 1) {//Modificar rango conforme los añada. Quizá separar en diferentes switchs(dentro de cada caso?) para jugar con posibilidades individuales
         case 2://Cambiamos campos necesarios. Zombie Lento que dispara
             objetoZombie.tipoZombie = "zombieTipo2";
             objetoZombie.velocidad = 10;//Avanza un poco cada vez que dispara, leer abajo
@@ -62,14 +62,25 @@ function generarTipoZombie() {
             sound.volume = volumen;
             sound.play();
             break;
-        case 7://Zombie flojo cuerpo a cuerpo, pero que deja una mina explosiva al morir
+        case 8://Zombie flojo cuerpo a cuerpo, pero que deja una mina explosiva al morir
             objetoZombie.tipoZombie = "zombieTipo5";
             objetoZombie.velocidad = 1.2;
             objetoZombie.cooldown = 650;
             objetoZombie.salud = 80 + 35 * ronda;
             objetoZombie.impacto = 1 + Math.round(ronda / 2);
             //Sonidos de este zombie: SPAWN ???
-            /*var sound = new Audio("./resources/sounds/zombies/ZOMBIE_SPAWN" + (Math.floor(Math.random() * 3) + 1) + ".wav");
+            /*var sound = new Audio("./resources/sounds/zombies/ZOMBIE_SPAWN" + (Math.floor(Math.random() * x) + x) + ".wav");
+            sound.volume = volumen;
+            sound.play();*/
+            break;
+        case 10://Zombie flojo cuerpo a cuerpo, pero que deja un charco de veneno al morir
+            objetoZombie.tipoZombie = "zombieTipo6";
+            objetoZombie.velocidad = 1.6;
+            objetoZombie.cooldown = 600;
+            objetoZombie.salud = 60 + 45 * ronda;
+            objetoZombie.impacto = 2 + Math.round(ronda / 2);
+            //Sonidos de este zombie: SPAWN ???
+            /*var sound = new Audio("./resources/sounds/zombies/ZOMBIE_SPAWN" + (Math.floor(Math.random() * x) + x) + ".wav");
             sound.volume = volumen;
             sound.play();*/
             break;
