@@ -137,11 +137,11 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
             var minaZombie = document.createElement("div");
             minaZombie.setAttribute("id", "minaZombie" + contadorAssets);
             minaZombie.setAttribute("class", "minaZombie");
-            /*var imagen = document.createElement("img");
-            imagen.setAttribute("src", "./resources/items/minaZombie.png");
+            var imagen = document.createElement("img");
+            imagen.setAttribute("src", "./resources/items/BOMBAZOMBIE.png");
             imagen.setAttribute("style", "width: 100%; height: 100%;");
             imagen.setAttribute("draggable", "false");
-            minaZombie.appendChild(imagen);*/
+            minaZombie.appendChild(imagen);
             container.appendChild(minaZombie);
             var objetoMina = {
                 nombre: "minaZombie" + contadorAssets,

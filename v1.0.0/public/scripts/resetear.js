@@ -64,6 +64,7 @@ function resetear() {
     listaAssets = [];
     listaBiohazards = [];
     inmunidadVeneno = false;
+    ultimoZombieGolpeado = "";
     elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
         "vw; position: absolute; border-radius: 25px; display: block; left: " +
         xInicial + "px; top: " + yInicial + "px;";

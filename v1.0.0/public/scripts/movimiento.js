@@ -58,7 +58,7 @@ function myMove(container, elem) {
 
             var rad = Math.atan2(ratonX - rectanguloObjeto.x, ratonY - rectanguloObjeto.y);
             var rot = (rad * (180 / Math.PI) * -1) + 180;
-            document.getElementById("personaje").style.transform = "rotate(" + rot + "deg)"
+            document.getElementById("personaje").style.transform = "rotate(" + rot + "deg)";
 
         } else if (keysPressed['KeyR']) { //poder recargar sin movimiento
             if (Jugador.recargando == false) {

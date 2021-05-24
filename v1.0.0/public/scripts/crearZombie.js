@@ -21,9 +21,15 @@ function crearZombie() {
             case "zombieTipo4":
                 fondo = "./resources/zombies/ZOMBIE4.png";
                 break;
+            case "zombieTipo5":
+                fondo = "./resources/zombies/ZOMBIE5.png";
+                break;
+            case "zombieTipo6":
+                fondo = "./resources/zombies/ZOMBIE6.png";
+                break;
             case "ZOMBIEBOSS":
                 mecanicaBoss = true;
-                //fondo = "./resources/zombies/ZOMBIEBOSS1.png";
+                fondo = "./resources/zombies/ZOMBIEBOSS1.png";
                 break;
             default:
                 break;

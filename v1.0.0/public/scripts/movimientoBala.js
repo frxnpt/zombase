@@ -27,12 +27,19 @@ function movimientoBala(movimientoX, movimientoY, numeroBala, velocidadBala, imp
         var posXHitbox = posXBullet + document.getElementById("bullet" + numeroBala).getBoundingClientRect().width / 2;
         var posYHitbox = posYBullet + document.getElementById("bullet" + numeroBala).getBoundingClientRect().height / 2;
 
+        var penetracion = false;
+        if (tipoArma == "RIFLEASALTO3" || tipoArma == "FRANCOTIRADOR1") {
+            penetracion = true;
+        }
+
         //Cambiar en el futuro el "20" (valor estatico de prueba) por el "impacto" que tenga el tipo de bala en el array
-        var colisionBala = colision(posXHitbox, posYHitbox, impacto);
+        var colisionBala = colision(posXHitbox, posYHitbox, impacto, penetracion);
 
         if (colisionBala == true) {
-            if (tipoArma == "NUKE_LAUNCHER") {
-                explosion(posXBullet, posYBullet, "bullet" + numeroBala, impacto);
+            if (tipoArma == "NUKE_LAUNCHER" || tipoArma == "LANZAGRANADAS") {
+                explosion(posXBullet, posYBullet, "bullet" + numeroBala, impacto, tipoArma);
+            } else if (tipoArma == "EXPERIMENTO-69420") {
+                encadenarRayo(posXHitbox, posYHitbox);
             }
             destruir("bullet" + numeroBala, "bala", posArrayBullet);
         }

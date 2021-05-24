@@ -83,7 +83,7 @@
 
     <!--Container-->
     <div>
-        <div id="container">
+        <div id="container" draggable="false">
             <div id="animate">
                 <img height="100%" id="personaje" draggable="false">
             </div>
@@ -220,6 +220,8 @@
     <script src="./scripts/explosionZombie.js"></script>
     <!-- Función para generar drops y puntuacion! -->
     <script src="./scripts/drops.js"></script>
+    <!-- Función para encadenar los rayos del arma especial -->
+    <script src="./scripts/encadenarRayo.js"></script>
     <script>
         //TODO: Mirar WEBPACK comprobar si da fallos
         var pausa = false;
@@ -262,8 +264,8 @@
                 municionArma1: 120,
                 recargaArma1: 2000,
                 cadenciaArma1: 200,
-                velocidadArma1: 0.75,
-                impactoArma1: 30000,
+                velocidadArma1: 1,
+                impactoArma1: 3000,
                 onCooldownArma1: false
             },
             arma2: {
@@ -303,6 +305,7 @@
 
         var listaBiohazards = [];
         var inmunidadVeneno = false;
+        var ultimoZombieGolpeado = "";
 
         elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
             "vw; position: absolute; display: block; left: " +
@@ -310,7 +313,7 @@
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
         document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
         document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
-        document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/PISTOLA1_FRAME.png");
+        document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
         var ratonX = 0;
         var ratonY = 0;
         let keysPressed = {};

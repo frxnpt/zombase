@@ -5,7 +5,7 @@ const listadoArmas = [{
         municion: 120,
         recarga: 2000,
         cadencia: 200, //--> semiautomatico
-        velocidad: 1,
+        velocidad: 0.75,
         impacto: 30,
         onCooldown: false
 },
@@ -15,9 +15,9 @@ const listadoArmas = [{
         tamanoCargador: 6,
         municion: 84,
         recarga: 3000,
-        cadencia: 800, //cooldown timer
+        cadencia: 600, //cooldown timer
         velocidad: 1,
-        impacto: 60, //8 BALLAS ESPARCIDAS
+        impacto: 65, //8 BALLAS ESPARCIDAS
         onCooldown: false //funcion disparo
 },
 {
@@ -58,18 +58,18 @@ const listadoArmas = [{
         cargador: 1,
         tamanoCargador: 1,
         municion: 25,
-        recarga: 3300,
-        cadencia: 500,
+        recarga: 4300,
+        cadencia: 1000,
         velocidad: 0.5,
         impacto: 3500,
         onCooldown: false
-}/*,
+},
 {
         nombre: "PISTOLA3",//Pistola parecida a la inicial pero mejor
         cargador: 12,
         tamanoCargador: 12,
         municion: 180,
-        recarga: 2200,
+        recarga: 2300,
         cadencia: 100,
         velocidad: 1.1,
         impacto: 95,
@@ -83,18 +83,18 @@ const listadoArmas = [{
         recarga: 1800,
         cadencia: 55,
         velocidad: 1.5,
-        impacto: 35,
+        impacto: 55,
         onCooldown: false //funcion disparo
 },
 {
         nombre: "SUBFUSIL2", //automatico, SUBFUSIL MEJOR
         cargador: 50,
         tamanoCargador: 50,
-        municion: 500,
-        recarga: 2200,
-        cadencia: 30,
+        municion: 400,
+        recarga: 2000,
+        cadencia: 40,
         velocidad: 1.7,
-        impacto: 45,
+        impacto: 40,
         onCooldown: false //funcion disparo
 },
 {
@@ -112,14 +112,14 @@ const listadoArmas = [{
         nombre: "RIFLEASALTO3", //SEMIAUTOMATICO, BALAS PENETRANTES
         cargador: 10,
         tamanoCargador: 10,
-        municion: 200,
+        municion: 120,
         recarga: 2700,
-        cadencia: 200,
+        cadencia: 400,
         velocidad: 2.1,
-        impacto: 325,
+        impacto: 375,
         onCooldown: false //funcion disparo
 },
-{
+/*{
         nombre: "FRANCOTIRADOR1", //SEMIAUTOMATICO, BALAS PENETRANTES
         cargador: 5,
         tamanoCargador: 5,
@@ -129,17 +129,29 @@ const listadoArmas = [{
         velocidad: 1.7,
         impacto: 850,
         onCooldown: false //funcion disparo
-},
+},*/
 {
-        nombre: "LANZAGRANADAS1",//EXPLOSIONES
+        nombre: "LANZAGRANADAS",//EXPLOSIONES
         cargador: 6,
         tamanoCargador: 6,
         municion: 60,
         recarga: 2700,
         cadencia: 600,
         velocidad: 0.7,
-        impacto: 450,
+        impacto: 700,
         onCooldown: false
-}*/
+}/*,
+{
+        nombre: "EXPERIMENTO-69420",//CADENA DE RAYOS (IDA DE CABEZA)
+        cargador: 4,
+        tamanoCargador: 4,
+        municion: 28,
+        recarga: 3600,
+        cadencia: 1300,
+        velocidad: 0.3,
+        impacto: 9000,
+        onCooldown: false
+},
+*/
 
 ]

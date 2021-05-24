@@ -1,9 +1,9 @@
-function explosion(X, Y, id, impacto) {
+function explosion(X, Y, id, impacto, tipoArma) {
     var explosion = document.createElement("div");
     explosion.setAttribute("id", "EXP_" + id);
-    explosion.setAttribute("class", "EXPLOSION");
+    explosion.setAttribute("class", tipoArma + "_EXP");
     var imagen = document.createElement("img");
-    imagen.setAttribute("src", "./resources/gif/EXPLOSION.gif");
+    imagen.setAttribute("src", "./resources/gif/" + tipoArma + "_EXPLOSION.gif");
     imagen.setAttribute("style", "width: 100%; height: 100%;");
     imagen.setAttribute("draggable", "false");
     explosion.appendChild(imagen);
@@ -13,6 +13,10 @@ function explosion(X, Y, id, impacto) {
         document.getElementById("EXP_" + id).getBoundingClientRect().width / 2) + "px";
     document.getElementById("EXP_" + id).style.top = (Y -
         document.getElementById("EXP_" + id).getBoundingClientRect().height / 2) + "px";
+
+    var sound = new Audio("./resources/sounds/armas/" + tipoArma + "_EXPLOSION.wav");//De momento solo 1 sonido por arma
+    sound.volume = volumen;
+    sound.play();
 
     //Necesario instanciar el rectangulo despues de asignarle las coordenadas
     var rectanguloExplosion = document.getElementById("EXP_" + id).getBoundingClientRect();
@@ -55,8 +59,8 @@ function explosion(X, Y, id, impacto) {
                 drops(posXZombie, posYZombie, porcentajeX, porcentajeY, listaZombies[i].tipoZombie);
 
                 destruir(listaZombies[i].nombre, "zombie", i);
-                i = -1;//necesario restablecer la i para que compruebe todo el array de nuevo,
-                //ya que los indices cambian al hacer el splice. -1 para que en la siguiente iteracion empiece por 0!!!!
+                i--;//necesario disminuir la i para que compruebe la misma posicion del array de nuevo,
+                //ya que los indices posteriores disminuyen 1 al hacer el splice.
             }
         }
     }

@@ -4,11 +4,9 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
     arma.setAttribute("id", "arma" + contadorArmas);
     arma.setAttribute("class", "ArmaDrop");
     var imagen = document.createElement("img");
-    imagen.setAttribute("draggable", "false");
-
     var idArma = "PISTOLA1";
 
-    switch (Math.floor(Math.random() * 6) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
+    switch (Math.floor(Math.random() * 12) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
         case 1:
             idArma = "ESCOPETA1";
             break;
@@ -25,13 +23,31 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
         case 5:
             idArma = "NUKE_LAUNCHER";
             break;
+        case 6:
+            idArma = "PISTOLA3";
+            break;
+        case 7:
+            idArma = "RIFLEASALTO2";
+            break;
+        case 8:
+            idArma = "RIFLEASALTO3";
+            break;
+        case 9:
+            idArma = "SUBFUSIL1";
+            break;
+        case 10:
+            idArma = "SUBFUSIL2";
+            break;
+        case 11:
+            idArma = "LANZAGRANADAS";
+            break;
         default://pistola1
             break;
     }
 
     imagen.setAttribute("src", "./resources/armas/" + idArma + "DROP.png");
-
     imagen.setAttribute("style", "width: 100%; height: 100%;");
+    imagen.setAttribute("draggable", "false");
     arma.appendChild(imagen);
     container.appendChild(arma);
 

@@ -131,8 +131,8 @@ function disparar() {
                         intervalo: contadorIntervalos
                     }
                     Balas.push(objetoBulletEscopeta);
-                    var movimientoXsemirandomizado = movimientoX + ((Math.floor(Math.random() * 40) - 20) / 100)//desviación de hasta +- 0.2 en movimiento
-                    var movimientoYsemirandomizado = movimientoY + ((Math.floor(Math.random() * 40) - 20) / 100)
+                    var movimientoXsemirandomizado = movimientoX + ((Math.floor(Math.random() * 40) - 20) / 100);//desviación de hasta +- 0.2 en movimiento
+                    var movimientoYsemirandomizado = movimientoY + ((Math.floor(Math.random() * 40) - 20) / 100);
                     if (movimientoXsemirandomizado > 1) {
                         movimientoXsemirandomizado = 1;
                     } else if (movimientoXsemirandomizado < -1) {
