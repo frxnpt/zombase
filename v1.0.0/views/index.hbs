@@ -87,13 +87,9 @@
             <div id="animate">
                 <img height="100%" id="personaje" draggable="false">
             </div>
-<<<<<<< Updated upstream
             <div id="menuPausa" draggable="false"
                 class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl"
                 style="display: none; z-index: 9999999999999999;">
-=======
-            <div id="menuPausa" class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl" style="display: none; z-index: 9999999999999999;">
->>>>>>> Stashed changes
                 <div class="text-center bg-yellow-300 w-[26vw] h-auto rounded-xl">
                     <p class="text-[1.5vw] m-[2vw] font_game">PAUSA</p>
                     <p class="font_game text-[0.75vw]"> El juego se encuentra en pausa, toma un descanso y vuelve a la batalla!
@@ -242,13 +238,8 @@
         var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
         var contadorArmas = 0; //para Ids Armas en el suelo
         var contadorAssets = 0; //Ids sangre
-<<<<<<< Updated upstream
         var contadorBiohazards = 0;//ids para elementos como el veneno
-        var ronda = 1;
-=======
-        var contadorBiohazards = 0; //ids para elementos como el veneno
-        var ronda = 10;
->>>>>>> Stashed changes
+        var ronda = 5;
         var boss = false;
         var limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));
         var volumen = 0.2; //No resetear
@@ -260,7 +251,6 @@
         var contadorZombies = 0; //Contador de zombies para la ronda(reseteado a 0 despues de cada ronda)
         //Guardamos de forma inicial la %pos relativa de la X y la Y para redimensionar luego (0.5 inicial)
         var Jugador = {
-<<<<<<< Updated upstream
             salud: 100,
             skinActual: "RAMBO",
             armaActual: 1,
@@ -292,40 +282,6 @@
             recargando: false
         } //Valores iniciales del jugador
         //TODO: importar variables (objetos de armas y zombies) desde fichero
-=======
-                salud: 100,
-                skinActual: "RAMBO",
-                armaActual: 1,
-                arma1: {
-                    nombreArma1: "LANZAGRANADAS",
-                    cargadorArma1: 8,
-                    tamanoCargadorArma1: 8,
-                    municionArma1: 120,
-                    recargaArma1: 2000,
-                    cadenciaArma1: 200,
-                    velocidadArma1: 1,
-                    impactoArma1: 3000,
-                    onCooldownArma1: false
-                },
-                arma2: {
-                    nombreArma2: "none",
-                    cargadorArma2: 0,
-                    tamanoCargadorArma2: 0,
-                    municionArma2: 0,
-                    recargaArma2: 0,
-                    cadenciaArma2: 0,
-                    velocidadArma2: 0,
-                    impactoArma2: 0,
-                    onCooldownArma2: false
-                },
-                velocidad: 0.5,
-                porcentajeX: 0.5, //Empieza en el centro del contenedor
-                porcentajeY: 0.5,
-                recargando: false
-            } //Valores iniciales del jugador
-            //TODO: importar variables (objetos de armas y zombies) desde fichero
->>>>>>> Stashed changes
-
         //Contador para ver el orden de los intervalos, y luego poder eliminarlos detenidamente. Empieza (actualmente)en 2 porque es el 
         //asignado directamente al movimiento nada más empezar y a la ronda. Al añadir zombies, bullets, etc, se le asignarán un valor de intervalo.
         var contadorIntervalos = 2;
