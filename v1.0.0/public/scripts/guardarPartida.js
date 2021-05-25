@@ -11,17 +11,16 @@ function guardarPartida() {
         }
     }
     var formData = new FormData();
-
-    formData.append("puntuacion", "hola");
-    formData.append("fecha", "hola2");
-    formData.append("token", "hola3");
-
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date + ' ' + time;
+    let params = 'puntuacion=' + score + '&fecha=' + dateTime + '&token=' + jwt;
     for (let [key, value] of formData.entries()) {
         console.log(key, value);
     }
-
-
     xhr.open("POST", "/partida/guardar");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(formData);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send(params);
+    resetear();
 }
