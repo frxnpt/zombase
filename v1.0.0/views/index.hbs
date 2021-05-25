@@ -87,19 +87,6 @@
             <div id="animate">
                 <img height="100%" id="personaje" draggable="false">
             </div>
-            <div id="menuMuerte" draggable="false"
-                class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl"
-                style="display: none; z-index: 9999999999999999;">
-                <div class="text-center bg-yellow-300 w-[26vw] h-auto rounded-xl">
-                    <p class="text-[1.5vw] m-[2vw] font_game">HAS MUERTO GIL</p>
-                    <p class="font_game text-[0.75vw]"> El juego se encuentra en pausa, toma un descanso y vuelve a la batalla!
-                    </p>
-                    <div class="flex flex-row justify-evenly gap-[0.5vw] mx-[1vw] mt-[2vw] mb-[4vw]">
-                        <button onclick="guardarPartida();" class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">GUARDAR PARTIDA</button>
-                        <button onclick="resetear();" class="text-[1vw] bg-red-400 p-[1vw] rounded-md border-red-800 border-dashed border-[0.25vw] font_game hover:text-white">RESTART</button>
-                    </div>
-                </div>
-            </div>
             <div id="menuPausa" draggable="false"
                 class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl"
                 style="display: none; z-index: 9999999999999999;">
@@ -109,6 +96,19 @@
                     </p>
                     <div class="flex flex-row justify-evenly gap-[0.5vw] mx-[1vw] mt-[2vw] mb-[4vw]">
                         <button onclick="reanudar();" class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">PLAY</button>
+                        <button onclick="resetear();" class="text-[1vw] bg-red-400 p-[1vw] rounded-md border-red-800 border-dashed border-[0.25vw] font_game hover:text-white">RESTART</button>
+                    </div>
+                </div>
+            </div>
+            <div id="menuMuerte" draggable="false"
+                class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl"
+                style="display: none; z-index: 9999999999999999;">
+                <div class="text-center bg-yellow-300 w-[26vw] h-auto rounded-xl">
+                    <p class="text-[1.5vw] m-[2vw] font_game">HAS MUERTO :(</p>
+                    <p class="font_game text-[0.75vw]"> Haber perdido una batalla, no significa perder la guerra. Recoge tus armas y vuelve al ataque!
+                    </p>
+                    <div class="flex flex-row justify-evenly gap-[0.5vw] mx-[1vw] mt-[2vw] mb-[4vw]">
+                        <button onclick="guardarPartida();" class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">GUARDAR PARTIDA</button>
                         <button onclick="resetear();" class="text-[1vw] bg-red-400 p-[1vw] rounded-md border-red-800 border-dashed border-[0.25vw] font_game hover:text-white">RESTART</button>
                     </div>
                 </div>
