@@ -53,7 +53,6 @@ app.use(session({
 // Run a "middleware" function on each request
 app.use((req, res, next) => {
     // Check if we've already initialised a session
-    console.log(req.session.hola);
     req.session.hola = "hola";
     session.Store.hola;
     next();
@@ -61,6 +60,7 @@ app.use((req, res, next) => {
 
 app.use('/', require('./routes/pages'));
 app.use('/auth/', require('./routes/auth'));
+app.use('/partida/', require('./routes/partida'));
 
 
 app.listen(5069, () => {
