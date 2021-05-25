@@ -78,6 +78,7 @@ function resetear() {
     document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/PISTOLA1_FRAME.png");
     document.getElementById("armamano2-img").removeAttribute("src");
     document.getElementById("armamano2-data").innerHTML = "";
+    document.getElementById("armamano2-municion").innerHTML = "";
     armaAutomatica = false;
     cambiarImagenPersonaje("PISTOLA1");
     myMove();
