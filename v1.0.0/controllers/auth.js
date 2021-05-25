@@ -16,7 +16,9 @@ const db = mysql.createConnection({
 exports.register = (req, res) => {
     console.log(req.body);
 
+
     const { name, surname, phone, emailReg, passReg, passRegConfirm, acepto } = req.body;
+
 
     db.query('SELECT email FROM users WHERE email = ?', [emailReg], async(error, results) => {
         if (error) {
@@ -35,7 +37,7 @@ exports.register = (req, res) => {
         bcrypt.genSalt(saltRounds, function(err, salt) {
             bcrypt.hash(passReg, salt, function(err, hash) {
                 //returns hash
-                console.log(hash);
+                console.log("contraseña hasheada: " + hash);
                 db.query('INSERT INTO users SET ?', { name: name, surname: surname, email: emailReg, password: hash, pp: "" }, (error, results) => {
                     if (error) {
                         console.log(error);
