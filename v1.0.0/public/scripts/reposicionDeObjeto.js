@@ -3,6 +3,7 @@ function reposicionDeObjetos() {
         document.getElementById("menuPausa").style.display = "none";
         pausar();
     }
+    //TODO arreglar el bug visual de que se superpone el menu de pausa al de muerte cuando redimensionas
     if (document.getElementById("menuMuerte")) {
         document.getElementById("menuMuerte").style.display = "none";
     }
