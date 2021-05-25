@@ -4,13 +4,14 @@ function resetear() {
     }
     intervalosAnteriores = contadorIntervalos; //Intervalos de la partida anterior no se tendrán en cuenta.
     var elementos = document.getElementById("container").getElementsByTagName("div").length;
-    if (elementos > 4) {
-        for (let j = 4; j < elementos; j++) {//Añadir 1 por cada div que no queramos eliminar, inluidos aquellos dentro de estos
+    if (elementos > 7) {
+        for (let j = 7; j < elementos; j++) { //Añadir 1 por cada div que no queramos eliminar, inluidos aquellos dentro de estos
             document.getElementById("container").removeChild(document.getElementById("container").lastChild);
         }
     }
     pausa = false;
     menuPausa.style.display = "none";
+    menuMuerte.style.display = "none";
     balasDisparadas = 0;
     balasDisparadasZombie = 0;
     contadorItems = 0;

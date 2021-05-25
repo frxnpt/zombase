@@ -3,8 +3,8 @@ function reposicionDeObjetos() {
         document.getElementById("menuPausa").style.display = "none";
         pausar();
     }
-    if (document.getElementById("menuFin")) {
-        document.getElementById("menuFin").remove();
+    if (document.getElementById("menuMuerte")) {
+        document.getElementById("menuMuerte").style.display = "none";
     }
     pausar();
     //ajuste de margenes del container
