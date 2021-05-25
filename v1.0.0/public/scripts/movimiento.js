@@ -133,7 +133,7 @@ function myMove(container, elem) {
                                 Jugador.arma1.impactoArma1 = listadoArmas[j].impacto;
                                 Jugador.arma1.onCooldownArma1 = listadoArmas[j].onCooldown;
                                 cambiarImagenPersonaje(listadoArmas[j].nombre);
-                                document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
+                                document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
                                 document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
                                 document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
                                 break;
@@ -149,7 +149,7 @@ function myMove(container, elem) {
                                 Jugador.arma2.impactoArma2 = listadoArmas[j].impacto;
                                 Jugador.arma2.onCooldownArma2 = listadoArmas[j].onCooldown;
                                 cambiarImagenPersonaje(listadoArmas[j].nombre);
-                                document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
+                                document.getElementById("armamano2-municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
                                 document.getElementById("armamano2-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma2.nombreArma2 + "_FRAME.png");
                                 document.getElementById("armamano2-data").innerHTML = Jugador.arma2.nombreArma2;
                                 break;
@@ -195,16 +195,9 @@ function myMove(container, elem) {
                         Jugador.arma2.municionArma2 = listadoArmas[j].municion;
                     }
 
-                    switch (Jugador.armaActual) {
-                        case 1:
-                            document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
-                            break;
-                        case 2:
-                            document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
-                            break;
-                        default:
-                            break;
-                    }
+                    document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
+                    document.getElementById("armamano2-municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
+
                 }
 
                 destruir(municiones[i].nombre, "MUNICION", i);

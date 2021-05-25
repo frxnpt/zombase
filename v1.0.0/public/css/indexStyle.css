@@ -33,13 +33,12 @@ p {
     font-size: 4vw;
 }
 
-#salud,
-#municion {
-    padding-right: 18vw;
+#salud
+ {
+    padding-right: 36vw;
 }
 
 #ronda,
-#municion,
 #salud {
     font-size: 2vw;
 }
@@ -402,9 +401,8 @@ footer {
     background: bisque;
     user-select: none;
     width: 13vw;
-    height: 5vw;
+    height: 7vw;
     left: 0.85vw;
-    top: 20vw;
 }
 
 #armamano2 {
@@ -412,25 +410,67 @@ footer {
     background: bisque;
     user-select: none;
     width: 13vw;
-    height: 5vw;
+    height: 7vw;
     left: 0.85vw;
-    top: 28.5vw;
     opacity: 0.4;
 }
 
-#armamano1-img {
-    max-height: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#armamano2-img {
-    max-height: 70%;
+#armamano1-img, #armamano2-img {
+    max-height: 50%;
     margin-left: auto;
     margin-right: auto;
 }
 
 #armamano1-data,
-#armamano2-data {
+#armamano2-data,
+#armamano1-municion,
+#armamano2-municion {
     font-size: 1vw;
 }
+
+.slider {
+    -webkit-appearance: none;
+    width: 10vw;
+    height: 1vw;
+    position: absolute;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-left: 1vw;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: rgba(59, 130, 246, 0.5);;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+
+  .audiocontainer {
+    position: absolute;
+    height: 2.5vw;
+    width: 13.5vw;
+    margin-left: 0.85vw;
+  }
+
+  #iconoaudio{
+      max-width: 1vw;
+      max-height: 1vw;
+      float: left;
+  }

@@ -22,7 +22,12 @@ function reposicionDeObjetos() {
     document.getElementById("animate").style.left = Math.round(posNuevaX) + "px";
     document.getElementById("animate").style.top = Math.round(posNuevaY) + "px";
 
-    document.getElementById("Scoreboard").style.top = document.getElementsByTagName("nav")[0].clientHeight * 1.3 + "px";
+    document.getElementById("Scoreboard").style.top = container.getBoundingClientRect().top + "px"; //ajuste altura score
+    document.getElementById("armamano1").style.top = container.getBoundingClientRect().top +
+        container.getBoundingClientRect().height / 3.2 + "px";
+    document.getElementById("armamano2").style.top = container.getBoundingClientRect().top +
+        container.getBoundingClientRect().height / 1.9 + "px";
+    document.getElementById("audiocontainer").style.top = container.getBoundingClientRect().top + "px";
 
     //Reposicion de balas
     for (let i = 0; i < Balas.length; i++) {

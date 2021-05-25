@@ -29,11 +29,11 @@ function disparar() {
             switch (Jugador.armaActual) {
                 case 1:
                     Jugador.arma1.cargadorArma1--;
-                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
+                    document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
                     break;
                 case 2:
                     Jugador.arma2.cargadorArma2--;
-                    document.getElementById("municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
+                    document.getElementById("armamano2-municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
                     break;
                 default:
                     break;
