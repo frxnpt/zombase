@@ -132,6 +132,12 @@ p {
     border-radius: 0px;
     display: block;
     transform-origin: top left 0px;
+    opacity: 1;
+    animation: desvanecerRayo 0.5s linear;
+}
+
+@keyframes desvanecerRayo {
+    100%{opacity: 0;}
 }
 
 .zombieTipo1 {

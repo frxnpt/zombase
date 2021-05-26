@@ -39,7 +39,7 @@ function movimientoBala(movimientoX, movimientoY, numeroBala, velocidadBala, imp
             if (tipoArma == "NUKE_LAUNCHER" || tipoArma == "LANZAGRANADAS") {
                 explosion(posXBullet, posYBullet, "bullet" + numeroBala, impacto, tipoArma);
             } else if (tipoArma == "EXPERIMENTO-69420") {
-                encadenarRayo(posXHitbox, posYHitbox);
+                encadenarRayo("bullet" + numeroBala, impacto);
             }
             destruir("bullet" + numeroBala, "bala", posArrayBullet);
         }

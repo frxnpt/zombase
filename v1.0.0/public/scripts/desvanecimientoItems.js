@@ -48,6 +48,12 @@ function desvanecerItem(tipo, nombre) {
                 }
             }, 30000);//30s
             break;
+        case 5://Rayos
+            contadorIntervalos++;
+            setTimeout(function () {
+                document.getElementById(nombre).remove();
+            }, 500);//0.5s
+            break;
         default:
             break;
     }

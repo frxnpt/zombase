@@ -143,10 +143,10 @@ const listadoArmas = [{
 }/*,
 {
         nombre: "EXPERIMENTO-69420",//CADENA DE RAYOS (IDA DE CABEZA)
-        cargador: 4,
-        tamanoCargador: 4,
-        municion: 28,
-        recarga: 3600,
+        cargador: 1,
+        tamanoCargador: 1,
+        municion: 6,
+        recarga: 4500,
         cadencia: 1300,
         velocidad: 0.3,
         impacto: 9000,
