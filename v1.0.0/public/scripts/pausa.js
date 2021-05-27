@@ -3,6 +3,7 @@ function pausar() {
     clearInterval(disparoAutomatico);
     var menuPausa = document.getElementById("menuPausa");
     menuPausa.style.display = "inherit";
+    menuPausa.style.zIndex = "99999999";
 
     menuPausa.style.left = container.getBoundingClientRect().width / 2 -
         menuPausa.getBoundingClientRect().width / 2 + "px";

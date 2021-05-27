@@ -8,6 +8,7 @@ function crearZombie() {
         var objetoZombie = generarTipoZombie();
         var zombie = document.createElement("div");
         zombie.setAttribute("id", "zombie" + zombies);
+        zombie.setAttribute("style", "z-index: 9999999;");
         zombie.setAttribute("class", objetoZombie.tipoZombie);
         var imagen = document.createElement("img");
         var mecanicaBoss = false;

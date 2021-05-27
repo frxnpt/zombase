@@ -43,6 +43,7 @@ function disparar() {
             var bullet = document.createElement("div");
             bullet.setAttribute("id", "bullet" + balasDisparadas);
             bullet.setAttribute("class", clase);
+            bullet.setAttribute("style", "z-index: 999999;")
             container.appendChild(bullet);
 
             var rectanguloBullet = document.getElementById("bullet" + balasDisparadas);
@@ -118,6 +119,7 @@ function disparar() {
                     var bulletEscopeta = document.createElement("div");
                     bulletEscopeta.setAttribute("id", "bullet" + balasDisparadas);
                     bulletEscopeta.setAttribute("class", clase);
+                    bulletEscopeta.setAttribute("style", "z-index: 999999;")
                     container.appendChild(bulletEscopeta);
                     document.getElementById("bullet" + balasDisparadas).style.left = posXBulletInicial + "px";
                     document.getElementById("bullet" + balasDisparadas).style.top = posYBulletInicial + "px";

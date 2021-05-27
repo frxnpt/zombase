@@ -41,7 +41,6 @@ function explosionZombie(X, Y, id) {//X e Y vienen centradas
         ((Xcentro >= limiteExplosionIzda && Xcentro <= limiteExplosionDcha) &&
             (Ybot >= limiteExplosionTop && Ybot <= limiteExplosionBot))) {
 
-        console.log("hit");
         Jugador.salud = Jugador.salud - (7 + Math.round(ronda / 2));//El daño de la explosion aumentara 1 cada 2 rondas
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
         if (Jugador.salud <= 0) { //Caso en el que el zombie muere

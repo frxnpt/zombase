@@ -3,6 +3,7 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
     var arma = document.createElement("div");
     arma.setAttribute("id", "arma" + contadorArmas);
     arma.setAttribute("class", "ArmaDrop");
+    arma.setAttribute("style", "z-index: 9999;")
     var imagen = document.createElement("img");
     var idArma = "PISTOLA1";
 

@@ -372,19 +372,7 @@ footer {
 }
 
 #animate {
-    z-index: 9999999999;
-}
-
-.zombieTipo1,
-.zombieTipo2,
-.zombieTipo3,
-.zombieTipo4 {
-    z-index: 9999999999999;
-}
-
-#menu,
-#menuFin {
-    z-index: 9999999999999999;
+    z-index: 999999;
 }
 
 #Scoreboard {

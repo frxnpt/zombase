@@ -8,6 +8,7 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
                 var botiquin = document.createElement("div");
                 botiquin.setAttribute("id", "botiquin" + contadorItems);
                 botiquin.setAttribute("class", "BOTIQUIN");
+                botiquin.setAttribute("style", "z-index: 999;")
                 var imagen = document.createElement("img");
                 imagen.setAttribute("src", "./resources/items/BOTIQUIN.png");
                 imagen.setAttribute("style", "width: 100%; height: 100%;");
@@ -44,6 +45,7 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
                 var municion = document.createElement("div");
                 municion.setAttribute("id", "municion" + contadorItems);
                 municion.setAttribute("class", "MUNICION");
+                municion.setAttribute("style", "z-index: 999;")
                 var imagen = document.createElement("img");
                 imagen.setAttribute("src", "./resources/items/MUNICION.png");
                 imagen.setAttribute("style", "width: 100%; height: 100%;");
@@ -91,6 +93,7 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
         var sangre = document.createElement("div");
         sangre.setAttribute("id", "sangre" + contadorAssets);
         sangre.setAttribute("class", "SANGRE");
+        sangre.setAttribute("style", "z-index: 3;")
         var imagenAsset = document.createElement("img");
         var numeroSangre = (Math.floor(Math.random() * 8) + 1);//1 al 8
 
@@ -137,6 +140,7 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
             var minaZombie = document.createElement("div");
             minaZombie.setAttribute("id", "minaZombie" + contadorAssets);
             minaZombie.setAttribute("class", "minaZombie");
+            minaZombie.setAttribute("style", "z-index: 99999;")
             var imagen = document.createElement("img");
             imagen.setAttribute("src", "./resources/items/BOMBAZOMBIE.png");
             imagen.setAttribute("style", "width: 100%; height: 100%;");
@@ -171,6 +175,7 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
             contadorBiohazards++;
             var veneno = document.createElement("div");
             veneno.setAttribute("id", "veneno" + contadorBiohazards);
+            veneno.setAttribute("style", "z-index: 4;")
             veneno.setAttribute("class", "veneno");
             /*var imagen = document.createElement("img");
             imagen.setAttribute("src", "./resources/items/veneno.png");
@@ -184,8 +189,10 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
                 porcY: perY
             }
             listaBiohazards.push(objetoVeneno);
-            document.getElementById("veneno" + contadorBiohazards).style.left = X + "px";
-            document.getElementById("veneno" + contadorBiohazards).style.top = Y + "px";
+            document.getElementById("veneno" + contadorBiohazards).style.left =
+                (X - document.getElementById("veneno" + contadorBiohazards).getBoundingClientRect().width / 3) + "px";//Ajuste pos aparicion del charco
+            document.getElementById("veneno" + contadorBiohazards).style.top =
+                (Y - document.getElementById("veneno" + contadorBiohazards).getBoundingClientRect().height / 3) + "px";
 
             contadorIntervalos++;
             setTimeout(function () {

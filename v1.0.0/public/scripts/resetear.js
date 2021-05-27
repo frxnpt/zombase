@@ -12,6 +12,8 @@ function resetear() {
     pausa = false;
     menuPausa.style.display = "none";
     menuMuerte.style.display = "none";
+    menuPausa.style.zIndex = "1";
+    menuMuerte.style.zIndex = "2";
     balasDisparadas = 0;
     balasDisparadasZombie = 0;
     contadorItems = 0;
