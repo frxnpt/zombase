@@ -7,7 +7,7 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
     var imagen = document.createElement("img");
     var idArma = "PISTOLA1";
 
-    switch (Math.floor(Math.random() * 12) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
+    switch (Math.floor(Math.random() * 14) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
         case 1:
             idArma = "ESCOPETA1";
             break;
@@ -41,6 +41,12 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
             break;
         case 11:
             idArma = "LANZAGRANADAS";
+            break;
+        case 12:
+            idArma = "EXPERIMENTO-69420";
+            break;
+        case 13:
+            idArma = "FRANCOTIRADOR1";
             break;
         default://pistola1
             break;

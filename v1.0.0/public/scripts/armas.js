@@ -59,7 +59,7 @@ const listadoArmas = [{
         tamanoCargador: 1,
         municion: 25,
         recarga: 4300,
-        cadencia: 1000,
+        cadencia: 1500,
         velocidad: 0.5,
         impacto: 3500,
         onCooldown: false
@@ -114,22 +114,22 @@ const listadoArmas = [{
         tamanoCargador: 10,
         municion: 120,
         recarga: 2700,
-        cadencia: 400,
+        cadencia: 600,
         velocidad: 2.1,
         impacto: 375,
         onCooldown: false //funcion disparo
 },
-/*{
+{
         nombre: "FRANCOTIRADOR1", //SEMIAUTOMATICO, BALAS PENETRANTES
         cargador: 5,
         tamanoCargador: 5,
         municion: 65,
-        recarga: 2600,
-        cadencia: 1000,
-        velocidad: 1.7,
-        impacto: 850,
+        recarga: 2800,
+        cadencia: 1800,
+        velocidad: 2.3,
+        impacto: 950,
         onCooldown: false //funcion disparo
-},*/
+},
 {
         nombre: "LANZAGRANADAS",//EXPLOSIONES
         cargador: 6,
@@ -140,18 +140,16 @@ const listadoArmas = [{
         velocidad: 0.7,
         impacto: 700,
         onCooldown: false
-}/*,
+},
 {
         nombre: "EXPERIMENTO-69420",//CADENA DE RAYOS (IDA DE CABEZA)
         cargador: 1,
         tamanoCargador: 1,
         municion: 6,
         recarga: 4500,
-        cadencia: 1300,
+        cadencia: 2000,
         velocidad: 0.3,
         impacto: 9000,
         onCooldown: false
-},
-*/
-
+}
 ]
