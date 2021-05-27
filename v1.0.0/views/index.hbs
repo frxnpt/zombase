@@ -275,7 +275,7 @@
         var contadorArmas = 0; //para Ids Armas en el suelo
         var contadorAssets = 0; //Ids sangre
         var contadorBiohazards = 0;//ids para elementos como el veneno
-        var ronda = 5;
+        var ronda = 1;
         var boss = false;
         var limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));
         var volumen = 0.2; //No resetear
@@ -289,14 +289,14 @@
             skinActual: "RAMBO",
             armaActual: 1,
             arma1: {
-                nombreArma1: "EXPERIMENTO-69420",
+                nombreArma1: "PISTOLA1",
                 cargadorArma1: 8,
                 tamanoCargadorArma1: 8,
                 municionArma1: 120,
                 recargaArma1: 2000,
                 cadenciaArma1: 200,
                 velocidadArma1: 1,
-                impactoArma1: 30000,
+                impactoArma1: 30,
                 onCooldownArma1: false
             },
             arma2: {
@@ -320,6 +320,12 @@
         //asignado directamente al movimiento nada más empezar y a la ronda. Al añadir zombies, bullets, etc, se le asignarán un valor de intervalo.
         var contadorIntervalos = 2;
         var intervalosAnteriores = 1; //1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
+
+        var sUsrAg = navigator.userAgent;//Detectar si el usuario esta usando mozilla
+        if (sUsrAg.indexOf("Firefox") > -1) {//Mozilla mete un intervalo de base
+            contadorIntervalos++;
+        }
+
         //Lista de objetos a parte del personaje, container y balas, utilizados para ver si hay colision/redimensión.
         //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
         var listaZombies = [];
