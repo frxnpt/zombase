@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const jwt = require('jsonwebtoken');
 const session = require("express-session");
 const express = require("express");
+var Handlebars = require('hbs');
 
 
 const db = mysql.createConnection({
@@ -25,4 +26,27 @@ exports.guardar = (req, res) => {
             console.log(results);
         }
     });
+}
+exports.verTop = (req, res) => {
+    db.query("SELECT * FROM games JOIN users ON games.jugador = users.id ORDER BY puntuacion DESC LIMIT 1", (err, rowss, fields) => {
+        if (err) {
+            console.error(err);
+        }
+        db.query("SELECT * FROM games JOIN users ON games.jugador = users.id ORDER BY puntuacion DESC LIMIT 9 OFFSET 1", (err, rows, fields) => {
+            if (err) {
+                console.error(err);
+            }
+            var positionCounter = 2;
+
+            Handlebars.registerHelper('position', function() {
+                return positionCounter++;
+            });
+            res.render('top', {
+                title: "Top Players",
+                primero: rowss,
+                items: rows
+            })
+        });
+    });
+
 }
