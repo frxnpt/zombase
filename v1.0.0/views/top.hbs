@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>Zombase</title>
 </head>
 
@@ -20,7 +20,7 @@
                     <!-- logo -->
                     <div>
                         <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-                            <img src="./img/logo.png" width="200" alt="">
+                            <img src="/img/logo.png" width="200" alt="">
                         </a>
                     </div>
 
@@ -82,67 +82,23 @@
                     <i class="ml-5 fa fa-trophy"></i>
                     <div class="ml-5">1st</div>
                 </div>
-                <div class="w-1/2 my-auto">Dani el pro</div>
-                <div class="w-1/4 my-auto">120 pts</div>
+                {{#each primero}}
+                <div class="w-1/2 my-auto">{{this.name}} {{this.surname}}</div>
+                <div class="w-1/4 my-auto">{{this.puntuacion}} pts</div>
+                {{/each}}
             </div>
-            <div class="flex h-16">
-                <div class="w-1/4 my-auto font-bold text-sm text-gray-400">
-                    <i class="ml-5 fa fa-trophy"></i>
-                    <div class="ml-5">2nd</div>
-                </div>
-                <div class="w-1/2 my-auto">Dani el no tan pro</div>
-                <div class="w-1/4 my-auto">100 pts</div>
-            </div>
-            <div class="flex h-16">
-                <div class="w-1/4 my-auto font-bold text-sm text-yellow-700">
-                    <i class="ml-5 fa fa-trophy"></i>
-                    <div class="ml-5">3rd</div>
-                </div>
-                <div class="w-1/2 my-auto">Dani el no tan pro</div>
-                <div class="w-1/4 my-auto">60 pts</div>
-            </div>
+            
+            {{#each items}}
             <div class="flex h-16">
                 <div class="w-1/4 my-auto font-bold text-sm text-gray-600">
                     <i class="ml-5 fa fa-trophy"></i>
-                    <div class="ml-5">4th</div>
+                    <div class="ml-5">{{position @index}}º</div>
                 </div>
-                <div class="w-1/2 my-auto">Dani el no tan pro</div>
-                <div class="w-1/4 my-auto">50 pts</div>
+                <div class="w-1/2 my-auto">{{this.name}} {{this.surname}}</div>
+                <div class="w-1/4 my-auto">{{this.puntuacion}} pts</div>
             </div>
-            <div class="flex h-16">
-                <div class="w-1/4 my-auto font-bold text-sm text-gray-600">
-                    <i class="ml-5 fa fa-trophy"></i>
-                    <div class="ml-5">5th</div>
-                </div>
-                <div class="w-1/2 my-auto">Dani el no tan pro</div>
-                <div class="w-1/4 my-auto">40 pts</div>
-            </div>
-            <div class="flex h-16">
-                <div class="w-1/4 my-auto font-bold text-sm text-gray-600">
-                    <i class="ml-5 fa fa-trophy"></i>
-                    <div class="ml-5">6th</div>
-                </div>
-                <div class="w-1/2 my-auto">Dani el no tan pro</div>
-                <div class="w-1/4 my-auto">30 pts</div>
-            </div>
-            <div class="flex h-16">
-                <div class="w-1/4 my-auto font-bold text-sm text-gray-600">
-                    <i class="ml-5 fa fa-trophy"></i>
-                    <div class="ml-5">7th</div>
-                </div>
-                <div class="w-1/2 my-auto">Dani el no tan pro</div>
-                <div class="w-1/4 my-auto">20 pts</div>
-            </div>
-            <div class="flex h-16">
-                <div class="w-1/4 my-auto font-bold text-sm text-gray-600">
-                    <i class="ml-5 fa fa-trophy"></i>
-                    <div class="ml-5">8th</div>
-                </div>
-                <div class="w-1/2 my-auto">Dani el no tan pro</div>
-                <div class="w-1/4 my-auto">10 pts</div>
-            </div>
+            {{/each}}
         </div>
-
     </div>
     <footer class="bg-gray-900 flex justify-center ">
         <div class="container mx-auto px-6 ">
