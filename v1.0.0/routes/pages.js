@@ -1,4 +1,5 @@
 const express = require('express');
+const partidaController = require('../controllers/partida');
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -13,9 +14,6 @@ router.get("/login", (req, res) => {
     } else {
         res.status(200).redirect('/');
     }
-});
-router.get("/top-players", (req, res) => {
-    res.render("top-players");
 });
 router.get("/profile", (req, res) => {
     if (!req.session.jwt) {
