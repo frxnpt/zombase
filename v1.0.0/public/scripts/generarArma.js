@@ -11,8 +11,7 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
         case 1:
             idArma = "ESCOPETA1";
             break;
-
-        case 2://TODO:AÑADIR MAS
+        case 2:
             idArma = "RIFLEASALTO1";
             break;
         case 3:

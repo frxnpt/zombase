@@ -4,6 +4,7 @@ function disparar() {
         var cargador = 0;
         var velocidad = 0;
         var impacto = 0;
+        var modoDisparo = 0;
         var onCooldown = false;
         switch (Jugador.armaActual) {
             case 1:
@@ -11,6 +12,7 @@ function disparar() {
                 cargador = Jugador.arma1.cargadorArma1;
                 velocidad = Jugador.arma1.velocidadArma1;
                 impacto = Jugador.arma1.impactoArma1;
+                modoDisparo = Jugador.arma1.modoDisparoArma1;
                 onCooldown = Jugador.arma1.onCooldownArma1;
                 break;
             case 2:
@@ -18,6 +20,7 @@ function disparar() {
                 cargador = Jugador.arma2.cargadorArma2;
                 velocidad = Jugador.arma2.velocidadArma2;
                 impacto = Jugador.arma2.impactoArma2;
+                modoDisparo = Jugador.arma2.modoDisparoArma2;
                 onCooldown = Jugador.arma2.onCooldownArma2;
                 break;
             default:
@@ -111,8 +114,8 @@ function disparar() {
             movimientoX = (xRatonCliente - xBulletCliente) / (document.body.clientWidth);
             movimientoY = (yRatonCliente - yBulletCliente) / (document.body.clientWidth);
 
-            var moverBala = setInterval(movimientoBala, 5, movimientoX, movimientoY, balasDisparadas, objetoBullet.velocidadBullet, objetoBullet.impactoBullet, clase);
-            if (clase == "ESCOPETA1") {//Disparo escopeta
+            var moverBala = setInterval(movimientoBala, 5, movimientoX, movimientoY, balasDisparadas, modoDisparo, clase);
+            if (modoDisparo == 5) {//Disparo escopeta
                 for (let i = 0; i < 7; i++) {
                     balasDisparadas++;
                     contadorIntervalos++;
@@ -146,7 +149,7 @@ function disparar() {
                     } else if (movimientoYsemirandomizado < -1) {
                         movimientoYsemirandomizado = -1;
                     }
-                    setInterval(movimientoBala, 5, movimientoXsemirandomizado, movimientoYsemirandomizado, balasDisparadas, objetoBulletEscopeta.velocidadBullet, objetoBulletEscopeta.impactoBullet, clase);
+                    setInterval(movimientoBala, 5, movimientoXsemirandomizado, movimientoYsemirandomizado, balasDisparadas, modoDisparo, clase);
                 }
             }
             switch (Jugador.armaActual) {

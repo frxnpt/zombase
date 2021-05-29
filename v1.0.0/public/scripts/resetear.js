@@ -82,7 +82,7 @@ function resetear() {
     document.getElementById("armamano2-data").innerHTML = "";
     document.getElementById("armamano2-municion").innerHTML = "";
     armaAutomatica = false;
-    cambiarImagenPersonaje("PISTOLA1");
+    cambiarImagenPersonaje("PISTOLA1", 1);
     myMove();
     timer = setInterval(myMove, 20, container, elem);
     empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);

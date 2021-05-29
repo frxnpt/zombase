@@ -1,13 +1,6 @@
-function movimientoBala(movimientoX, movimientoY, numeroBala, velocidadBala, impacto, tipoArma) {
+function movimientoBala(movimientoX, movimientoY, numeroBala, modoDisparo, tipoArma) {
     if (pausa == false) {//Ajuste de matriz eliminado, calculos hechos con el width para ambos
         //Creando asi una matriz imaginaria con X e Y iguales
-        var factorVelocidadBullet = factorVelocidad / 4;
-        var factorAumentoX = factorVelocidadBullet * movimientoX * velocidadBala;
-        var factorAumentoY = factorVelocidadBullet * movimientoY * velocidadBala;
-        var posXBullet = (document.getElementById("bullet" + numeroBala).getBoundingClientRect().left -
-            document.getElementById("container").getBoundingClientRect().left) + factorAumentoX;
-        var posYBullet = (document.getElementById("bullet" + numeroBala).getBoundingClientRect().top -
-            document.getElementById("container").getBoundingClientRect().top) + factorAumentoY;
 
         var posArrayBullet = 0;
         for (let i = 0; i < Balas.length; i++) {
@@ -15,6 +8,14 @@ function movimientoBala(movimientoX, movimientoY, numeroBala, velocidadBala, imp
                 posArrayBullet = i;
             }
         }
+
+        var factorVelocidadBullet = factorVelocidad / 4;
+        var factorAumentoX = factorVelocidadBullet * movimientoX * Balas[posArrayBullet].velocidadBullet;
+        var factorAumentoY = factorVelocidadBullet * movimientoY * Balas[posArrayBullet].velocidadBullet;
+        var posXBullet = (document.getElementById("bullet" + numeroBala).getBoundingClientRect().left -
+            document.getElementById("container").getBoundingClientRect().left) + factorAumentoX;
+        var posYBullet = (document.getElementById("bullet" + numeroBala).getBoundingClientRect().top -
+            document.getElementById("container").getBoundingClientRect().top) + factorAumentoY;
 
         Balas[posArrayBullet].porcX = posXBullet / container.getBoundingClientRect().width;
         Balas[posArrayBullet].porcY = posYBullet / container.getBoundingClientRect().height;
@@ -28,18 +29,18 @@ function movimientoBala(movimientoX, movimientoY, numeroBala, velocidadBala, imp
         var posYHitbox = posYBullet + document.getElementById("bullet" + numeroBala).getBoundingClientRect().height / 2;
 
         var penetracion = false;
-        if (tipoArma == "RIFLEASALTO3" || tipoArma == "FRANCOTIRADOR1") {
+        if (modoDisparo == 4) {
             penetracion = true;
         }
 
         //Cambiar en el futuro el "20" (valor estatico de prueba) por el "impacto" que tenga el tipo de bala en el array
-        var colisionBala = colision(posXHitbox, posYHitbox, impacto, penetracion);
+        var colisionBala = colision(posXHitbox, posYHitbox, Balas[posArrayBullet].impactoBullet, penetracion);
 
         if (colisionBala == true) {
-            if (tipoArma == "NUKE_LAUNCHER" || tipoArma == "LANZAGRANADAS") {
-                explosion(posXBullet, posYBullet, "bullet" + numeroBala, impacto, tipoArma);
-            } else if (tipoArma == "EXPERIMENTO-69420") {
-                encadenarRayo("bullet" + numeroBala, impacto);
+            if (modoDisparo == 3) {
+                explosion(posXBullet, posYBullet, "bullet" + numeroBala, Balas[posArrayBullet].impactoBullet, tipoArma);
+            } else if (modoDisparo == 6) {
+                encadenarRayo("bullet" + numeroBala, Balas[posArrayBullet].impactoBullet);
             }
             destruir("bullet" + numeroBala, "bala", posArrayBullet);
         }

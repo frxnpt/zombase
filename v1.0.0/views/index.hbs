@@ -195,10 +195,10 @@
     <script>
         var jwt = "{{jwt}}";
     </script>
+    <!--Listado de armas en Formato JSON-->
+    <script src="./scripts/armasJSON.js"></script>
     <!--Guardar partida-->
     <script src="./scripts/guardarPartida.js"></script>
-    <!--Listado de Armas-->
-    <script src="./scripts/armas.js"></script>
     <!--Generación de drop de armas aleatorio-->
     <script src="./scripts/generarArma.js"></script>
     <!--Función de recarga del arma actual-->
@@ -289,14 +289,15 @@
             skinActual: "RAMBO",
             armaActual: 1,
             arma1: {
-                nombreArma1: "EXPERIMENTO-69420",
+                nombreArma1: "PISTOLA1",
                 cargadorArma1: 8,
                 tamanoCargadorArma1: 8,
                 municionArma1: 120,
                 recargaArma1: 2000,
                 cadenciaArma1: 1800,
                 velocidadArma1: 1,
-                impactoArma1: 30000,
+                impactoArma1: 30,
+                modoDisparoArma1: 1,
                 onCooldownArma1: false
             },
             arma2: {
@@ -308,6 +309,7 @@
                 cadenciaArma2: 0,
                 velocidadArma2: 0,
                 impactoArma2: 0,
+                modoDisparoArma2: 1,
                 onCooldownArma2: false
             },
             velocidad: 0.5,

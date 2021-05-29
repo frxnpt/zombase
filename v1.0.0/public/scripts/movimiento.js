@@ -118,37 +118,39 @@ function myMove(container, elem) {
             if (((xPersonajeHitbox >= limiteItemXizda && xPersonajeHitbox <= limiteItemXdcha) &&
                 (yPersonajeHitbox >= limiteItemYtop && yPersonajeHitbox <= limiteItemYbot)) &&
                 keysPressed['KeyE'] && recogerArma == false) {
-                for (let j = 0; j < listadoArmas.length; j++) { //Listado armas viene de armas.js que carga un array
-                    if (armas[i].idArma == listadoArmas[j].nombre) {
+                for (let j = 0; j < listadoArmasJSON.length; j++) { //Listado armas viene de armas.js que carga un array
+                    if (armas[i].idArma == listadoArmasJSON[j].nombre) {
                         switch (Jugador.armaActual) {
                             case 1:
-                                //Jugador.arma1 = listadoArmas[j];asi daba problemas de solapamiento
-                                Jugador.arma1.nombreArma1 = listadoArmas[j].nombre;
-                                Jugador.arma1.cargadorArma1 = listadoArmas[j].cargador;
-                                Jugador.arma1.tamanoCargadorArma1 = listadoArmas[j].tamanoCargador;
-                                Jugador.arma1.municionArma1 = listadoArmas[j].municion;
-                                Jugador.arma1.recargaArma1 = listadoArmas[j].recarga;
-                                Jugador.arma1.cadenciaArma1 = listadoArmas[j].cadencia;
-                                Jugador.arma1.velocidadArma1 = listadoArmas[j].velocidad;
-                                Jugador.arma1.impactoArma1 = listadoArmas[j].impacto;
-                                Jugador.arma1.onCooldownArma1 = listadoArmas[j].onCooldown;
-                                cambiarImagenPersonaje(listadoArmas[j].nombre);
+                                //Jugador.arma1 = listadoArmasJSON[j];asi daba problemas de solapamiento
+                                Jugador.arma1.nombreArma1 = listadoArmasJSON[j].nombre;
+                                Jugador.arma1.cargadorArma1 = listadoArmasJSON[j].cargador;
+                                Jugador.arma1.tamanoCargadorArma1 = listadoArmasJSON[j].tamanoCargador;
+                                Jugador.arma1.municionArma1 = listadoArmasJSON[j].municion;
+                                Jugador.arma1.recargaArma1 = listadoArmasJSON[j].recarga;
+                                Jugador.arma1.cadenciaArma1 = listadoArmasJSON[j].cadencia;
+                                Jugador.arma1.velocidadArma1 = listadoArmasJSON[j].velocidad;
+                                Jugador.arma1.impactoArma1 = listadoArmasJSON[j].impacto;
+                                Jugador.arma1.modoDisparoArma1 = listadoArmasJSON[j].modoDisparo;
+                                Jugador.arma1.onCooldownArma1 = false;
+                                cambiarImagenPersonaje(listadoArmasJSON[j].nombre, listadoArmasJSON[j].modoDisparo);
                                 document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
                                 document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
                                 document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
                                 break;
                             case 2:
-                                //Jugador.arma2 = listadoArmas[j];asi daba problemas de solapamiento
-                                Jugador.arma2.nombreArma2 = listadoArmas[j].nombre;
-                                Jugador.arma2.cargadorArma2 = listadoArmas[j].cargador;
-                                Jugador.arma2.tamanoCargadorArma2 = listadoArmas[j].tamanoCargador;
-                                Jugador.arma2.municionArma2 = listadoArmas[j].municion;
-                                Jugador.arma2.recargaArma2 = listadoArmas[j].recarga;
-                                Jugador.arma2.cadenciaArma2 = listadoArmas[j].cadencia;
-                                Jugador.arma2.velocidadArma2 = listadoArmas[j].velocidad;
-                                Jugador.arma2.impactoArma2 = listadoArmas[j].impacto;
-                                Jugador.arma2.onCooldownArma2 = listadoArmas[j].onCooldown;
-                                cambiarImagenPersonaje(listadoArmas[j].nombre);
+                                //Jugador.arma2 = listadoArmasJSON[j];asi daba problemas de solapamiento
+                                Jugador.arma2.nombreArma2 = listadoArmasJSON[j].nombre;
+                                Jugador.arma2.cargadorArma2 = listadoArmasJSON[j].cargador;
+                                Jugador.arma2.tamanoCargadorArma2 = listadoArmasJSON[j].tamanoCargador;
+                                Jugador.arma2.municionArma2 = listadoArmasJSON[j].municion;
+                                Jugador.arma2.recargaArma2 = listadoArmasJSON[j].recarga;
+                                Jugador.arma2.cadenciaArma2 = listadoArmasJSON[j].cadencia;
+                                Jugador.arma2.velocidadArma2 = listadoArmasJSON[j].velocidad;
+                                Jugador.arma2.impactoArma2 = listadoArmasJSON[j].impacto;
+                                Jugador.arma2.modoDisparoArma2 = listadoArmasJSON[j].modoDisparo;
+                                Jugador.arma2.onCooldownArma2 = false;
+                                cambiarImagenPersonaje(listadoArmasJSON[j].nombre, listadoArmasJSON[j].modoDisparo);
                                 document.getElementById("armamano2-municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
                                 document.getElementById("armamano2-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma2.nombreArma2 + "_FRAME.png");
                                 document.getElementById("armamano2-data").innerHTML = Jugador.arma2.nombreArma2;
@@ -182,24 +184,23 @@ function myMove(container, elem) {
             if ((xPersonajeHitbox >= limiteItemXizda && xPersonajeHitbox <= limiteItemXdcha) &&
                 (yPersonajeHitbox >= limiteItemYtop && yPersonajeHitbox <= limiteItemYbot)) {
 
-                for (let j = 0; j < listadoArmas.length; j++) {
-                    if (Jugador.arma1.nombreArma1 == listadoArmas[j].nombre) {
-                        Jugador.arma1.cargadorArma1 = listadoArmas[j].cargador;
-                        Jugador.arma1.tamanoCargadorArma1 = listadoArmas[j].tamanoCargador;
-                        Jugador.arma1.municionArma1 = listadoArmas[j].municion;
+                for (let j = 0; j < listadoArmasJSON.length; j++) {
+                    if (Jugador.arma1.nombreArma1 == listadoArmasJSON[j].nombre) {
+                        Jugador.arma1.cargadorArma1 = listadoArmasJSON[j].cargador;
+                        Jugador.arma1.tamanoCargadorArma1 = listadoArmasJSON[j].tamanoCargador;
+                        Jugador.arma1.municionArma1 = listadoArmasJSON[j].municion;
                     }
 
-                    if (Jugador.arma2.nombreArma2 == listadoArmas[j].nombre) {
-                        Jugador.arma2.cargadorArma2 = listadoArmas[j].cargador;
-                        Jugador.arma2.tamanoCargadorArma2 = listadoArmas[j].tamanoCargador;
-                        Jugador.arma2.municionArma2 = listadoArmas[j].municion;
+                    if (Jugador.arma2.nombreArma2 == listadoArmasJSON[j].nombre) {
+                        Jugador.arma2.cargadorArma2 = listadoArmasJSON[j].cargador;
+                        Jugador.arma2.tamanoCargadorArma2 = listadoArmasJSON[j].tamanoCargador;
+                        Jugador.arma2.municionArma2 = listadoArmasJSON[j].municion;
                     }
 
                     document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
                     document.getElementById("armamano2-municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
 
                 }
-
                 destruir(municiones[i].nombre, "MUNICION", i);
             }
 

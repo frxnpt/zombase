@@ -8,7 +8,7 @@ function cambiarArma() { // cambio de imagen (y modo disparo!) Para el cambio de
                 if (Jugador.arma2.nombreArma2 == "none") {
                     document.getElementById("personaje").setAttribute("src", "../resources/personajes/RAMBO.png");
                 } else {
-                    cambiarImagenPersonaje(Jugador.arma2.nombreArma2);
+                    cambiarImagenPersonaje(Jugador.arma2.nombreArma2, Jugador.arma2.modoDisparoArma2);
                 }
 
                 document.getElementById("armamano2").style.opacity = 1;
@@ -19,7 +19,7 @@ function cambiarArma() { // cambio de imagen (y modo disparo!) Para el cambio de
                 if (Jugador.arma1.nombreArma1 == "none") {
                     document.getElementById("personaje").setAttribute("src", "../resources/personajes/RAMBO.png");
                 } else {
-                    cambiarImagenPersonaje(Jugador.arma1.nombreArma1);
+                    cambiarImagenPersonaje(Jugador.arma1.nombreArma1, Jugador.arma1.modoDisparoArma1);
                 }
 
                 document.getElementById("armamano1").style.opacity = 1;
