@@ -158,6 +158,9 @@
         <input type="range" min="0" max="100" value="20" class="slider" id="audio">
     </div>
 
+    <!-- Div para debugging -->
+    <div id="debug"></div>
+
     </div>
     <footer class="bg-gray-900 flex justify-center">
         <div class="container mx-auto px-6">
@@ -294,9 +297,9 @@
                 tamanoCargadorArma1: 8,
                 municionArma1: 120,
                 recargaArma1: 2000,
-                cadenciaArma1: 1800,
+                cadenciaArma1: 400,
                 velocidadArma1: 1,
-                impactoArma1: 30,
+                impactoArma1: 3000,
                 modoDisparoArma1: 1,
                 onCooldownArma1: false
             },
@@ -317,16 +320,9 @@
             porcentajeY: 0.5,
             recargando: false
         } //Valores iniciales del jugador
-        //TODO: importar variables (objetos de armas y zombies) desde fichero
-        //Contador para ver el orden de los intervalos, y luego poder eliminarlos detenidamente. Empieza (actualmente)en 2 porque es el 
-        //asignado directamente al movimiento nada más empezar y a la ronda. Al añadir zombies, bullets, etc, se le asignarán un valor de intervalo.
-        var contadorIntervalos = 2;
+        //Contador para ver el orden de los intervalos, y luego poder eliminarlos debidamente. 
+        var contadorIntervalos = 0;
         var intervalosAnteriores = 1; //1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
-
-        var sUsrAg = navigator.userAgent;//Detectar si el usuario esta usando mozilla
-        if (sUsrAg.indexOf("Firefox") > -1) {//Mozilla mete un intervalo de base
-            contadorIntervalos++;
-        }
 
         //Lista de objetos a parte del personaje, container y balas, utilizados para ver si hay colision/redimensión.
         //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
@@ -430,6 +426,21 @@
         var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
         var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
         var generarZombie = 0;
+
+        //Contador de intervalos automatico. Hay algunas extensiones que aumentan el número de intervalos (como por ejemplo ublock). De base debería empezar
+        //Por 3 (intervalo movimiento, ronda y el que viene ahora). También por ejemplo, mozilla firefox inserta un intervalo base. Con este
+        //intervalo vamos a comprobar (un número de veces limitado definido por limiteIntervalos) cuántos intervalos llevamos, para llevar un seguimiento
+        //mas fiable.
+        var limiteIntervalos = 20;//20, me parece un número razonable, ya que nadie deberia de tener por ejemplo 10+ extensiones actuando sobre la pagina
+        setInterval(function () {
+            contadorIntervalos = limiteIntervalos;
+            clearInterval(contadorIntervalos);
+            limiteIntervalos--;
+            if (limiteIntervalos < 0) {
+                pausa = true;//si hay demasiados intervalos por detrás, el juego no continuará
+            }
+        }, 10);
+
     </script>
 
     <script>

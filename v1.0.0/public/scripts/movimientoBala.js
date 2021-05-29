@@ -8,7 +8,14 @@ function movimientoBala(movimientoX, movimientoY, numeroBala, modoDisparo, tipoA
                 posArrayBullet = i;
             }
         }
-
+        if (Balas[posArrayBullet] == undefined) {
+            pausa = true;
+            alert("\nHa ocurrido un error. Para más detalles visita la consola (F12)");//TODO: pasar a modal por ejemplo
+            console.error("Ha ocurrido un error, alguna de las extensiones está bloqueando el funcionamiento del juego, por ello este ha sido paralizado."
+                + "\n\n Puedes probar a desactivar algunas extensiones (seguramente sea alguna que esté modificando o actuando sobre la página."
+                + " Por ejemplo uBlock, o la extensión de Adobe). Tranquilo, no utilizamos anuncios de ningún tipo.");
+            return;
+        }
         var factorVelocidadBullet = factorVelocidad / 4;
         var factorAumentoX = factorVelocidadBullet * movimientoX * Balas[posArrayBullet].velocidadBullet;
         var factorAumentoY = factorVelocidadBullet * movimientoY * Balas[posArrayBullet].velocidadBullet;
