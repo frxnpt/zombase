@@ -59,9 +59,9 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "cargador": 1,
         "tamanoCargador": 1,
         "municion": 25,
-        "recarga": 4300,
-        "cadencia": 1500,
-        "velocidad": 0.5,
+        "recarga": 5000,
+        "cadencia": 2500,
+        "velocidad": 0.4,
         "impacto": 3500,
         "modoDisparo": 3
     },
