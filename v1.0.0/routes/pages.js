@@ -15,11 +15,4 @@ router.get("/login", (req, res) => {
         res.status(200).redirect('/');
     }
 });
-router.get("/profile", (req, res) => {
-    if (!req.session.jwt) {
-        res.status(200).redirect('/login');
-    } else {
-        res.render("profile");
-    }
-});
 module.exports = router;
