@@ -18,7 +18,7 @@ exports.guardar = (req, res) => {
 
     let decodedJWT = jwt.verify(token, process.env.JWT_SECRET);
     console.log(decodedJWT.id);
-    db.query('INSERT INTO games SET ?', { jugador: decodedJWT.id, fecha: fecha, puntuacion: puntuacion }, (error, results) => {
+    db.query('INSERT INTO games SET ?', { jugador: decodedJWT.id, fecha: fecha, puntuacion: puntuacion, descripción: "" }, (error, results) => {
         if (error) {
             console.log(error);
         } else {
@@ -48,5 +48,25 @@ exports.verTop = (req, res) => {
             })
         });
     });
+}
+exports.verMisPartidas = (req, res) => {
+    console.log(req.body);
+    const { token } = req.body;
+    console.log('el token:' + token);
+    let decodedJWT = jwt.verify(token, process.env.JWT_SECRET);
+    let jwtstring = decodedJWT.id;
+    db.query("SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y %H:%i') as fechabien FROM games WHERE jugador = ?", jwtstring, async(error, results) => {
+        if (error) {
+            console.error(error);
+        }
+        console.log(results);
+        //res.render('profile', {
+        //  partidas: results
+        //})
+        res.status(200).redirect("/profile");
+    });
+
+}
+exports.verMisPartidasMostrar = (req, res) => {
 
 }
