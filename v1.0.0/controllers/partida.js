@@ -12,7 +12,7 @@ const db = mysql.createConnection({
     database: process.env.DATABASE
 });
 
-exports.guardar = (req, res) => {
+const guardar = (req, res) => {
     console.log(req.body);
     const { token, fecha, puntuacion } = req.body;
 
@@ -27,7 +27,7 @@ exports.guardar = (req, res) => {
         }
     });
 }
-exports.verTop = (req, res) => {
+const verTop = (req, res) => {
     db.query("SELECT * FROM games JOIN users ON games.jugador = users.id ORDER BY puntuacion DESC LIMIT 1", (err, rowss, fields) => {
         if (err) {
             console.error(err);
@@ -49,24 +49,41 @@ exports.verTop = (req, res) => {
         });
     });
 }
-exports.verMisPartidas = (req, res) => {
-    console.log(req.body);
-    const { token } = req.body;
-    console.log('el token:' + token);
-    let decodedJWT = jwt.verify(token, process.env.JWT_SECRET);
+const verMisPartidas = (req, res) => {
+    const getCookie = (req, name) => {
+        return req.headers.cookie
+            .split("; ")
+            .map(it => it.split("="))
+            .filter(it => it[0] == name)[0][1];
+    }
+    let tokensito = getCookie(req, "jwt");
+    console.log("LAS GALLETAS PACO: " + tokensito)
+    let decodedJWT = jwt.verify(tokensito, process.env.JWT_SECRET);
     let jwtstring = decodedJWT.id;
     db.query("SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y %H:%i') as fechabien FROM games WHERE jugador = ?", jwtstring, async(error, results) => {
         if (error) {
             console.error(error);
         }
         console.log(results);
-        //res.render('profile', {
-        //  partidas: results
-        //})
-        res.status(200).redirect("/profile");
+        res.render('profile', {
+            partidas: results
+        })
     });
 
 }
-exports.verMisPartidasMostrar = (req, res) => {
+const borrar = (req, res) => {
+    console.log("HOLA ESTAS BORRANDO")
+    db.query("DELETE FROM games WHERE id = ?", [req.params.id], (error, results) => {
+        if (error) {
+            console.log("error fumando porros " + error);
+        } else {
+            console.log("borrada al pingo");
+        }
+        res.redirect('/perfil/ver')
+    });
 
 }
+exports.verMisPartidas = verMisPartidas;
+exports.guardar = guardar;
+exports.borrar = borrar;
+exports.verTop = verTop;
