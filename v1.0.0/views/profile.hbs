@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="/css/indexStyle.css">
     <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>Zombase</title>
 </head>
@@ -70,13 +70,15 @@
     </nav>
     <div class="max-w-7xl mx-auto mt-10 p-10 bg-white">
         <div id="fotoperfil" class="flex flex-row gap-5">
-            <div class="flex flex-col w-3/12 gap-3">
-                <img src="/img/perfil.png " class="w-full h-auto" alt="">
-                <p class="text-2xl font-bold ">John Doe</p>
-                <textarea class="bg-gray-50 rounded-md p-2 resize-none"></textarea>
-                <button class="bg-yellow-400 p-2 rounded-md flex-grow text-center text-white font-bold">Subir Foto</button>
-                <button class="bg-green-400 p-2 rounded-md flex-grow text-center text-white font-bold">Guardar Perfil</button>
-            </div>
+                <form action="/perfil/guardar" method="POST" class="flex flex-col w-3/12 gap-3">
+                {{#each player}}
+                    <img src="/img/perfil.png" id="pp" class="w-full h-auto" alt="">
+                    <p class="text-2xl font-bold" id="nombre">{{this.name}} {{this.surname}}</p>
+                    <textarea class="bg-gray-50 rounded-md p-2 resize-none" id="description" name="description">{{this.descripcion}}</textarea>
+                    <button class="bg-yellow-400 p-2 rounded-md text-center text-white font-bold">Subir Foto</button>
+                    <button type="submit" class="bg-green-400 p-2 rounded-md text-center text-white font-bold">Guardar Perfil</button>
+                {{/each}}
+                </form>
             <div class="flex flex-col flex-grow gap-5">
                 <p class="text-2xl font-bold ">Tus partidas</p>
                 <table class="min-w-full divide-y divide-gray-200">
@@ -150,7 +152,10 @@
                                 {{this.fechabien}}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" class="text-red-600 hover:text-red-900">Borrar</a>
+                                <form action="/partida/borrar/{{id}}" method="POST">
+                                    <button type="submit" class="text-red-600 hover:text-red-900">Borrar</button>
+                                </form>
+
                             </td>
                         </tr>
                         {{/each}}
