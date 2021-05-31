@@ -62,7 +62,7 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/pages'));
 app.use('/auth/', require('./routes/auth'));
 app.use('/partida/', require('./routes/partida'));
-
+app.use('/perfil/', require('./routes/perfil'));
 
 app.listen(5069, () => {
     console.log("Server started on Port 5069")
