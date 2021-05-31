@@ -1,8 +1,21 @@
 function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicionar desde el medio y restar la mitad de width y height dividos por 2 como en explosion
 
     var drop = false;//Variable para controlar 1 drop por zombie
+
     if (drop == false) {
-        switch (Math.floor(Math.random() * 15) + 1) {//Probabilidad de dropear un botiquin de un zombie cuando muere
+        switch (Math.floor(Math.random() * 10) + 1) {//Probabilidad de dropear un arma de un zombie cuando muere por disparo
+            case 5:
+                generarArma(X, Y, perX, perY);
+                drop = true;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    if (drop == false) {
+        switch (Math.floor(Math.random() * 50) + 1) {//Probabilidad de dropear un botiquin de un zombie cuando muere
             case 2:
                 contadorItems++;
                 var botiquin = document.createElement("div");
@@ -39,7 +52,7 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
     }
 
     if (drop == false) {
-        switch (Math.floor(Math.random() * 5) + 1) {//Probabilidad de dropear una municion de un zombie cuando muere
+        switch (Math.floor(Math.random() * 40) + 1) {//Probabilidad de dropear una municion de un zombie cuando muere
             case 1:
                 contadorItems++;
                 var municion = document.createElement("div");
@@ -67,19 +80,6 @@ function drops(X, Y, perX, perY, tipoZombie) {//TODO: ?recalcular X e Y, posicio
                 rectanguloMunicion.style.top = Y + "px";
 
                 desvanecerItem(3, "municion" + contadorItems);//Devanece la municion a los 30s
-                drop = true;
-                break;
-
-            default:
-                break;
-        }
-    }
-
-
-    if (drop == false) {
-        switch (Math.floor(Math.random() * 3) + 1) {//Probabilidad de dropear un arma de un zombie cuando muere por disparo
-            case 2:
-                generarArma(X, Y, perX, perY);
                 drop = true;
                 break;
 

@@ -6,48 +6,53 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
     arma.setAttribute("style", "z-index: 9999;")
     var imagen = document.createElement("img");
     var idArma = "PISTOLA1";
+    let roll = Math.floor(Math.random() * 100) + 1;
+    console.log(roll);
 
-    switch (Math.floor(Math.random() * 14) + 1) {//añadir luego quiza condiciones de rondas para armas mas potentes
-        case 1:
+    switch (true) {//añadir luego quiza condiciones de rondas para armas mas potentes
+        case roll <= 12://12%
             idArma = "ESCOPETA1";
             break;
-        case 2:
+        case roll > 12 && roll <= 20://8%
             idArma = "RIFLEASALTO1";
             break;
-        case 3:
+        case roll > 20 && roll <= 24://4%
             idArma = "ARMARAYOS";
             break;
-        case 4:
+        case roll > 24 && roll <= 30://6%
             idArma = "PISTOLA2";
             break;
-        case 5:
+        case roll > 30 && roll <= 32://2%
             idArma = "NUKE_LAUNCHER";
             break;
-        case 6:
+        case roll > 32 && roll <= 46://14%
             idArma = "PISTOLA3";
             break;
-        case 7:
+        case roll > 46 && roll <= 51://7%
             idArma = "RIFLEASALTO2";
             break;
-        case 8:
+        case roll > 51 && roll <= 57://6%
             idArma = "RIFLEASALTO3";
             break;
-        case 9:
+        case roll > 57 && roll <= 66://9%
             idArma = "SUBFUSIL1";
             break;
-        case 10:
+        case roll > 66 && roll <= 77://11%
             idArma = "SUBFUSIL2";
             break;
-        case 11:
+        case roll > 77 && roll <= 82://5%
             idArma = "LANZAGRANADAS";
             break;
-        case 12:
+        case roll > 82 && roll <= 83://1%
             idArma = "EXPERIMENTO-69420";
             break;
-        case 13:
+        case roll > 83 && roll <= 88://5%
             idArma = "FRANCOTIRADOR1";
             break;
-        default://pistola1
+        case roll > 88 && roll <= 100://12%
+            idArma = "PISTOLA1";
+            break;
+        default://pistola1 12%
             break;
     }
 

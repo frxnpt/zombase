@@ -1,7 +1,7 @@
 function cambiarArma() { // cambio de imagen (y modo disparo!) Para el cambio de arma con la ruleta del raton
     if (pausa == false) {
 
-        event.preventDefault(); //TODO: Actualizar a cambio con variable para evitar repetición de código (igual que cambio imagen)
+        event.preventDefault();
         switch (Jugador.armaActual) {
             case 1:
                 Jugador.armaActual = 2;

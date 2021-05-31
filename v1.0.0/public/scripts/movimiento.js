@@ -23,7 +23,6 @@ function myMove(container, elem) {
             var limiteX = Math.round(rectanguloContainer.width - rectanguloObjeto.width);
             var limiteY = Math.round(rectanguloContainer.height - rectanguloObjeto.height);
 
-            //TODO: PASAR A SWITCH DE MANERA ELEGANTE SI ES POSIBLE, ENCAPSULAR EN FUNCION
             if (keysPressed['KeyA'] && x >= 0) {
                 direccionX -= factorVelocidad * Jugador.velocidad / 3;
             }

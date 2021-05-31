@@ -36,7 +36,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "nombre": "ARMARAYOS",//Clasica
         "cargador": 20,
         "tamanoCargador": 20,
-        "municion": 200,
+        "municion": 100,
         "recarga": 2800,
         "cadencia": 350,
         "velocidad": 2,
@@ -58,7 +58,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "nombre": "NUKE_LAUNCHER",//SUPER EXPLOSIONES
         "cargador": 1,
         "tamanoCargador": 1,
-        "municion": 25,
+        "municion": 6,
         "recarga": 5000,
         "cadencia": 2500,
         "velocidad": 0.4,
@@ -80,29 +80,29 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "nombre": "SUBFUSIL1", //automatico, SUBFUSIL
         "cargador": 35,
         "tamanoCargador": 35,
-        "municion": 350,
+        "municion": 250,
         "recarga": 1800,
         "cadencia": 55,
         "velocidad": 1.5,
-        "impacto": 55,
+        "impacto": 52,
         "modoDisparo": 2
     },
     {
-        "nombre": "SUBFUSIL2", //automatico, SUBFUSIL MEJOR
+        "nombre": "SUBFUSIL2", //automatico, SUBFUSIL
         "cargador": 50,
         "tamanoCargador": 50,
-        "municion": 400,
+        "municion": 300,
         "recarga": 2000,
         "cadencia": 40,
         "velocidad": 1.7,
-        "impacto": 40,
+        "impacto": 38,
         "modoDisparo": 2
     },
     {
         "nombre": "RIFLEASALTO2", //automatico
         "cargador": 25,
         "tamanoCargador": 25,
-        "municion": 450,
+        "municion": 375,
         "recarga": 2600,
         "cadencia": 65,
         "velocidad": 1.8,
@@ -124,7 +124,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "nombre": "FRANCOTIRADOR1", //SEMIAUTOMATICO, BALAS PENETRANTES
         "cargador": 5,
         "tamanoCargador": 5,
-        "municion": 65,
+        "municion": 45,
         "recarga": 2800,
         "cadencia": 1800,
         "velocidad": 2.3,
@@ -143,7 +143,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 3
     },
     {
-        "nombre": "EXPERIMENTO-69420",//CADENA DE RAYOS (IDA DE CABEZA)
+        "nombre": "EXPERIMENTO-69420",//CADENA DE RAYOS
         "cargador": 1,
         "tamanoCargador": 1,
         "municion": 6,
