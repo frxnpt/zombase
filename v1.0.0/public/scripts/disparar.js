@@ -65,7 +65,6 @@ function disparar() {
             var porcentajeXBullet = posXBulletInicial / container.getBoundingClientRect().width;
             var porcentajeYBullet = posYBulletInicial / container.getBoundingClientRect().height;
 
-            //TODO: Añadir diferentes clases con diferentes daños y velocidades.
             var objetoBullet = {
                 nombre: "bullet" + balasDisparadas,
                 impactoBullet: impacto,
@@ -100,7 +99,6 @@ function disparar() {
             var movimientoY = (yRatonCliente - yBulletCliente) / (document.body.clientWidth);
 
             //Trazamos la línea hasta el final de la pantalla, para calcular el % en el que se desplaza cada coordenada y la velocidad sea uniforme
-            //TODO: al pulsar cerca del personaje, se produce ralentizacion al tener que hacer muchos calculos?. Optimizar
             while (true) {
                 if ((xRatonCliente <= xBulletCliente - document.body.clientWidth || xRatonCliente >= xBulletCliente + document.body.clientWidth) ||
                     (yRatonCliente <= yBulletCliente - document.body.clientWidth || yRatonCliente >= yBulletCliente + document.body.clientWidth)) {
