@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/indexStyle.css">
-    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>Zombase</title>
 </head>
 
@@ -21,7 +21,7 @@
                     <!-- logo -->
                     <div>
                         <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-                            <img src="./img/logo.png" width="200" alt="">
+                            <img src="/img/logo.png" width="200" alt="">
                         </a>
                     </div>
 
@@ -47,9 +47,6 @@
                     {{/if}}
                     
                 </div>
-
-
-
                 <div class="md:hidden flex items-center">
                     <button class="mobile-menu-button">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -62,8 +59,6 @@
 
             </div>
         </div>
-
-
         <!-- mobile menu -->
         <div class="mobile-menu hidden md:hidden">
             <a href="#" class="link">Inicio</a>
@@ -73,35 +68,136 @@
             <a href="#" class="link">Registro</a>
         </div>
     </nav>
+    <div class="max-w-7xl mx-auto mt-10 p-10 bg-white">
+        <div id="fotoperfil" class="flex flex-row gap-5">
+            <div class="flex flex-col w-3/12 gap-3">
+                <img src="/img/perfil.png " class="w-full h-auto" alt="">
+                <p class="text-2xl font-bold ">John Doe</p>
+                <textarea class="bg-gray-50 rounded-md p-2 resize-none"></textarea>
+                <button class="bg-yellow-400 p-2 rounded-md flex-grow text-center text-white font-bold">Subir Foto</button>
+                <button class="bg-green-400 p-2 rounded-md flex-grow text-center text-white font-bold">Guardar Perfil</button>
+            </div>
+            <div class="flex flex-col flex-grow gap-5">
+                <p class="text-2xl font-bold ">Tus partidas</p>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Id
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Descripción
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Puntuación
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Fecha
+                            </th>
+                            <th scope="col" class="relative px-6 py-3">
+                                <span class="sr-only">Edit</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900"><textarea class="bg-gray-50 rounded-md p-1 w-full resize-none"></textarea></div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            432 Puntos
+                          </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                28/05/2021 11:55
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="#" class="text-red-600 hover:text-red-900">Borrar</a>
+                            </td>
+                        </tr>
+                        {{#each partidas}}
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">
+                                            {{this.id}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900"><textarea class="bg-gray-50 rounded-md p-1 w-full resize-none"></textarea></div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    {{this.puntuacion}} Puntos
+                          </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{this.fechabien}}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="#" class="text-red-600 hover:text-red-900">Borrar</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+
+
+
+                        <!-- More people... -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
 
     </div>
-    <footer class="bg-gray-900 flex justify-center">
-        <div class="container mx-auto px-6">
+
+
+
+
+    <footer class="bg-gray-900 flex justify-center ">
+        <div class="container mx-auto px-6 ">
             <div class="flex flex-col items-center ">
                 <div class="sm:w-2/3 pt-5 ">
-                    <img src="./img/vigade.png" class="w-10 mx-auto" alt="">
+                    <img src="/img/vigade.png " class="w-10 mx-auto " alt=" ">
                 </div>
-                <div class="sm:w-2/3 pt-5">
-                    <p class="text-sm text-gray-400 mb-2 text-center">
+                <div class="sm:w-2/3 pt-5 ">
+                    <p class="text-sm text-gray-400 mb-2 text-center ">
                         Este juego fue desarrollado con amor por el equipo de Vigade Studios
                     </p>
                 </div>
-                <div class="sm:w-2/3 pt-5">
-                    <div class="flex flex-row gap-5 justify-center">
-                        <a href="#"><i class="fa fa-facebook link-footer"></i> </a>
-                        <a href="#"><i class="fa fa-twitter link-footer"></i> </a>
-                        <a href="#"><i class="fa fa-github link-footer"></i> </a>
-                        <a href="#"><i class="fa fa-instagram link-footer"></i> </a>
-                        <a href="#"><i class="fa fa-linkedin link-footer"></i> </a>
+                <div class="sm:w-2/3 pt-5 ">
+                    <div class="flex flex-row gap-5 justify-center ">
+                        <a href="# "><i class="fa fa-facebook link-footer "></i> </a>
+                        <a href="# "><i class="fa fa-twitter link-footer "></i> </a>
+                        <a href="# "><i class="fa fa-github link-footer "></i> </a>
+                        <a href="# "><i class="fa fa-instagram link-footer "></i> </a>
+                        <a href="# "><i class="fa fa-linkedin link-footer "></i> </a>
                     </div>
                 </div>
-                <div class="sm:w-2/3 pt-5 pb-3">
-                    <div class="flex flex-row gap-5 justify-center">
-                        <a href="#" class="link-footer">Politica de privacidad</a>
-                        <a href="#" class="link-footer">Terminos y condiciones</a>
-                        <a href="#" class="link-footer">Soporte</a>
-                        <a href="#" class="link-footer">Contacto</a>
-                        <a href="#" class="link-footer">Declaración sobre las cookies</a>
+                <div class="sm:w-2/3 pt-5 pb-3 ">
+                    <div class="flex flex-row gap-5 justify-center ">
+                        <a href="# " class="link-footer ">Politica de privacidad</a>
+                        <a href="# " class="link-footer ">Terminos y condiciones</a>
+                        <a href="# " class="link-footer ">Soporte</a>
+                        <a href="# " class="link-footer ">Contacto</a>
+                        <a href="# " class="link-footer ">Declaración sobre las cookies</a>
 
                     </div>
                 </div>
