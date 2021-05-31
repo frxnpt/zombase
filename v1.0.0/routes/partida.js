@@ -7,5 +7,7 @@ router.post("/guardar", partidaController.guardar);
 
 router.get("/top", partidaController.verTop);
 
+router.post("/misPartidas", partidaController.verMisPartidas)
 
+router.get("/misPartidasMostrar", partidaController.verMisPartidas)
 module.exports = router;
