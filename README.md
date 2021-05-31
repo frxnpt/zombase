@@ -11,7 +11,8 @@ DATABASE_USER = your user
 DATABASE_PASSWORD = your password
 JWT_SECRET = your secret
 JWT_EXPIRES_IN = Xd (X being a number of your choice)
-JWT_COOKIE_EXPIRES = X (X being a number of your choice)´´´
+JWT_COOKIE_EXPIRES = X (X being a number of your choice)
+```
 ## Authors
 * **Antonio Ruiz** - *Game design & logic, HUD, audio, game-related CSS and animations* - [AntonioRuiz96](https://github.com/AntonioRuiz96)
 * **Fran Perea** - *Server-side design & operations, front end design, zombie, character, weapons & terrain image model designs* - [frxnpt](https://github.com/frxnpt)
