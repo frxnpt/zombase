@@ -5,40 +5,40 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
     arma.setAttribute("class", "ArmaDrop");
     arma.setAttribute("style", "z-index: 9999;")
     var imagen = document.createElement("img");
-    var idArma = "PISTOLA1";
+    var idArma = "RUGER_P89";
     let roll = Math.floor(Math.random() * 100) + 1;
     console.log(roll);
 
     switch (true) {//añadir luego quiza condiciones de rondas para armas mas potentes
         case roll <= 12://12%
-            idArma = "ESCOPETA1";
+            idArma = "MOSSBERG_500";
             break;
         case roll > 12 && roll <= 20://8%
-            idArma = "RIFLEASALTO1";
+            idArma = "M16";
             break;
         case roll > 20 && roll <= 24://4%
-            idArma = "ARMARAYOS";
+            idArma = "ARMA_DESCONOCIDA";
             break;
         case roll > 24 && roll <= 30://6%
-            idArma = "PISTOLA2";
+            idArma = "DESERT_EAGLE";
             break;
         case roll > 30 && roll <= 32://2%
-            idArma = "NUKE_LAUNCHER";
+            idArma = "LANZA-NUKES";
             break;
         case roll > 32 && roll <= 46://14%
-            idArma = "PISTOLA3";
+            idArma = "BERETTA_M9";
             break;
         case roll > 46 && roll <= 51://7%
-            idArma = "RIFLEASALTO2";
+            idArma = "FAMAS";
             break;
         case roll > 51 && roll <= 57://6%
-            idArma = "RIFLEASALTO3";
+            idArma = "M1_GARAND";
             break;
         case roll > 57 && roll <= 66://9%
-            idArma = "SUBFUSIL1";
+            idArma = "MP5";
             break;
         case roll > 66 && roll <= 77://11%
-            idArma = "SUBFUSIL2";
+            idArma = "MAC-9";
             break;
         case roll > 77 && roll <= 82://5%
             idArma = "LANZAGRANADAS";
@@ -47,12 +47,12 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
             idArma = "EXPERIMENTO-69420";
             break;
         case roll > 83 && roll <= 88://5%
-            idArma = "FRANCOTIRADOR1";
+            idArma = "L115A3";
             break;
         case roll > 88 && roll <= 100://12%
-            idArma = "PISTOLA1";
+            idArma = "RUGER_P89";
             break;
-        default://pistola1 12%
+        default://RUGER_P89 12%
             break;
     }
 

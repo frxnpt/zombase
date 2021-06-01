@@ -31,7 +31,7 @@ function resetear() {
         skinActual: "RAMBO",
         armaActual: 1,
         arma1: {
-            nombreArma1: "PISTOLA1",
+            nombreArma1: "RUGER_P89",
             cargadorArma1: 8,
             tamanoCargadorArma1: 8,
             municionArma1: 120,
@@ -76,13 +76,13 @@ function resetear() {
     document.getElementById("ronda").innerHTML = "Ronda: ";
     document.getElementById('personaje').style.animation = "none";
     document.getElementById("personaje").style.animationIterationCount = "0";
-    document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
-    document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/PISTOLA1_FRAME.png");
+    document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1.replace('_', ' ');
+    document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
     document.getElementById("armamano2-img").removeAttribute("src");
     document.getElementById("armamano2-data").innerHTML = "";
     document.getElementById("armamano2-municion").innerHTML = "";
     armaAutomatica = false;
-    cambiarImagenPersonaje("PISTOLA1", 1);
+    cambiarImagenPersonaje(Jugador.arma1.nombreArma1, 1);
     myMove();
     timer = setInterval(myMove, 20, container, elem);
     empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);

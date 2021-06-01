@@ -1,6 +1,6 @@
 const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 - explosivo, 4 - penetrante, 5 -escopeta, 6- cadena de rayos
     {
-        "nombre": "PISTOLA1",//Pistola inicial
+        "nombre": "RUGER_P89",//Pistola inicial
         "cargador": 8,
         "tamanoCargador": 8,
         "municion": 120,
@@ -11,7 +11,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 1
     },
     {
-        "nombre": "ESCOPETA1",
+        "nombre": "MOSSBERG_500",
         "cargador": 6,
         "tamanoCargador": 6,
         "municion": 84,
@@ -22,7 +22,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 5
     },
     {
-        "nombre": "RIFLEASALTO1", //automatico
+        "nombre": "M16", //automatico
         "cargador": 30,
         "tamanoCargador": 30,
         "municion": 450,
@@ -33,7 +33,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 2
     },
     {
-        "nombre": "ARMARAYOS",//Clasica
+        "nombre": "ARMA_DESCONOCIDA",//ESTILO ARMA DE RAYOS
         "cargador": 20,
         "tamanoCargador": 20,
         "municion": 100,
@@ -44,7 +44,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 1
     },
     {
-        "nombre": "PISTOLA2",//Tipo desert eagle, lenta y potente
+        "nombre": "DESERT_EAGLE",//Tipo desert eagle, lenta y potente
         "cargador": 7,
         "tamanoCargador": 7,
         "municion": 94,
@@ -55,7 +55,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 1
     },
     {
-        "nombre": "NUKE_LAUNCHER",//SUPER EXPLOSIONES
+        "nombre": "LANZA-NUKES",//SUPER EXPLOSIONES
         "cargador": 1,
         "tamanoCargador": 1,
         "municion": 6,
@@ -66,7 +66,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 3
     },
     {
-        "nombre": "PISTOLA3",//Pistola parecida a la inicial pero mejor
+        "nombre": "BERETTA_M9",//Pistola parecida a la inicial pero mejor
         "cargador": 12,
         "tamanoCargador": 12,
         "municion": 180,
@@ -77,7 +77,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 1
     },
     {
-        "nombre": "SUBFUSIL1", //automatico, SUBFUSIL
+        "nombre": "MP5", //automatico, SUBFUSIL
         "cargador": 35,
         "tamanoCargador": 35,
         "municion": 250,
@@ -88,7 +88,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 2
     },
     {
-        "nombre": "SUBFUSIL2", //automatico, SUBFUSIL
+        "nombre": "MAC-9", //automatico, SUBFUSIL
         "cargador": 50,
         "tamanoCargador": 50,
         "municion": 300,
@@ -99,7 +99,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 2
     },
     {
-        "nombre": "RIFLEASALTO2", //automatico
+        "nombre": "FAMAS", //automatico
         "cargador": 25,
         "tamanoCargador": 25,
         "municion": 375,
@@ -110,7 +110,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 2
     },
     {
-        "nombre": "RIFLEASALTO3", //SEMIAUTOMATICO, BALAS PENETRANTES
+        "nombre": "M1_GARAND", //SEMIAUTOMATICO, BALAS PENETRANTES
         "cargador": 10,
         "tamanoCargador": 10,
         "municion": 120,
@@ -121,7 +121,7 @@ const listadoArmasJSON = [//modos disparo: 1- semiautomatico, 2- automatica, 3 -
         "modoDisparo": 4
     },
     {
-        "nombre": "FRANCOTIRADOR1", //SEMIAUTOMATICO, BALAS PENETRANTES
+        "nombre": "L115A3", //SEMIAUTOMATICO, BALAS PENETRANTES
         "cargador": 5,
         "tamanoCargador": 5,
         "municion": 45,

@@ -135,7 +135,7 @@ function myMove(container, elem) {
                                 cambiarImagenPersonaje(listadoArmasJSON[j].nombre, listadoArmasJSON[j].modoDisparo);
                                 document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
                                 document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
-                                document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
+                                document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1.replace('_', ' ');
                                 break;
                             case 2:
                                 //Jugador.arma2 = listadoArmasJSON[j];asi daba problemas de solapamiento
@@ -152,7 +152,7 @@ function myMove(container, elem) {
                                 cambiarImagenPersonaje(listadoArmasJSON[j].nombre, listadoArmasJSON[j].modoDisparo);
                                 document.getElementById("armamano2-municion").innerHTML = "Cargador: " + Jugador.arma2.cargadorArma2 + " / " + Jugador.arma2.municionArma2;
                                 document.getElementById("armamano2-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma2.nombreArma2 + "_FRAME.png");
-                                document.getElementById("armamano2-data").innerHTML = Jugador.arma2.nombreArma2;
+                                document.getElementById("armamano2-data").innerHTML = Jugador.arma2.nombreArma2.replace('_', ' ');
                                 break;
 
                             default:

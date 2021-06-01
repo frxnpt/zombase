@@ -73,9 +73,9 @@ p {
     width: 80%;
 }
 
-.PISTOLA1,
-.PISTOLA2,
-.PISTOLA3 {
+.RUGER_P89,
+.DESERT_EAGLE,
+.BERETTA_M9 {
     width: 1vw;
     height: 1vw;
     position: absolute;
@@ -84,8 +84,8 @@ p {
     display: block;
 }
 
-.SUBFUSIL1,
-.SUBFUSIL2 {
+.MP5,
+.MAC-9 {
     width: 0.8vw;
     height: 0.8vw;
     position: absolute;
@@ -94,7 +94,7 @@ p {
     display: block;
 }
 
-.ARMARAYOS {
+.ARMA_DESCONOCIDA {
     width: 0.8vw;
     height: 0.8vw;
     position: absolute;
@@ -103,7 +103,7 @@ p {
     display: block;
 }
 
-.ESCOPETA1, .NUKE_LAUNCHER, .LANZAGRANADAS {
+.MOSSBERG_500, .LANZA-NUKES, .LANZAGRANADAS {
     width: 0.5vw;
     height: 0.5vw;
     position: absolute;
@@ -202,10 +202,10 @@ p {
     display: block;
 }
 
-.RIFLEASALTO1,
-.RIFLEASALTO2,
-.RIFLEASALTO3,
-.FRANCOTIRADOR1 {
+.M16,
+.FAMAS,
+.M1_GARAND,
+.L115A3 {
     width: 0.9vw;
     height: 0.9vw;
     position: absolute;
@@ -291,7 +291,7 @@ p {
     animation: animate2 30s linear;
 }
 
-.NUKE_LAUNCHER_EXP {
+.LANZA-NUKES_EXP {
     width: 20vw;
     height: 20vw;
     position: absolute;

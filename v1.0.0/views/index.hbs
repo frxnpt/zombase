@@ -264,7 +264,6 @@
         //TODO: Mirar WEBPACK comprobar si da fallos
         var pausa = false;
         var container = document.getElementById("container");
-        document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_PISTOLA1.png");
         container.style.width = "70vw";
         container.style.height = "42vw";
         container.style.marginTop = "2vh";
@@ -294,7 +293,7 @@
             skinActual: "RAMBO",
             armaActual: 1,
             arma1: {
-                nombreArma1: "PISTOLA1",
+                nombreArma1: "RUGER_P89",
                 cargadorArma1: 8,
                 tamanoCargadorArma1: 8,
                 municionArma1: 120,
@@ -347,8 +346,9 @@
             "vw; position: absolute; display: block; left: " +
             xInicial + "px; top: " + yInicial + "px;";
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
+        document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_" + Jugador.arma1.nombreArma1 + ".png");
         document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
-        document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1;
+        document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1.replace('_', ' ');
         document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
         var ratonX = 0;
         var ratonY = 0;
