@@ -7,7 +7,6 @@ function generarArma(ZombieX, ZombieY, perX, perY) {
     var imagen = document.createElement("img");
     var idArma = "P4100";
     let roll = Math.floor(Math.random() * 100) + 1;
-    console.log(roll);
 
     switch (true) {//añadir luego quiza condiciones de rondas para armas mas potentes
         case roll <= 12://12%
