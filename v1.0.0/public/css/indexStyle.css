@@ -73,9 +73,9 @@ p {
     width: 80%;
 }
 
-.RUGER_P89,
-.DESERT_EAGLE,
-.BERETTA_M9 {
+.P4100,
+.DE90,
+.M101 {
     width: 1vw;
     height: 1vw;
     position: absolute;
@@ -84,8 +84,8 @@ p {
     display: block;
 }
 
-.MP5,
-.MAC-9 {
+.SMG507,
+.SU-4 {
     width: 0.8vw;
     height: 0.8vw;
     position: absolute;
@@ -103,7 +103,7 @@ p {
     display: block;
 }
 
-.MOSSBERG_500, .LANZA-NUKES, .LANZAGRANADAS {
+.MSS500, .LANZA-NUKES, .LANZAGRANADAS {
     width: 0.5vw;
     height: 0.5vw;
     position: absolute;
@@ -202,10 +202,10 @@ p {
     display: block;
 }
 
-.M16,
-.FAMAS,
-.M1_GARAND,
-.L115A3 {
+.FA16,
+.FG1,
+.CARABINA_ANTIGUA,
+.L11SR {
     width: 0.9vw;
     height: 0.9vw;
     position: absolute;

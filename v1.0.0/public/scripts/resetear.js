@@ -31,7 +31,7 @@ function resetear() {
         skinActual: "RAMBO",
         armaActual: 1,
         arma1: {
-            nombreArma1: "RUGER_P89",
+            nombreArma1: "P4100",
             cargadorArma1: 8,
             tamanoCargadorArma1: 8,
             municionArma1: 120,
