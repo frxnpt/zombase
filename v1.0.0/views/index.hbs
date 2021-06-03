@@ -402,7 +402,8 @@
         var factorVelocidad = container.clientWidth * 0.025;
         window.addEventListener("resize", reposicionDeObjetos); //A veces falla al pulsar maximizar?
         document.addEventListener("click", disparar);
-
+        document.addEventListener("contextmenu", pausar);
+        document.addEventListener("visibilitychange", pausar);
         var disparoAutomatico;
         var armaAutomatica = false;
         document.addEventListener("mousedown", function (e) {
