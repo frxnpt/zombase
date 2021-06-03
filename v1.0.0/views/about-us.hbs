@@ -28,7 +28,7 @@
                     <div class="hidden md:flex items-center space-x-5">
                         <a href="/" class="link-nav">Inicio</a>
                         <a href="/about-us" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Sobre nosotros</a>
-                        <a href="/top-players" class="link-nav">Top Jugadores</a>
+                        <a href="/partida/top" class="link-nav">Top Jugadores</a>
                     </div>
                 </div>
 
@@ -60,11 +60,15 @@
 
         <!-- menú para móviles -->
         <div class="mobile-menu hidden md:hidden">
-            <a href="/" class="link">Inicio</a>
-            <a href="/about-us" class="link">Sobre nosotros</a>
-            <a href="/top-players" class="link">Top jugadores</a>
-            <a href="/login" class="link">Iniciar Sesión</a>
-            <a href="/login" class="link">Registro</a>
+            {{#if jwt}}
+                <a href="/perfil/ver" class="link">Perfil</a>
+                <form action="/auth/logout" method="POST">
+                    <button type="submit" class="link-mobile-logout w-full">Desconectar</a>
+                </form>
+            {{else}}
+                <a href="/login" class="link">Iniciar Sesión</a>
+                <a href="/login" class="w-full link">Registrar</a>
+            {{/if}}
         </div>
     </nav>
     <div class="flex justify-center">

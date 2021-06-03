@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
     res.render("index", { jwt: req.cookies.jwt });
 });
 router.get("/about-us", (req, res) => {
-    res.render("about-us");
+    res.render("about-us", { jwt: req.cookies.jwt });
 });
 router.get("/login", (req, res) => {
     if (!req.cookies.jwt) {
