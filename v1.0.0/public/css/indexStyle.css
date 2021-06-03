@@ -33,16 +33,6 @@ p {
     font-size: 4vw;
 }
 
-#salud
- {
-    padding-right: 36vw;
-}
-
-#ronda,
-#salud {
-    font-size: 2vw;
-}
-
 .botonContinuar,
 .botonReiniciar {
     font-size: 2vw;
@@ -103,7 +93,9 @@ p {
     display: block;
 }
 
-.MSS500, .LANZA-NUKES, .LANZAGRANADAS {
+.MSS500,
+.LANZA-NUKES,
+.LANZAGRANADAS {
     width: 0.5vw;
     height: 0.5vw;
     position: absolute;
@@ -124,10 +116,12 @@ p {
 }
 
 @keyframes inestabilidad {
-    100%{filter: hue-rotate(180deg)}
+    100% {
+        filter: hue-rotate(180deg)
+    }
 }
 
-.rayo{
+.rayo {
     position: absolute;
     border-radius: 0px;
     display: block;
@@ -137,7 +131,9 @@ p {
 }
 
 @keyframes desvanecerRayo {
-    100%{opacity: 0;}
+    100% {
+        opacity: 0;
+    }
 }
 
 .zombieTipo1 {
@@ -147,7 +143,6 @@ p {
     border-radius: 0px;
     display: block;
 }
-
 
 .zombieTipo2 {
     width: 2.2vw;
@@ -172,6 +167,7 @@ p {
     border-radius: 0px;
     display: block;
 }
+
 .zombieTipo5 {
     width: 3.2vw;
     height: 3.2vw;
@@ -179,6 +175,7 @@ p {
     border-radius: 0px;
     display: block;
 }
+
 .zombieTipo6 {
     width: 2.2vw;
     height: 2.2vw;
@@ -186,7 +183,8 @@ p {
     border-radius: 0px;
     display: block;
 }
-.ZOMBIEBOSS{
+
+.ZOMBIEBOSS {
     width: 6.5vw;
     height: 6.5vw;
     position: absolute;
@@ -298,14 +296,15 @@ p {
     display: block;
 }
 
-.EXPLOSIONZ, .LANZAGRANADAS_EXP {
+.EXPLOSIONZ,
+.LANZAGRANADAS_EXP {
     width: 10vw;
     height: 10vw;
     position: absolute;
     display: block;
 }
 
-.minaZombie{
+.minaZombie {
     width: 3vw;
     height: 3vw;
     position: absolute;
@@ -314,49 +313,71 @@ p {
     animation: explosionInminente 3s linear;
 }
 
-.veneno{
+.veneno {
     width: 10vw;
     height: 10vw;
     position: absolute;
     display: block;
     border-radius: 0px;
-    background-color: greenyellow;
 }
 
 @keyframes explosionInminente {
-    14%{
+    14% {
         filter: brightness(1);
-    }28%{
+    }
+    28% {
         filter: sepia(1) hue-rotate(-52deg) saturate(10);
-    }38%{
+    }
+    38% {
         filter: brightness(1);
-    }48%{
-        filter: sepia(1) hue-rotate(-52deg) saturate(10);;
-    }56%{
+    }
+    48% {
+        filter: sepia(1) hue-rotate(-52deg) saturate(10);
+        ;
+    }
+    56% {
         filter: brightness(1);
-    }64%{
-        filter: sepia(1) hue-rotate(-52deg) saturate(10);;
-    }70%{
+    }
+    64% {
+        filter: sepia(1) hue-rotate(-52deg) saturate(10);
+        ;
+    }
+    70% {
         filter: brightness(1);
-    }76%{
-        filter: sepia(1) hue-rotate(-52deg) saturate(10);;
-    }80%{
+    }
+    76% {
+        filter: sepia(1) hue-rotate(-52deg) saturate(10);
+        ;
+    }
+    80% {
         filter: brightness(1);
-    }84%{
-        filter: sepia(1) hue-rotate(-52deg) saturate(10);;
-    }87%{
+    }
+    84% {
+        filter: sepia(1) hue-rotate(-52deg) saturate(10);
+        ;
+    }
+    87% {
         filter: brightness(1);
-    }90%{
-        filter: sepia(1) hue-rotate(-52deg) saturate(10);;
-    }92%{
+    }
+    90% {
+        filter: sepia(1) hue-rotate(-52deg) saturate(10);
+        ;
+    }
+    92% {
         filter: brightness(1);
-    }94%{
-        filter: sepia(1) hue-rotate(-52deg) saturate(10);;
-    }96%{
+    }
+    94% {
+        filter: sepia(1) hue-rotate(-52deg) saturate(10);
+        ;
+    }
+    96% {
         filter: brightness(1);
-    }98%{
-        filter: sepia(1) hue-rotate(-52deg) saturate(10);;
-    }100%{
+    }
+    98% {
+        filter: sepia(1) hue-rotate(-52deg) saturate(10);
+        ;
+    }
+    100% {
         filter: brightness(1);
     }
 }
@@ -409,7 +430,8 @@ footer {
     opacity: 0.4;
 }
 
-#armamano1-img, #armamano2-img {
+#armamano1-img,
+#armamano2-img {
     max-height: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -433,38 +455,39 @@ footer {
     -webkit-transition: .2s;
     transition: opacity .2s;
     margin-left: 1vw;
-  }
-  
-  .slider:hover {
+}
+
+.slider:hover {
     opacity: 1;
-  }
-  
-  .slider::-webkit-slider-thumb {
+}
+
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
     height: 25px;
-    background: rgba(59, 130, 246, 0.5);;
+    background: rgba(59, 130, 246, 0.5);
+    ;
     cursor: pointer;
     border-radius: 30px;
-  }
-  
-  .slider::-moz-range-thumb {
+}
+
+.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     background: #04AA6D;
     cursor: pointer;
-  }
+}
 
-  .audiocontainer {
+.audiocontainer {
     position: absolute;
     height: 2.5vw;
     width: 13.5vw;
     margin-left: 0.85vw;
-  }
+}
 
-  #iconoaudio{
-      max-width: 1vw;
-      max-height: 1vw;
-      float: left;
-  }
+#iconoaudio {
+    max-width: 1vw;
+    max-height: 1vw;
+    float: left;
+}
