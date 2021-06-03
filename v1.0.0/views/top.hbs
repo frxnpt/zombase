@@ -28,21 +28,22 @@
                     <div class="hidden md:flex items-center space-x-5">
                         <a href="/" class="link-nav">Inicio</a>
                         <a href="/about-us" class="link-nav">Sobre nosotros</a>
-                        <a href="/login" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Top Jugadores</a>
+                        <a href="/partida/top" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Top Jugadores</a>
                     </div>
                 </div>
 
                 <!-- menu login -->
-                <div class="hidden md:flex items-center space-x-5">
+                <div class="hidden md:flex flex-row items-center space-x-5">
                     {{#if jwt}}
-                    <a href="/profile" class="link-nav">Perfil</a>
+                    <a href="/perfil/ver" class="link-nav">Perfil</a>
                     <form action="/auth/logout" method="POST" class="h-full align-middle pt-8">
                         <button href="/login" class="font-semibold px-2 py-1 rounded-md bg-red-900 box-border text-white hover:bg-red-700 transition duration-500 shadow">Desconectar</a>
                     </form>
-   
+
                     {{else}}
                     <a href="/login" class="link-nav">Iniciar Sesión</a>
-                    <a href="/login" class="font-semibold px-2 py-1 rounded-md bg-blue-900 box-border text-white hover:bg-purple-900 transition duration-500 shadow">Registrar</a>
+                    <a href="/login"
+                        class="font-semibold px-2 py-1 rounded-md bg-blue-900 box-border text-white hover:bg-purple-900 transition duration-500 shadow">Registrar</a>
                     {{/if}}
                 </div>
 
