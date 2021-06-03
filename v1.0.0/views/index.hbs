@@ -74,9 +74,16 @@
         <div class="mobile-menu hidden md:hidden">
             <a href="#" class="link">Inicio</a>
             <a href="#" class="link">Sobre nosotros</a>
-            <a href="#" class="link">Top jugadores</a>
-            <a href="#" class="link">Iniciar Sesión</a>
-            <a href="#" class="link">Registro</a>
+            <a href="#" class="link">Top jugadores</a> 
+            {{#if jwt}}
+                <a href="/perfil/ver" class="link">Perfil</a>
+                <form action="/auth/logout" method="POST">
+                    <button type="submit" class="link-mobile-logout w-full">Desconectar</a>
+                </form>
+            {{else}}
+                <a href="/login" class="link">Iniciar Sesión</a>
+                <a href="/login" class="w-full link">Registrar</a>
+            {{/if}}
         </div>
     </nav>
 
