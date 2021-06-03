@@ -12,29 +12,36 @@ const db = mysql.createConnection({
     database: process.env.DATABASE
 });
 const verPerfil = (req, res) => {
-    const getCookie = (req, name) => {
-        return req.headers.cookie
-            .split("; ")
-            .map(it => it.split("="))
-            .filter(it => it[0] == name)[0][1];
-    }
-    let tokensito = getCookie(req, "jwt");
-    console.log("LAS GALLETAS PACO: " + tokensito)
-    let decodedJWT = jwt.verify(tokensito, process.env.JWT_SECRET);
-    let jwtstring = decodedJWT.id;
-    db.query("SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y %H:%i') as fechabien FROM games WHERE jugador = ?", jwtstring, async(error, results) => {
-        if (error) {
-            console.error(error);
-        }
-        db.query("SELECT * FROM users WHERE id = ?", jwtstring, async(error, rresults) => {
-            console.log(rresults);
-            res.render('profile', {
-                partidas: results,
-                player: rresults
-            });
-        });
+    if (!req.cookies.jwt) {
+        res.render("login");
+    } else {
 
-    });
+
+        const getCookie = (req, name) => {
+            return req.headers.cookie
+                .split("; ")
+                .map(it => it.split("="))
+                .filter(it => it[0] == name)[0][1];
+        }
+        let tokensito = getCookie(req, "jwt");
+        console.log("LAS GALLETAS PACO: " + tokensito)
+        let decodedJWT = jwt.verify(tokensito, process.env.JWT_SECRET);
+        let jwtstring = decodedJWT.id;
+        db.query("SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y %H:%i') as fechabien FROM games WHERE jugador = ?", jwtstring, async(error, results) => {
+            if (error) {
+                console.error(error);
+            }
+            db.query("SELECT * FROM users WHERE id = ?", jwtstring, async(error, rresults) => {
+                console.log(rresults);
+                res.render('profile', {
+                    partidas: results,
+                    player: rresults,
+                    jwt: req.cookies.jwt
+                });
+            });
+
+        });
+    }
 }
 
 exports.guardarPerfil = (req, res) => {
@@ -59,5 +66,6 @@ exports.guardarPerfil = (req, res) => {
         res.redirect('/perfil/ver');
     });
 }
+
 
 exports.verPerfil = verPerfil;
