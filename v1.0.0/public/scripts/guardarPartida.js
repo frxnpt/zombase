@@ -15,7 +15,7 @@ function guardarPartida() {
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date + ' ' + time;
-    let params = 'puntuacion=' + score + '&fecha=' + dateTime + '&token=' + jwt;
+    let params = 'puntuacion=' + score + '&fecha=' + dateTime + '&token=' + jwt + '&ronda=' + ronda;
     for (let [key, value] of formData.entries()) {
         console.log(key, value);
     }
