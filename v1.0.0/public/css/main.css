@@ -621,6 +621,10 @@ video {
 	margin-left: 1vw;
 	margin-right: 1vw;
 }
+.mx-\[15vw\] {
+	margin-left: 15vw;
+	margin-right: 15vw;
+}
 .mx-5 {
 	margin-left: 1.25rem;
 	margin-right: 1.25rem;
@@ -708,6 +712,9 @@ video {
 .w-6 {
 	width: 1.5rem;
 }
+.w-full {
+	width: 100%;
+}
 .w-8\/12 {
 	width: 66.666667%;
 }
@@ -720,8 +727,8 @@ video {
 .w-\[26vw\] {
 	width: 26vw;
 }
-.w-full {
-	width: 100%;
+.w-auto {
+	width: auto;
 }
 .w-3\/12 {
 	width: 25%;
@@ -894,6 +901,10 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
+.bg-gray-100 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
 .bg-green-500 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
@@ -914,25 +925,25 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgba(251, 191, 36, var(--tw-bg-opacity));
 }
+.bg-red-100 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(254, 226, 226, var(--tw-bg-opacity));
+}
 .bg-green-100 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(209, 250, 229, var(--tw-bg-opacity));
 }
-.bg-gray-100 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
-}
 .p-\[1vw\] {
 	padding: 1vw;
+}
+.p-1 {
+	padding: 0.25rem;
 }
 .p-10 {
 	padding: 2.5rem;
 }
 .p-2 {
 	padding: 0.5rem;
-}
-.p-1 {
-	padding: 0.25rem;
 }
 .px-5 {
 	padding-left: 1.25rem;
@@ -1056,6 +1067,14 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
+.text-red-600 {
+	--tw-text-opacity: 1;
+	color: rgba(220, 38, 38, var(--tw-text-opacity));
+}
+.text-green-800 {
+	--tw-text-opacity: 1;
+	color: rgba(6, 95, 70, var(--tw-text-opacity));
+}
 .text-gray-100 {
 	--tw-text-opacity: 1;
 	color: rgba(243, 244, 246, var(--tw-text-opacity));
@@ -1071,14 +1090,6 @@ video {
 .text-gray-900 {
 	--tw-text-opacity: 1;
 	color: rgba(17, 24, 39, var(--tw-text-opacity));
-}
-.text-green-800 {
-	--tw-text-opacity: 1;
-	color: rgba(6, 95, 70, var(--tw-text-opacity));
-}
-.text-red-600 {
-	--tw-text-opacity: 1;
-	color: rgba(220, 38, 38, var(--tw-text-opacity));
 }
 .text-yellow-400 {
 	--tw-text-opacity: 1;
