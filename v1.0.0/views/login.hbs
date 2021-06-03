@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>Zombase</title>
 </head>
 
@@ -28,7 +28,7 @@
                     <div class="hidden md:flex items-center space-x-5">
                         <a href="/" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Inicio</a>
                         <a href="/about-us" class="link-nav">Sobre nosotros</a>
-                        <a href="/top-players" class="link-nav">Top Jugadores</a>
+                        <a href="/partida/top" class="link-nav">Top Jugadores</a>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
         <div class="mobile-menu hidden md:hidden">
             <a href="/" class="link">Inicio</a>
             <a href="/about-us" class="link">Sobre nosotros</a>
-            <a href="/top-players" class="link">Top jugadores</a>
+            <a href="/partida/top" class="link">Top jugadores</a>    
         </div>
     </nav>
     <div class="flex justify-center">
@@ -62,14 +62,14 @@
                         <div>
                             <label for="emailLog" class="text-sm block text-left mx-5">Correo electrónico</label>
                             <div class="flex flex-col">
-                                <input type="text" placeholder="example@example.com" id="emailLog" name="emailLog" class="mx-5 ">
+                                <input type="text" placeholder="example@example.com" id="emailLog" name="emailLog" class="mx-5 bg-gray-100 rounded-md p-1">
                             </div>
                         </div>
 
                         <div>
                             <label for="passLog" class="text-sm block text-left mx-5">Contraseña</label>
                             <div class="flex flex-col">
-                                <input type="password" placeholder="password" id="passLog" name="passLog" class="mx-5 ">
+                                <input type="password" placeholder="password" id="passLog" name="passLog" class="mx-5 bg-gray-100 rounded-md p-1 ">
                             </div>
                         </div>
                         <div class="flex flex-row justify-start flex-wrap">
@@ -97,38 +97,38 @@
                         <div class="flex flex-row justify-between flex-wrap gap-5 xs:gap-5">
                             <div>
                                 <label for="name" class="text-sm text-left block mx-5">Nombre</label>
-                                <input type="text" placeholder="Fran" id="name" name="name" class="mx-5" required>
+                                <input type="text" placeholder="Fran" id="name" name="name" class="mx-5 bg-gray-100 rounded-md p-1" required>
                             </div>
                             <div>
                                 <label for="surname" class="text-sm block text-left mx-5">Apellidos</label>
-                                <input type="text" placeholder="Rivera" id="surname" name="surname" class="mx-5" required>
+                                <input type="text" placeholder="Rivera" id="surname" name="surname" class="mx-5 bg-gray-100 rounded-md p-1" required>
                             </div>
                         </div>
 
                         <div>
                             <label for="phone" class="text-sm block text-left mx-5">Nº de teléfono</label>
                             <div class="flex flex-col">
-                                <input type="text" placeholder="+34 656213123" id="phone" name="phone" class="mx-5" required>
+                                <input type="text" placeholder="+34 656213123" id="phone" name="phone" class="mx-5 bg-gray-100 rounded-md p-1" required>
                             </div>
 
                         </div>
                         <div>
                             <label for="emailReg" class="text-sm block text-left mx-5">Correo electrónico</label>
                             <div class="flex flex-col">
-                                <input type="text" placeholder="example@example.com" id="emailReg" name="emailReg" class="mx-5" required>
+                                <input type="text" placeholder="example@example.com" id="emailReg" name="emailReg" class="mx-5 bg-gray-100 rounded-md p-1" required>
                             </div>
                         </div>
 
                         <div>
                             <label for="passReg" class="text-sm block text-left mx-5">Contraseña</label>
                             <div class="flex flex-col">
-                                <input type="password" placeholder="password" id="passReg" name="passReg" class="mx-5 " required>
+                                <input type="password" placeholder="password" id="passReg" name="passReg" class="mx-5 bg-gray-100 rounded-md p-1" required>
                             </div>
                         </div>
                         <div>
                             <label for="passRegConfirm" class="text-sm block text-left mx-5">Confirmar contraseña</label>
                             <div class="flex flex-col">
-                                <input type="password" placeholder="password" id="passRegConfirm" name="passRegConfirm" class="mx-5 " required>
+                                <input type="password" placeholder="password" id="passRegConfirm" name="passRegConfirm" class="mx-5 bg-gray-100 rounded-md p-1 " required>
                             </div>
                         </div>
                         <div class="flex flex-row justify-start flex-wrap">
