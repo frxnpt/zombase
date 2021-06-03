@@ -1,7 +1,7 @@
 function nuevaRonda(intervalo) {
     document.getElementById("ronda").innerHTML = "Ronda: " + ronda;
     clearTimeout(intervalo);
-    switch (ronda / 5) {//Cambia terreno cada 5 rondas
+    switch (ronda / 5) { //Cambia terreno cada 5 rondas
         case 1:
             document.getElementById("terreno").setAttribute("src", "./resources/terrenos/TERRENO2.png")
             break;
