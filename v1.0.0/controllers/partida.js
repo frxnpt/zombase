@@ -14,11 +14,11 @@ const db = mysql.createConnection({
 
 const guardar = (req, res) => {
     console.log(req.body);
-    const { token, fecha, puntuacion } = req.body;
+    const { token, fecha, puntuacion, ronda } = req.body;
 
     let decodedJWT = jwt.verify(token, process.env.JWT_SECRET);
     console.log(decodedJWT.id);
-    db.query('INSERT INTO games SET ?', { jugador: decodedJWT.id, fecha: fecha, puntuacion: puntuacion, descripción: "" }, (error, results) => {
+    db.query('INSERT INTO games SET ?', { jugador: decodedJWT.id, fecha: fecha, puntuacion: puntuacion, ronda: ronda }, (error, results) => {
         if (error) {
             console.log(error);
         } else {
@@ -44,7 +44,8 @@ const verTop = (req, res) => {
             res.render('top', {
                 title: "Top Players",
                 primero: rowss,
-                items: rows
+                items: rows,
+                jwt: req.cookies.jwt
             })
         });
     });
