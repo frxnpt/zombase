@@ -31,7 +31,8 @@
 
                     <!-- menu principal -->
                     <div class="hidden md:flex items-center space-x-5">
-                        <a href="/" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Inicio</a>
+                        <a href="/"
+                            class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Inicio</a>
                         <a href="/about-us" class="link-nav">Sobre nosotros</a>
                         <a href="/partida/top" class="link-nav">Top Jugadores</a>
                     </div>
@@ -42,7 +43,8 @@
                     {{#if jwt}}
                     <a href="/perfil/ver" class="link-nav">Perfil</a>
                     <form action="/auth/logout" method="POST" class="h-full align-middle pt-8">
-                        <button href="/login" class="font-semibold px-2 py-1 rounded-md bg-red-900 box-border text-white hover:bg-red-700 transition duration-500 shadow">Desconectar</a>
+                        <button href="/login"
+                            class="font-semibold px-2 py-1 rounded-md bg-red-900 box-border text-white hover:bg-red-700 transition duration-500 shadow">Desconectar</a>
                     </form>
 
                     {{else}}
@@ -74,15 +76,15 @@
         <div class="mobile-menu hidden md:hidden">
             <a href="#" class="link">Inicio</a>
             <a href="#" class="link">Sobre nosotros</a>
-            <a href="#" class="link">Top jugadores</a> 
+            <a href="#" class="link">Top jugadores</a>
             {{#if jwt}}
-                <a href="/perfil/ver" class="link">Perfil</a>
-                <form action="/auth/logout" method="POST">
-                    <button type="submit" class="link-mobile-logout w-full">Desconectar</a>
-                </form>
+            <a href="/perfil/ver" class="link">Perfil</a>
+            <form action="/auth/logout" method="POST">
+                <button type="submit" class="link-mobile-logout w-full">Desconectar</a>
+            </form>
             {{else}}
-                <a href="/login" class="link">Iniciar Sesión</a>
-                <a href="/login" class="w-full link">Registrar</a>
+            <a href="/login" class="link">Iniciar Sesión</a>
+            <a href="/login" class="w-full link">Registrar</a>
             {{/if}}
         </div>
     </nav>
@@ -91,383 +93,386 @@
     <!--Container-->
     <div>
         <div id="container" draggable="false">
-            <img src="./resources/terrenos/TERRENO1.png" style="height: 100%; width: 100%" draggable="false" id="terreno">
+            <img src="./resources/terrenos/TERRENO1.png" style="height: 100%; width: 100%" draggable="false"
+                id="terreno">
             <div id="animate">
                 <img height="100%" id="personaje" draggable="false">
             </div>
-            <div id="menuPausa" draggable="false" class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl" style="display: none; z-index: 1;">
+            <div id="menuPausa" draggable="false"
+                class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl"
+                style="display: none; z-index: 1;">
                 <div class="text-center bg-yellow-300 w-[26vw] h-auto rounded-xl">
                     <p class="text-[1.5vw] m-[2vw] font_game">PAUSA</p>
-                    <p class="font_game text-[0.75vw]"> El juego se encuentra en pausa, toma un descanso y vuelve a la batalla!
+                    <p class="font_game text-[0.75vw]"> El juego se encuentra en pausa, toma un descanso y vuelve a la
+                        batalla!
                     </p>
                     <div class="flex flex-row justify-evenly gap-[0.5vw] mx-[1vw] mt-[2vw] mb-[4vw]">
-                        <button onclick="reanudar();" class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">PLAY</button>
-                <button onclick="resetear();" class="text-[1vw] bg-red-400 p-[1vw] rounded-md border-red-800 border-dashed border-[0.25vw] font_game hover:text-white">RESTART</button>
-        </div>
-        </div>
-        </div>
-        <div id="menuMuerte" draggable="false" class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl" style="display: none; z-index: 2;">
-            <div class="text-center bg-yellow-300 w-[26vw] h-auto rounded-xl">
-                <p class="text-[1.5vw] m-[2vw] font_game">HAS MUERTO :(</p>
-                <p class="font_game text-[0.75vw]"> Haber perdido una batalla, no significa perder la guerra. Recoge tus armas y vuelve al ataque!
-                </p>
-                <div class="flex flex-row justify-evenly gap-[0.5vw] mx-[1vw] mt-[2vw] mb-[4vw]">
-                    <button onclick="guardarPartida();" class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">GUARDAR
+                        <button onclick="reanudar();"
+                            class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">PLAY</button>
+                        <button onclick="resetear();"
+                            class="text-[1vw] bg-red-400 p-[1vw] rounded-md border-red-800 border-dashed border-[0.25vw] font_game hover:text-white">RESTART</button>
+                    </div>
+                </div>
+            </div>
+            <div id="menuMuerte" draggable="false"
+                class="bg-yellow-300 text-center absolute rounded-xl border-[0.25vw] border-white shadow-xl"
+                style="display: none; z-index: 2;">
+                <div class="text-center bg-yellow-300 w-[26vw] h-auto rounded-xl">
+                    <p class="text-[1.5vw] m-[2vw] font_game">HAS MUERTO :(</p>
+                    <p class="font_game text-[0.75vw]"> Haber perdido una batalla, no significa perder la guerra. Recoge
+                        tus armas y vuelve al ataque!
+                    </p>
+                    <div class="flex flex-row justify-evenly gap-[0.5vw] mx-[1vw] mt-[2vw] mb-[4vw]">
+                        <button onclick="guardarPartida();"
+                            class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">GUARDAR
                             PARTIDA</button>
-                    <button onclick="resetear();" class="text-[1vw] bg-red-400 p-[1vw] rounded-md border-red-800 border-dashed border-[0.25vw] font_game hover:text-white">RESTART</button>
-                </div>
-            </div>
-        </div>
-
-        </div>
-
-        </div>
-
-
-        <!-- info (temporal)-->
-        <div class="flex flex-row justify-between mx-[15vw]">
-            <div class="flex flex-row gap-3 items-center">
-                <i class="fas fa-heartbeat text-red-600" style="font-size: 1.5vw;"></i>
-                <p id="salud" class="font_game text-[1.5vw] w-auto"></p>
-            </div>
-            <div class="flex flex-row gap-3 items-center">
-                <i class="fas fa-khanda text-green-800" style="font-size: 1.5vw;"></i>
-                <p id="ronda" class="font_game text-[1.5vw] w-auto">Ronda:</p>
-            </div>
-        </div>
-
-        <!-- Scoreboard (temporal)-->
-        <div id="Scoreboard" class="Scoreboard font_game" draggable="false">
-            <img height="100%" id="Scoreboard-img" draggable="false">
-            <p id="Scoreboard-data"></p>
-        </div>
-
-        <!-- arma1 (temporal)-->
-        <div id="armamano1" class="armamano1" draggable="false">
-            <img id="armamano1-img" draggable="false">
-            <p style="text-align: center;" id="armamano1-data"></p>
-            <p style="text-align: center;" id="armamano1-municion">Balas / Cargador</p>
-        </div>
-        <!-- arma2 (temporal)-->
-        <div id="armamano2" class="armamano2" draggable="false">
-            <img id="armamano2-img" draggable="false">
-            <p style="text-align: center;" id="armamano2-data"></p>
-            <p style="text-align: center;" id="armamano2-municion"></p>
-        </div>
-
-        <!-- Slider audio -->
-        <div class="audiocontainer" id="audiocontainer">
-            <img src="./img/volumen.png" style="width: 100%; height: 100%;" id="iconoaudio">
-            <input type="range" min="0" max="100" value="20" class="slider" id="audio">
-        </div>
-
-        <!-- Div para debugging -->
-        <div id="debug"></div>
-
-        </div>
-        <footer class="bg-gray-900 flex justify-center">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col items-center ">
-                    <div class="sm:w-2/3 pt-5 ">
-                        <img src="./img/vigade.png" class="w-10 mx-auto" alt="">
-                    </div>
-                    <div class="sm:w-2/3 pt-5">
-                        <p class="text-sm text-gray-400 mb-2 text-center">
-                            Este juego fue desarrollado con amor por el equipo de Vigade Studios
-                        </p>
-                    </div>
-                    <div class="sm:w-2/3 pt-5">
-                        <div class="flex flex-row gap-5 justify-center">
-                            <a href="#"><i class="fa fa-facebook link-footer"></i> </a>
-                            <a href="#"><i class="fa fa-twitter link-footer"></i> </a>
-                            <a href="#"><i class="fa fa-github link-footer"></i> </a>
-                            <a href="#"><i class="fa fa-instagram link-footer"></i> </a>
-                            <a href="#"><i class="fa fa-linkedin link-footer"></i> </a>
-                        </div>
-                    </div>
-                    <div class="sm:w-2/3 pt-5 pb-3">
-                        <div class="flex flex-row gap-5 justify-center">
-                            <a href="#" class="link-footer">Politica de privacidad</a>
-                            <a href="#" class="link-footer">Terminos y condiciones</a>
-                            <a href="#" class="link-footer">Soporte</a>
-                            <a href="#" class="link-footer">Contacto</a>
-                            <a href="#" class="link-footer">Declaración sobre las cookies</a>
-
-                        </div>
+                        <button onclick="resetear();"
+                            class="text-[1vw] bg-red-400 p-[1vw] rounded-md border-red-800 border-dashed border-[0.25vw] font_game hover:text-white">RESTART</button>
                     </div>
                 </div>
             </div>
-        </footer>
-        <script>
-            var jwt = "{{jwt}}";
-        </script>
-        <!--Ver Mis partidas-->
-        <script src="./scripts/verMisPartidas.js"></script>
-        <!--Listado de armas en Formato JSON-->
-        <script src="./scripts/armasJSON.js"></script>
-        <!--Guardar partida-->
-        <script src="./scripts/guardarPartida.js"></script>
-        <!--Generación de drop de armas aleatorio-->
-        <script src="./scripts/generarArma.js"></script>
-        <!--Función de recarga del arma actual-->
-        <script src="./scripts/recargar.js"></script>
-        <!--Cambia la imagen actual del personaje al recoger un arma y activa modo de disparo automatico en ciertos casos-->
-        <script src="./scripts/cambiarImagenPersonaje.js"></script>
-        <!--Función para resetear la partida-->
-        <script src="./scripts/resetear.js"></script>
-        <!--Función de pausa-->
-        <script src="./scripts/pausa.js"></script>
-        <!--Función de reanudación-->
-        <script src="./scripts/reanudar.js"></script>
-        <!--Función de destrucción de un elemento en el DOM y su correspondiente array-->
-        <script src="./scripts/destruir.js"></script>
-        <!--Función de colision de las balas disparadas por el jugador y drop rates-->
-        <script src="./scripts/colision.js"></script>
-        <!--Función de colision de las balas disparadas por el zombie-->
-        <script src="./scripts/colisionBalaZ.js"></script>
-        <!--Función de reposicion  de todos los objetos en pantalla-->
-        <script src="./scripts/reposicionDeObjeto.js"></script>
-        <!--Función de movimiento del jugador y detección de TECLAS PULSADAS, interaccion items armas y entorno-->
-        <script src="./scripts/movimiento.js"></script>
-        <!--Función de disparo del jugador-->
-        <script src="./scripts/disparar.js"></script>
-        <!--Función de disparo del zombie-->
-        <script src="./scripts/disparoZombie.js"></script>
-        <!--Función que controla el intervalo de las balas del jugador-->
-        <script src="./scripts/movimientoBala.js"></script>
-        <!--Función que controla el intervalo de las balas del zombie-->
-        <script src="./scripts/movimientoBalaZombie.js"></script>
-        <!--Función que controla la generación de zombies-->
-        <script src="./scripts/crearZombie.js"></script>
-        <!--Función que controla la generación de distintos tipos de zombies-->
-        <script src="./scripts/generarTipoZombie.js"></script>
-        <!--Función que controla el intervalo del movimiento del zombie-->
-        <script src="./scripts/movimientoZombie.js"></script>
-        <!--Función que controla la colision del zombie con jugador y paredes y cooldown-->
-        <script src="./scripts/colisionZombie.js"></script>
-        <!--Función que reestablece el movimiento del zombie-->
-        <script src="./scripts/reestablecerMovimiento.js"></script>
-        <!--Función para el control de rondas-->
-        <script src="./scripts/nuevaRonda.js"></script>
-        <!--Función de fin de partida cuando la salud llega a 0-->
-        <script src="./scripts/finalPartida.js"></script>
-        <!--Función para cambiar armas con la ruleta del raton (modo de disparo seteado a default)-->
-        <script src="./scripts/cambiarArma.js"></script>
-        <!--Función para eliminar items del suelo con el tiempo (30s) -->
-        <script src="./scripts/desvanecimientoItems.js"></script>
-        <!-- Función para generar explosiones -->
-        <script src="./scripts/explosion.js"></script>
-        <!-- Función para generar explosiones desde zombies-->
-        <script src="./scripts/explosionZombie.js"></script>
-        <!-- Función para generar drops y puntuacion! -->
-        <script src="./scripts/drops.js"></script>
-        <!-- Función para encadenar los rayos del arma especial -->
-        <script src="./scripts/encadenarRayo.js"></script>
-        <script>
-            //TODO: Mirar WEBPACK comprobar si da fallos
-            var pausa = false;
-            var container = document.getElementById("container");
-            container.style.width = "70vw";
-            container.style.height = "42vw";
-            container.style.marginTop = "2vh";
-            container.style.marginLeft = document.body.clientWidth / 2 - container.clientWidth / 2 + "px";
-            var elem = document.getElementById("animate");
-            var xInicial = container.clientWidth / 2;
-            var yInicial = container.clientHeight / 2;
-            var widhtInicial = 2;
-            var heightInicial = 2;
-            var balasDisparadas = 0;
-            var balasDisparadasZombie = 0;
-            var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
-            var contadorArmas = 0; //para Ids Armas en el suelo
-            var contadorAssets = 0; //Ids sangre
-            var contadorBiohazards = 0; //ids para elementos como el veneno
-            var ronda = 1;
-            var boss = false;
-            var limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));
-            var volumen = 0.2; //No resetear
-            var score = 0;
-            document.getElementById("Scoreboard-data").innerHTML = score;
-            var zombies = 0; //Nombre de los zombies
-            var contadorZombies = 0; //Contador de zombies para la ronda(reseteado a 0 despues de cada ronda)
-            //Guardamos de forma inicial la %pos relativa de la X y la Y para redimensionar luego (0.5 inicial)
-            var Jugador = {
-                    salud: 100,
-                    skinActual: "RAMBO",
-                    armaActual: 1,
-                    arma1: {
-                        nombreArma1: "P4100",
-                        cargadorArma1: 8,
-                        tamanoCargadorArma1: 8,
-                        municionArma1: 120,
-                        recargaArma1: 2000,
-                        cadenciaArma1: 200,
-                        velocidadArma1: 0.75,
-                        impactoArma1: 30,
-                        modoDisparoArma1: 1,
-                        onCooldownArma1: false
-                    },
-                    arma2: {
-                        nombreArma2: "none",
-                        cargadorArma2: 0,
-                        tamanoCargadorArma2: 0,
-                        municionArma2: 0,
-                        recargaArma2: 0,
-                        cadenciaArma2: 0,
-                        velocidadArma2: 0,
-                        impactoArma2: 0,
-                        modoDisparoArma2: 1,
-                        onCooldownArma2: false
-                    },
-                    velocidad: 0.5,
-                    porcentajeX: 0.5, //Empieza en el centro del contenedor
-                    porcentajeY: 0.5,
-                    recargando: false
-                } //Valores iniciales del jugador
-                //Contador para ver el orden de los intervalos, y luego poder eliminarlos debidamente. 
-            var contadorIntervalos = 0;
-            var intervalosAnteriores = 1; //1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
 
-            //Lista de objetos a parte del personaje, container y balas, utilizados para ver si hay colision/redimensión.
-            //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
-            var listaZombies = [];
+        </div>
 
-            //balas, items, armas, assets, biohazards activas para su reposicionamiento y redimension
-            //**Separando en diferentes arrays, ahoramos gran cantidad de comprobaciones a multiples funciones**
-            var Balas = [];
-            var BalasZombie = [];
-            var botiquines = [];
-            var municiones = [];
-            var armas = [];
-            var listaAssets = [];
-            let saludContainer = document.getElementById("salud");
-            var listaBiohazards = [];
-            var inmunidadVeneno = false;
-            var ultimoZombieGolpeado = "";
-
-            elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
-                "vw; position: absolute; display: block; left: " +
-                xInicial + "px; top: " + yInicial + "px;";
-            saludContainer.innerHTML = 'Salud: ' + Jugador.salud + "HP";
+    </div>
 
 
-            document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_" + Jugador.arma1.nombreArma1 + ".png");
-            document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
-            document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1.replace('_', ' ');
-            document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
-            var ratonX = 0;
-            var ratonY = 0;
-            let keysPressed = {};
-            var recogerArma = false;
-            document.addEventListener('keydown', (event) => {
-                keysPressed[event.code] = true;
-            });
+    <!-- info (temporal)-->
+    <div class="flex flex-row justify-between mx-[15vw]">
+        <div class="flex flex-row gap-3 items-center">
+            <i class="fas fa-heartbeat text-red-600" style="font-size: 1.5vw;"></i>
+            <p id="salud" class="font_game text-[1.5vw] w-auto"></p>
+        </div>
+        <div class="flex flex-row gap-3 items-center">
+            <i class="fas fa-khanda text-green-800" style="font-size: 1.5vw;"></i>
+            <p id="ronda" class="font_game text-[1.5vw] w-auto">Ronda:</p>
+        </div>
+    </div>
 
-            document.addEventListener('keyup', (event) => {
-                if (event.code == 'KeyE') {
-                    recogerArma = false; //Sistema para que no coja 2 armas de 1 pulsación
-                } //ya que al estar a 20ms aunque pulsemos una vez, detectara gran cantidad de keydown
-                //De esta forma, solo cuando se haya levantado la tecla E se podra recoger otra arma
-                delete keysPressed[event.code];
-            });
+    <!-- Scoreboard (temporal)-->
+    <div id="Scoreboard" class="Scoreboard font_game" draggable="false">
+        <img height="100%" id="Scoreboard-img" draggable="false">
+        <p id="Scoreboard-data"></p>
+    </div>
 
-            document.addEventListener('mousemove', (event) => {
-                if (pausa == false) {
-                    ratonX = event.clientX;
-                    ratonY = event.clientY;
-                    var rad = Math.atan2(ratonX - elem.getBoundingClientRect().x, ratonY - elem.getBoundingClientRect().y);
-                    var rot = (rad * (180 / Math.PI) * -1) + 180;
-                    document.getElementById("personaje").style.transform = "rotate(" + rot + "deg)";
-                }
-            });
-            //TODO: AÑADIR EVENT LISTENER PARA CUANDO SE PIERDA EL FOCO SE PONGA EN PAUSA
-            container.addEventListener("wheel", cambiarArma)
-                //Movimiento basado en % del tamaño del contedor, de forma que a tamaños de container mas grandes, tenga una velocidad similar
-                //En caso de un cuadrado 1000 x 1000, yendo de 3 en 3 de forma estática por ejemplo, tomaría mucho mas tiempo llegar a las esquinas
-                //que en un 400 x 400. Esto es para futuro tamaño responsive del container. 0.01 velocidad sería 1% del container por ejecución.
-                //Este valor nos servirá de referencia
-            var factorVelocidad = container.clientWidth * 0.025;
-            window.addEventListener("resize", reposicionDeObjetos); //A veces falla al pulsar maximizar?
-            document.addEventListener("click", disparar);
+    <!-- arma1 (temporal)-->
+    <div id="armamano1" class="armamano1" draggable="false">
+        <img id="armamano1-img" draggable="false">
+        <p style="text-align: center;" id="armamano1-data"></p>
+        <p style="text-align: center;" id="armamano1-municion">Balas / Cargador</p>
+    </div>
+    <!-- arma2 (temporal)-->
+    <div id="armamano2" class="armamano2" draggable="false">
+        <img id="armamano2-img" draggable="false">
+        <p style="text-align: center;" id="armamano2-data"></p>
+        <p style="text-align: center;" id="armamano2-municion"></p>
+    </div>
 
-            var disparoAutomatico;
-            var armaAutomatica = false;
-            document.addEventListener("mousedown", function(e) {
-                if (pausa == false && armaAutomatica == true && e.button == 0) {
-                    contadorIntervalos++;
-                    disparoAutomatico = setInterval(function() {
-                        disparar();
-                    }, 20);
-                }
-            });
+    <!-- Slider audio -->
+    <div class="audiocontainer" id="audiocontainer">
+        <img src="./img/volumen.png" style="width: 100%; height: 100%;" id="iconoaudio">
+        <input type="range" min="0" max="100" value="20" class="slider" id="audio">
+    </div>
 
-            document.addEventListener("mouseup", function() {
-                if (pausa == false && armaAutomatica == true) {
-                    clearInterval(disparoAutomatico);
-                }
-            });
+    <!-- Div para debugging -->
+    <div id="debug"></div>
 
-            document.addEventListener("dragend", function() {
-                if (pausa == false && armaAutomatica == true) {
-                    clearInterval(disparoAutomatico);
-                }
-            });
+    </div>
+    <footer class="bg-gray-900 flex justify-center">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center ">
+                <div class="sm:w-2/3 pt-5 ">
+                    <img src="./img/vigade.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="sm:w-2/3 pt-5">
+                    <p class="text-sm text-gray-400 mb-2 text-center">
+                        Este juego fue desarrollado con amor por el equipo de Vigade Studios
+                    </p>
+                </div>
+                <div class="sm:w-2/3 pt-5">
+                    <div class="flex flex-row gap-5 justify-center">
+                        <a href="#"><i class="fa fa-facebook link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-twitter link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-github link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-instagram link-footer"></i> </a>
+                        <a href="#"><i class="fa fa-linkedin link-footer"></i> </a>
+                    </div>
+                </div>
+                <div class="sm:w-2/3 pt-5 pb-3">
+                    <div class="flex flex-row gap-5 justify-center">
+                        <a href="#" class="link-footer">Politica de privacidad</a>
+                        <a href="#" class="link-footer">Terminos y condiciones</a>
+                        <a href="#" class="link-footer">Soporte</a>
+                        <a href="#" class="link-footer">Contacto</a>
+                        <a href="#" class="link-footer">Declaración sobre las cookies</a>
 
-            document.getElementById("audio").oninput = function() {
-                volumen = document.getElementById("audio").value / 100;
-                console.log(volumen);
-            };
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var jwt = "{{jwt}}";
+    </script>
+    <!--Ver Mis partidas-->
+    <script src="./scripts/verMisPartidas.js"></script>
+    <!--Listado de armas en Formato JSON-->
+    <script src="./scripts/armasJSON.js"></script>
+    <!--Guardar partida-->
+    <script src="./scripts/guardarPartida.js"></script>
+    <!--Generación de drop de armas aleatorio-->
+    <script src="./scripts/generarArma.js"></script>
+    <!--Función de recarga del arma actual-->
+    <script src="./scripts/recargar.js"></script>
+    <!--Cambia la imagen actual del personaje al recoger un arma y activa modo de disparo automatico en ciertos casos-->
+    <script src="./scripts/cambiarImagenPersonaje.js"></script>
+    <!--Función para resetear la partida-->
+    <script src="./scripts/resetear.js"></script>
+    <!--Función de pausa-->
+    <script src="./scripts/pausa.js"></script>
+    <!--Función de reanudación-->
+    <script src="./scripts/reanudar.js"></script>
+    <!--Función de destrucción de un elemento en el DOM y su correspondiente array-->
+    <script src="./scripts/destruir.js"></script>
+    <!--Función de colision de las balas disparadas por el jugador y drop rates-->
+    <script src="./scripts/colision.js"></script>
+    <!--Función de colision de las balas disparadas por el zombie-->
+    <script src="./scripts/colisionBalaZ.js"></script>
+    <!--Función de reposicion  de todos los objetos en pantalla-->
+    <script src="./scripts/reposicionDeObjeto.js"></script>
+    <!--Función de movimiento del jugador y detección de TECLAS PULSADAS, interaccion items armas y entorno-->
+    <script src="./scripts/movimiento.js"></script>
+    <!--Función de disparo del jugador-->
+    <script src="./scripts/disparar.js"></script>
+    <!--Función de disparo del zombie-->
+    <script src="./scripts/disparoZombie.js"></script>
+    <!--Función que controla el intervalo de las balas del jugador-->
+    <script src="./scripts/movimientoBala.js"></script>
+    <!--Función que controla el intervalo de las balas del zombie-->
+    <script src="./scripts/movimientoBalaZombie.js"></script>
+    <!--Función que controla la generación de zombies-->
+    <script src="./scripts/crearZombie.js"></script>
+    <!--Función que controla la generación de distintos tipos de zombies-->
+    <script src="./scripts/generarTipoZombie.js"></script>
+    <!--Función que controla el intervalo del movimiento del zombie-->
+    <script src="./scripts/movimientoZombie.js"></script>
+    <!--Función que controla la colision del zombie con jugador y paredes y cooldown-->
+    <script src="./scripts/colisionZombie.js"></script>
+    <!--Función que reestablece el movimiento del zombie-->
+    <script src="./scripts/reestablecerMovimiento.js"></script>
+    <!--Función para el control de rondas-->
+    <script src="./scripts/nuevaRonda.js"></script>
+    <!--Función de fin de partida cuando la salud llega a 0-->
+    <script src="./scripts/finalPartida.js"></script>
+    <!--Función para cambiar armas con la ruleta del raton (modo de disparo seteado a default)-->
+    <script src="./scripts/cambiarArma.js"></script>
+    <!--Función para eliminar items del suelo con el tiempo (30s) -->
+    <script src="./scripts/desvanecimientoItems.js"></script>
+    <!-- Función para generar explosiones -->
+    <script src="./scripts/explosion.js"></script>
+    <!-- Función para generar explosiones desde zombies-->
+    <script src="./scripts/explosionZombie.js"></script>
+    <!-- Función para generar drops y puntuacion! -->
+    <script src="./scripts/drops.js"></script>
+    <!-- Función para encadenar los rayos del arma especial -->
+    <script src="./scripts/encadenarRayo.js"></script>
+    <script>
+        //TODO: Mirar WEBPACK comprobar si da fallos
+        var pausa = false;
+        var container = document.getElementById("container");
+        container.style.width = "70vw";
+        container.style.height = "42vw";
+        container.style.marginTop = "2vh";
+        container.style.marginLeft = document.body.clientWidth / 2 - container.clientWidth / 2 + "px";
+        var elem = document.getElementById("animate");
+        var xInicial = container.clientWidth / 2;
+        var yInicial = container.clientHeight / 2;
+        var widhtInicial = 2;
+        var heightInicial = 2;
+        var balasDisparadas = 0;
+        var balasDisparadasZombie = 0;
+        var contadorItems = 0; //para Ids Items en el suelo (municion y botiquines)
+        var contadorArmas = 0; //para Ids Armas en el suelo
+        var contadorAssets = 0; //Ids sangre
+        var contadorBiohazards = 0; //ids para elementos como el veneno
+        var ronda = 1;
+        var boss = false;
+        var limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));
+        var volumen = 0.2; //No resetear
+        var score = 0;
+        document.getElementById("Scoreboard-data").innerHTML = score;
+        var zombies = 0; //Nombre de los zombies
+        var contadorZombies = 0; //Contador de zombies para la ronda(reseteado a 0 despues de cada ronda)
+        //Guardamos de forma inicial la %pos relativa de la X y la Y para redimensionar luego (0.5 inicial)
+        var Jugador = {
+            salud: 100,
+            skinActual: "RAMBO",
+            armaActual: 1,
+            arma1: {
+                nombreArma1: "P4100",
+                cargadorArma1: 8,
+                tamanoCargadorArma1: 8,
+                municionArma1: 120,
+                recargaArma1: 2000,
+                cadenciaArma1: 200,
+                velocidadArma1: 0.75,
+                impactoArma1: 30,
+                modoDisparoArma1: 1,
+                onCooldownArma1: false
+            },
+            arma2: {
+                nombreArma2: "none",
+                cargadorArma2: 0,
+                tamanoCargadorArma2: 0,
+                municionArma2: 0,
+                recargaArma2: 0,
+                cadenciaArma2: 0,
+                velocidadArma2: 0,
+                impactoArma2: 0,
+                modoDisparoArma2: 1,
+                onCooldownArma2: false
+            },
+            velocidad: 0.5,
+            porcentajeX: 0.5, //Empieza en el centro del contenedor
+            porcentajeY: 0.5,
+            recargando: false
+        } //Valores iniciales del jugador
+        //Contador para ver el orden de los intervalos, y luego poder eliminarlos debidamente. 
+        var contadorIntervalos = 0;
+        var intervalosAnteriores = 1; //1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
 
-            window.onbeforeunload = function() { //Evita que se carguen los elementos en posiciones indebidas (no se porque sucede)
-                window.scrollTo(0, 0); //Al hacer habiendo scrolleado abajo
+        //Lista de objetos a parte del personaje, container y balas, utilizados para ver si hay colision/redimensión.
+        //Para añadir zombies, obstaculos , otros jugadores quizas. posible nuevo array de jugadores en el futuro.
+        var listaZombies = [];
+
+        //balas, items, armas, assets, biohazards activas para su reposicionamiento y redimension
+        //**Separando en diferentes arrays, ahoramos gran cantidad de comprobaciones a multiples funciones**
+        var Balas = [];
+        var BalasZombie = [];
+        var botiquines = [];
+        var municiones = [];
+        var armas = [];
+        var listaAssets = [];
+        let saludContainer = document.getElementById("salud");
+        var listaBiohazards = [];
+        var inmunidadVeneno = false;
+        var ultimoZombieGolpeado = "";
+
+        elem.style = "width: " + widhtInicial + "vw; height: " + heightInicial +
+            "vw; position: absolute; display: block; left: " +
+            xInicial + "px; top: " + yInicial + "px;";
+        saludContainer.innerHTML = 'Salud: ' + Jugador.salud + "HP";
+
+
+        document.getElementById("personaje").setAttribute("src", "./resources/personajes/RAMBO_" + Jugador.arma1.nombreArma1 + ".png");
+        document.getElementById("armamano1-municion").innerHTML = "Cargador: " + Jugador.arma1.cargadorArma1 + " / " + Jugador.arma1.municionArma1;
+        document.getElementById("armamano1-data").innerHTML = Jugador.arma1.nombreArma1.replace('_', ' ');
+        document.getElementById("armamano1-img").setAttribute("src", "../resources/armas_frame/" + Jugador.arma1.nombreArma1 + "_FRAME.png");
+        var ratonX = 0;
+        var ratonY = 0;
+        let keysPressed = {};
+        var recogerArma = false;
+        document.addEventListener('keydown', (event) => {
+            keysPressed[event.code] = true;
+        });
+
+        document.addEventListener('keyup', (event) => {
+            if (event.code == 'KeyE') {
+                recogerArma = false; //Sistema para que no coja 2 armas de 1 pulsación
+            } //ya que al estar a 20ms aunque pulsemos una vez, detectara gran cantidad de keydown
+            //De esta forma, solo cuando se haya levantado la tecla E se podra recoger otra arma
+            delete keysPressed[event.code];
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            if (pausa == false) {
+                ratonX = event.clientX;
+                ratonY = event.clientY;
+                var rad = Math.atan2(ratonX - elem.getBoundingClientRect().x, ratonY - elem.getBoundingClientRect().y);
+                var rot = (rad * (180 / Math.PI) * -1) + 180;
+                document.getElementById("personaje").style.transform = "rotate(" + rot + "deg)";
             }
+        });
+        //TODO: AÑADIR EVENT LISTENER PARA CUANDO SE PIERDA EL FOCO SE PONGA EN PAUSA
+        container.addEventListener("wheel", cambiarArma)
+        //Movimiento basado en % del tamaño del contedor, de forma que a tamaños de container mas grandes, tenga una velocidad similar
+        //En caso de un cuadrado 1000 x 1000, yendo de 3 en 3 de forma estática por ejemplo, tomaría mucho mas tiempo llegar a las esquinas
+        //que en un 400 x 400. Esto es para futuro tamaño responsive del container. 0.01 velocidad sería 1% del container por ejecución.
+        //Este valor nos servirá de referencia
+        var factorVelocidad = container.clientWidth * 0.025;
+        window.addEventListener("resize", reposicionDeObjetos); //A veces falla al pulsar maximizar?
+        document.addEventListener("click", disparar);
 
-<<<<<<< Updated upstream
+        var disparoAutomatico;
+        var armaAutomatica = false;
+        document.addEventListener("mousedown", function (e) {
+            if (pausa == false && armaAutomatica == true && e.button == 0) {
+                contadorIntervalos++;
+                disparoAutomatico = setInterval(function () {
+                    disparar();
+                }, 20);
+            }
+        });
+
+        document.addEventListener("mouseup", function () {
+            if (pausa == false && armaAutomatica == true) {
+                clearInterval(disparoAutomatico);
+            }
+        });
+
+        document.addEventListener("dragend", function () {
+            if (pausa == false && armaAutomatica == true) {
+                clearInterval(disparoAutomatico);
+            }
+        });
+
+        document.getElementById("audio").oninput = function () {
+            volumen = document.getElementById("audio").value / 100;
+            console.log(volumen);
+        };
+
+        window.onbeforeunload = function () { //Evita que se carguen los elementos en posiciones indebidas (no se porque sucede)
+            window.scrollTo(0, 0); //Al hacer habiendo scrolleado abajo
+        }
+
+        document.getElementById("Scoreboard").style.top = container.getBoundingClientRect().top + "px"; //ajuste altura score
+        document.getElementById("armamano1").style.top = container.getBoundingClientRect().top +
+            container.getBoundingClientRect().height / 3.2 + "px";
+        document.getElementById("armamano2").style.top = container.getBoundingClientRect().top +
+            container.getBoundingClientRect().height / 1.9 + "px";
+        document.getElementById("audiocontainer").style.top = container.getBoundingClientRect().top + "px";
+
+        myMove();
+        var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
+        var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
+        var generarZombie = 0;
+
+        //Contador de intervalos automatico. Hay algunas extensiones que aumentan el número de intervalos (como por ejemplo ublock). De base debería empezar
+        //Por 3 (intervalo movimiento, ronda y el que viene ahora). También por ejemplo, mozilla firefox inserta un intervalo base. Con este
+        //intervalo vamos a comprobar (un número de veces limitado definido por limiteIntervalos) cuántos intervalos llevamos, para llevar un seguimiento
+        //mas fiable.
+        var limiteIntervalos = 20; //20, me parece un número razonable, ya que nadie deberia de tener por ejemplo 10+ extensiones actuando sobre la pagina
+        setInterval(function () {
+            contadorIntervalos = limiteIntervalos;
+            clearInterval(contadorIntervalos);
+            limiteIntervalos--;
+            if (limiteIntervalos < 0) {
+                pausa = true; //si hay demasiados intervalos por detrás, el juego no continuará
+            }
+        }, 10);
+    </script>
+
+    <script>
+        // hacemos las variables
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
         // agrego los listeners para togglear
         btn.addEventListener("click", () => {
             menu.classList.toggle("hidden");
             reposicionDeObjetos();
         });
     </script>
-=======
-            document.getElementById("Scoreboard").style.top = container.getBoundingClientRect().top + "px"; //ajuste altura score
-            document.getElementById("armamano1").style.top = container.getBoundingClientRect().top +
-                container.getBoundingClientRect().height / 3.2 + "px";
-            document.getElementById("armamano2").style.top = container.getBoundingClientRect().top +
-                container.getBoundingClientRect().height / 1.9 + "px";
-            document.getElementById("audiocontainer").style.top = container.getBoundingClientRect().top + "px";
-
-            myMove();
-            var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
-            var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
-            var generarZombie = 0;
-
-            //Contador de intervalos automatico. Hay algunas extensiones que aumentan el número de intervalos (como por ejemplo ublock). De base debería empezar
-            //Por 3 (intervalo movimiento, ronda y el que viene ahora). También por ejemplo, mozilla firefox inserta un intervalo base. Con este
-            //intervalo vamos a comprobar (un número de veces limitado definido por limiteIntervalos) cuántos intervalos llevamos, para llevar un seguimiento
-            //mas fiable.
-            var limiteIntervalos = 20; //20, me parece un número razonable, ya que nadie deberia de tener por ejemplo 10+ extensiones actuando sobre la pagina
-            setInterval(function() {
-                contadorIntervalos = limiteIntervalos;
-                clearInterval(contadorIntervalos);
-                limiteIntervalos--;
-                if (limiteIntervalos < 0) {
-                    pausa = true; //si hay demasiados intervalos por detrás, el juego no continuará
-                }
-            }, 10);
-        </script>
-
-        <script>
-            // hacemos las variables
-            const btn = document.querySelector("button.mobile-menu-button");
-            const menu = document.querySelector(".mobile-menu");
-
-            // agrego los listeners para togglear
-            btn.addEventListener("click", () => {
-                menu.classList.toggle("hidden");
-            });
-        </script>
->>>>>>> Stashed changes
 
 </body>
 
