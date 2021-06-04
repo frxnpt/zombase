@@ -21,7 +21,7 @@ function resetear() {
     contadorAssets = 0;
     contadorBiohazards = 0;
     ronda = 1;
-    limiteZombies = Math.round((ronda / 3 + 6) * (0.7 * ronda));
+    limiteZombies = Math.round((ronda / 3 + 6) * (0.5 * ronda)) + 1;
     zombies = 0;
     contadorZombies = 0;
     score = 0;
