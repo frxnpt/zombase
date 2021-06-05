@@ -128,11 +128,11 @@ document.addEventListener("visibilitychange", pausar);
 var disparoAutomatico;
 var armaAutomatica = false;
 document.addEventListener("mousedown", function (e) {
-    if (pausa == false && armaAutomatica == true && e.button == 0) {
+    if (pausa == false && armaAutomatica == true && e.button == 0) {//e.button es clave para evitar errores
         contadorIntervalos++;
         disparoAutomatico = setInterval(function () {
             disparar();
-        }, 20);
+        }, 20);//TODO: testear en 5
     }
 });
 
@@ -150,7 +150,6 @@ document.addEventListener("dragend", function () {
 
 document.getElementById("audio").oninput = function () {
     volumen = document.getElementById("audio").value / 100;
-    console.log(volumen);
 };
 
 window.onbeforeunload = function () { //Evita que se carguen los elementos en posiciones indebidas (no se porque sucede)

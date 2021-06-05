@@ -26,7 +26,7 @@ function disparar() {
             default:
                 break;
         }
-        if (cargador > 0 && Jugador.recargando == false && onCooldown == false) {
+        if (cargador > 0 && Jugador.recargando == false && onCooldown == false && clase != "none") {
             balasDisparadas++;
             contadorIntervalos++;
             switch (Jugador.armaActual) {
@@ -53,12 +53,10 @@ function disparar() {
 
             //Posicion1 (posicion de donde sale la bala) (no es la X dentro del cliente. si no dentro del container.)
             var posXBulletInicial = (elem.getBoundingClientRect().left +
-                (elem.getBoundingClientRect().right - elem.getBoundingClientRect().left) / 2) -
-                container.getBoundingClientRect().left;
+                elem.getBoundingClientRect().width / 2) - container.getBoundingClientRect().left;
 
             var posYBulletInicial = (elem.getBoundingClientRect().top +
-                (elem.getBoundingClientRect().bottom - elem.getBoundingClientRect().top) / 2) -
-                container.getBoundingClientRect().top;
+                elem.getBoundingClientRect().height / 2) - container.getBoundingClientRect().top;
 
             //Guardar balas como objeto
 
@@ -82,11 +80,9 @@ function disparar() {
             sound.play();//Encontrar mas que no desentonen para todas las armas es muy dificil
 
             var xBulletCliente = rectanguloBullet.getBoundingClientRect().left +
-                (rectanguloBullet.getBoundingClientRect().right -
-                    rectanguloBullet.getBoundingClientRect().left) / 2;
+                elem.getBoundingClientRect().width / 2;
             var yBulletCliente = rectanguloBullet.getBoundingClientRect().top +
-                (rectanguloBullet.getBoundingClientRect().bottom -
-                    rectanguloBullet.getBoundingClientRect().top) / 2;
+                elem.getBoundingClientRect().height / 2;
 
 
             //Posicion2 (indicador de direccion)
@@ -106,13 +102,13 @@ function disparar() {
                 }
                 xRatonCliente = xRatonCliente + (movimientoX) * 100;
                 yRatonCliente = yRatonCliente + (movimientoY) * 100;
-            }//Multiplicado * 50 para aumentar la velocidad del calculo
+            }//Multiplicado * 100 para aumentar la velocidad del calculo
 
             //Recalculo de velocidad, con los nuevos valores, correspondientes al limite de la pantalla, para obtener una velocidad uniforme
             movimientoX = (xRatonCliente - xBulletCliente) / (document.body.clientWidth);
             movimientoY = (yRatonCliente - yBulletCliente) / (document.body.clientWidth);
 
-            var moverBala = setInterval(movimientoBala, 5, movimientoX, movimientoY, balasDisparadas, modoDisparo, clase);
+            setInterval(movimientoBala, 5, movimientoX, movimientoY, balasDisparadas, modoDisparo, clase);
             if (modoDisparo == 5) {//Disparo escopeta
                 for (let i = 0; i < 7; i++) {
                     balasDisparadas++;
@@ -168,7 +164,7 @@ function disparar() {
                 default:
                     break;
             }
-        } else if (pausa == false && cargador == 0 && Jugador.recargando == false) {
+        } else if (pausa == false && cargador == 0 && Jugador.recargando == false && clase != "none") {
             recargar(Jugador.armaActual);
         }
     }
