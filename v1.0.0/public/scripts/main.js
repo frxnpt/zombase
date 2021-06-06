@@ -26,39 +26,39 @@ var zombies = 0; //Nombre de los zombies
 var contadorZombies = 0; //Contador de zombies para la ronda(reseteado a 0 despues de cada ronda)
 //Guardamos de forma inicial la %pos relativa de la X y la Y para redimensionar luego (0.5 inicial)
 var Jugador = {
-    salud: 100,
-    skinActual: "RAMBO",
-    armaActual: 1,
-    arma1: {
-        nombreArma1: "P4100",
-        cargadorArma1: 8,
-        tamanoCargadorArma1: 8,
-        municionArma1: 120,
-        recargaArma1: 2000,
-        cadenciaArma1: 200,
-        velocidadArma1: 0.75,
-        impactoArma1: 30,
-        modoDisparoArma1: 1,
-        onCooldownArma1: false
-    },
-    arma2: {
-        nombreArma2: "none",
-        cargadorArma2: 0,
-        tamanoCargadorArma2: 0,
-        municionArma2: 0,
-        recargaArma2: 0,
-        cadenciaArma2: 0,
-        velocidadArma2: 0,
-        impactoArma2: 0,
-        modoDisparoArma2: 1,
-        onCooldownArma2: false
-    },
-    velocidad: 0.5,
-    porcentajeX: 0.5, //Empieza en el centro del contenedor
-    porcentajeY: 0.5,
-    recargando: false
-} //Valores iniciales del jugador
-//Contador para ver el orden de los intervalos, y luego poder eliminarlos debidamente. 
+        salud: 100,
+        skinActual: "RAMBO",
+        armaActual: 1,
+        arma1: {
+            nombreArma1: "P4100",
+            cargadorArma1: 8,
+            tamanoCargadorArma1: 8,
+            municionArma1: 120,
+            recargaArma1: 2000,
+            cadenciaArma1: 200,
+            velocidadArma1: 0.75,
+            impactoArma1: 30,
+            modoDisparoArma1: 1,
+            onCooldownArma1: false
+        },
+        arma2: {
+            nombreArma2: "none",
+            cargadorArma2: 0,
+            tamanoCargadorArma2: 0,
+            municionArma2: 0,
+            recargaArma2: 0,
+            cadenciaArma2: 0,
+            velocidadArma2: 0,
+            impactoArma2: 0,
+            modoDisparoArma2: 1,
+            onCooldownArma2: false
+        },
+        velocidad: 0.5,
+        porcentajeX: 0.5, //Empieza en el centro del contenedor
+        porcentajeY: 0.5,
+        recargando: false
+    } //Valores iniciales del jugador
+    //Contador para ver el orden de los intervalos, y luego poder eliminarlos debidamente. 
 var contadorIntervalos = 0;
 var intervalosAnteriores = 1; //1 para que empiece a limpiar por el intervalo 1, no hay intervalo 0
 
@@ -116,10 +116,10 @@ document.addEventListener('mousemove', (event) => {
 });
 //TODO: AÑADIR EVENT LISTENER PARA CUANDO SE PIERDA EL FOCO SE PONGA EN PAUSA
 container.addEventListener("wheel", cambiarArma)
-//Movimiento basado en % del tamaño del contedor, de forma que a tamaños de container mas grandes, tenga una velocidad similar
-//En caso de un cuadrado 1000 x 1000, yendo de 3 en 3 de forma estática por ejemplo, tomaría mucho mas tiempo llegar a las esquinas
-//que en un 400 x 400. Esto es para futuro tamaño responsive del container. 0.01 velocidad sería 1% del container por ejecución.
-//Este valor nos servirá de referencia
+    //Movimiento basado en % del tamaño del contedor, de forma que a tamaños de container mas grandes, tenga una velocidad similar
+    //En caso de un cuadrado 1000 x 1000, yendo de 3 en 3 de forma estática por ejemplo, tomaría mucho mas tiempo llegar a las esquinas
+    //que en un 400 x 400. Esto es para futuro tamaño responsive del container. 0.01 velocidad sería 1% del container por ejecución.
+    //Este valor nos servirá de referencia
 var factorVelocidad = container.clientWidth * 0.025;
 window.addEventListener("resize", reposicionDeObjetos); //A veces falla al pulsar maximizar?
 document.addEventListener("click", disparar);
@@ -127,32 +127,32 @@ document.addEventListener("contextmenu", pausar);
 document.addEventListener("visibilitychange", pausar);
 var disparoAutomatico;
 var armaAutomatica = false;
-document.addEventListener("mousedown", function (e) {
-    if (pausa == false && armaAutomatica == true && e.button == 0) {//e.button es clave para evitar errores
+document.addEventListener("mousedown", function(e) {
+    if (pausa == false && armaAutomatica == true && e.button == 0) {
         contadorIntervalos++;
-        disparoAutomatico = setInterval(function () {
+        disparoAutomatico = setInterval(function() {
             disparar();
-        }, 20);//TODO: testear en 5
+        }, 20); //TODO: testear en 5
     }
 });
 
-document.addEventListener("mouseup", function () {
+document.addEventListener("mouseup", function() {
     if (pausa == false && armaAutomatica == true) {
         clearInterval(disparoAutomatico);
     }
 });
 
-document.addEventListener("dragend", function () {
+document.addEventListener("dragend", function() {
     if (pausa == false && armaAutomatica == true) {
         clearInterval(disparoAutomatico);
     }
 });
 
-document.getElementById("audio").oninput = function () {
+document.getElementById("audio").oninput = function() {
     volumen = document.getElementById("audio").value / 100;
 };
 
-window.onbeforeunload = function () { //Evita que se carguen los elementos en posiciones indebidas (no se porque sucede)
+window.onbeforeunload = function() { //Evita que se carguen los elementos en posiciones indebidas (no se porque sucede)
     window.scrollTo(0, 0); //Al hacer habiendo scrolleado abajo
 }
 
@@ -173,7 +173,7 @@ var generarZombie = 0;
 //intervalo vamos a comprobar (un número de veces limitado definido por limiteIntervalos) cuántos intervalos llevamos, para llevar un seguimiento
 //mas fiable.
 var limiteIntervalos = 20; //20, me parece un número razonable, ya que nadie deberia de tener por ejemplo 10+ extensiones actuando sobre la pagina
-setInterval(function () {
+setInterval(function() {
     contadorIntervalos = limiteIntervalos;
     clearInterval(contadorIntervalos);
     limiteIntervalos--;
