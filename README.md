@@ -117,13 +117,15 @@ COMMIT;
 ```
 
 You will also need to create/set up your own config.env file in the root directory. Example CONFIG:
-```DATABASE = your DB name
+```
+DATABASE = nodejs-zombase
 DATABASE_HOST = localhost
-DATABASE_USER = your user
-DATABASE_PASSWORD = your password
-JWT_SECRET = your secret
-JWT_EXPIRES_IN = Xd (X being a number of your choice)
-JWT_COOKIE_EXPIRES = X (X being a number of your choice)
+DATABASE_USER = root
+DATABASE_PASSWORD =
+JWT_SECRET = patata
+JWT_EXPIRES_IN = 90d
+JWT_COOKIE_EXPIRES = 90
+
 ```
 Once you have this, you can execute an npm start command on the directory with the node modules.
 
