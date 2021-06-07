@@ -21,7 +21,7 @@ function drops(X, Y, perX, perY, tipoZombie) { //TODO: ?recalcular X e Y, posici
                 var botiquin = document.createElement("div");
                 botiquin.setAttribute("id", "botiquin" + contadorItems);
                 botiquin.setAttribute("class", "BOTIQUIN");
-                botiquin.setAttribute("style", "z-index: 999;")
+                botiquin.setAttribute("style", "z-index: 999;");
                 var imagen = document.createElement("img");
                 imagen.setAttribute("src", "./resources/items/BOTIQUIN.png");
                 imagen.setAttribute("style", "width: 100%; height: 100%;");
@@ -52,7 +52,7 @@ function drops(X, Y, perX, perY, tipoZombie) { //TODO: ?recalcular X e Y, posici
     }
 
     if (drop == false) {
-        switch (Math.floor(Math.random() * 40) + 1) { //Probabilidad de dropear una municion de un zombie cuando muere
+        switch (Math.floor(Math.random() * 50) + 1) { //Probabilidad de dropear una municion de un zombie cuando muere
             case 1:
                 contadorItems++;
                 var municion = document.createElement("div");
@@ -159,7 +159,7 @@ function drops(X, Y, perX, perY, tipoZombie) { //TODO: ?recalcular X e Y, posici
             var minaX = (recMina.left + recMina.width / 2) - container.getBoundingClientRect().left;
             var minaY = (recMina.top + recMina.height / 2) - container.getBoundingClientRect().top;
             contadorIntervalos++;
-            setTimeout(function() {
+            setTimeout(function () {
                 explosionZombie(minaX, minaY, objetoMina.nombre);
                 for (let i = 0; i < listaAssets.length; i++) {
                     if (objetoMina.nombre == listaAssets[i].nombre) {
@@ -195,7 +195,7 @@ function drops(X, Y, perX, perY, tipoZombie) { //TODO: ?recalcular X e Y, posici
                 (Y - document.getElementById("veneno" + contadorBiohazards).getBoundingClientRect().height / 3) + "px";
 
             contadorIntervalos++;
-            setTimeout(function() {
+            setTimeout(function () {
                 for (let i = 0; i < listaBiohazards.length; i++) {
                     if (objetoVeneno.nombre == listaBiohazards[i].nombre) {
                         destruir(objetoVeneno.nombre, "BIOHAZ", i);

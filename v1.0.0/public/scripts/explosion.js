@@ -2,6 +2,7 @@ function explosion(X, Y, id, impacto, tipoArma) {
     var explosion = document.createElement("div");
     explosion.setAttribute("id", "EXP_" + id);
     explosion.setAttribute("class", tipoArma + "_EXP");
+    explosion.setAttribute("style", "z-index: 999;");
     var imagen = document.createElement("img");
     imagen.setAttribute("src", "./resources/gif/" + tipoArma + "_EXPLOSION.gif");
     imagen.setAttribute("style", "width: 100%; height: 100%;");

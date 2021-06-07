@@ -6,6 +6,7 @@ function movimientoBala(movimientoX, movimientoY, numeroBala, modoDisparo, tipoA
         for (let i = 0; i < Balas.length; i++) {
             if (Balas[i].nombre == "bullet" + numeroBala) {
                 posArrayBullet = i;
+                break;
             }
         }
         if (Balas[posArrayBullet] == undefined) {

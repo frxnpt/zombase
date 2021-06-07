@@ -2,6 +2,7 @@ function explosionZombie(X, Y, id) {//X e Y vienen centradas
     var explosion = document.createElement("div");
     explosion.setAttribute("id", "EXPZ_" + id);
     explosion.setAttribute("class", "EXPLOSIONZ");
+    explosion.setAttribute("style", "z-index: 999;");
     var imagen = document.createElement("img");
     imagen.setAttribute("src", "./resources/gif/EXPLOSION_ZOMBIE.gif");
     imagen.setAttribute("style", "width: 100%; height: 100%;");

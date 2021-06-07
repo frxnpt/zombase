@@ -5,6 +5,7 @@ function movimientoBalaZombie(movimientoX, movimientoY, numeroBalaZombie) {
         for (let i = 0; i < BalasZombie.length; i++) {
             if (BalasZombie[i].nombre == "BalaZ" + numeroBalaZombie) {
                 posArrayBulletZ = i;
+                break;
             }
         }
 
