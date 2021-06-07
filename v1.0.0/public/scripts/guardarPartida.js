@@ -1,4 +1,9 @@
 function guardarPartida() {
+
+    if (!jwt) {
+        alert("⚠️ DEBES ESTAR LOGUEADO PARA PODER GUARDAR LA PARTIDA!!! ⚠️");
+        return;
+    }
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
