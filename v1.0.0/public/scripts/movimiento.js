@@ -225,7 +225,7 @@ function myMove(container, elem) {
 
                     Jugador.salud = Jugador.salud - 1;
                     document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
-                    if (Jugador.salud < 0) {
+                    if (Jugador.salud <= 0) {
                         finalPartida();
                     }
                     inmunidadVeneno = true;
