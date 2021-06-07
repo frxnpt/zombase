@@ -23,23 +23,24 @@ const storage = multer.diskStorage({
     }
 });
 
+const getCookie = (req, name) => {
+    return req.headers.cookie
+        .split("; ")
+        .map(it => it.split("="))
+        .filter(it => it[0] == name)[0][1];
+}
+
 const upload = multer({ storage });
 
 
 router.post("/subir", upload.single("avatar"), (req, res) => {
     imgpath = "/img/profiles/" + req.file.filename;
-
     req.file.filename = ""
-    const getCookie = (req, name) => {
-        return req.headers.cookie
-            .split("; ")
-            .map(it => it.split("="))
-            .filter(it => it[0] == name)[0][1];
-    }
 
     let tokensito = getCookie(req, "jwt");
     let decodedJWT = jwt.verify(tokensito, process.env.JWT_SECRET);
     let jwtstring = decodedJWT.id;
+
     db.query("UPDATE users SET pp = ? WHERE id = ?", [imgpath, jwtstring], async(error, results) => {
         if (error) {
             console.error(error);
