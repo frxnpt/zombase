@@ -1,9 +1,7 @@
 const mysql = require("mysql");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const session = require("express-session");
 const saltRounds = 10;
-let hashedPassword;
 
 const db = mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -41,12 +39,9 @@ exports.register = (req, res) => {
                         console.log(error);
                     } else {
                         console.log(results);
-                        req.session.loggedin = true;
-                        req.session.save();
                         return res.render('login', {
                             successReg: 'Usuario registrado correctamente!'
                         });
-
                     }
                 });
             });
@@ -83,12 +78,8 @@ exports.login = (req, res) => {
                     ),
                     httpOnly: true
                 }
-                res.cookie('jwt', token, cookieOptions);
-                req.session.jwt = token;
-                req.session.save();
-                res.status(200).redirect("/");
-
-
+                res.cookie('jwt', token, cookieOptions); //y guardamos el JWT en las cookies con la configuracion de arriba
+                res.status(200).redirect("/"); //redireccionamos al index
             }
         });
     } catch (error) {
@@ -98,8 +89,6 @@ exports.login = (req, res) => {
 exports.logout = (req, res) => {
     try {
         res.clearCookie('jwt');
-        req.session.jwt = "";
-
 
         return res.status(200).redirect('/login');
     } catch (error) {
