@@ -27,7 +27,7 @@
 
                     <!-- menu principal -->
                     <div class="hidden md:flex items-center space-x-5">
-                        <a href="/" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Inicio</a>
+                        <a href="/" class="link-nav">Inicio</a>
                         <a href="/about-us" class="link-nav">Sobre nosotros</a>
                         <a href="/partida/top" class="link-nav">Top Jugadores</a>
                     </div>
@@ -36,7 +36,7 @@
                 <!-- menu login -->
                 <div class="hidden md:flex flex-row items-center space-x-5">
                     {{#if jwt}}
-                    <a href="/perfil/ver" class="link-nav">Perfil</a>
+                    <a href="/perfil/ver" class="hover:bg-purple-500 px-2 py-1 rounded-md block text-white font-semibold">Perfil</a>
                     <form action="/auth/logout" method="POST" class="h-full align-middle pt-8">
                         <button href="/login" class="font-semibold px-2 py-1 rounded-md bg-red-900 box-border text-white hover:bg-red-700 transition duration-500 shadow">Desconectar</a>
                     </form>
@@ -194,6 +194,16 @@
             </div>
         </div>
     </footer>
+    <script>
+            // creo variables para coger todos los menus
+            const btn = document.querySelector("button.mobile-menu-button ");
+            const menu = document.querySelector(".mobile-menu ");
+
+            // y le agrego un listener para el click para toglear el hidden del menu
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
 </body>
 
 </html>
