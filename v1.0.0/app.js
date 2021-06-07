@@ -3,7 +3,6 @@ const express = require("express");
 const mysql = require("mysql");
 const path = require("path");
 const dotenv = require('dotenv');
-const session = require('express-session')
 const cookieParser = require('cookie-parser');
 
 //Localizamos el archivo con las contraseñas e información sensible
@@ -37,25 +36,6 @@ app.set('view engine', 'hbs');
 /*en caso de que haya un error con la conexión mostramos el error, y si no hay error, mostramos un mensaje por consola 
 para verificar que todo está bien*/
 db.connect((error) => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log("MYSQL Connected...")
-    }
-})
-
-
-app.use(session({
-    secret: 'aosdnkasdnk1.ksadAMsamdlkasmdaks',
-    resave: false,
-    saveUninitialized: false,
-}));
-
-// Run a "middleware" function on each request
-app.use((req, res, next) => {
-    // Check if we've already initialised a session
-    req.session.hola = "hola";
-    session.Store.hola;
         if (error) {
             console.log(error);
         } else {
