@@ -1,7 +1,5 @@
 const mysql = require("mysql");
 const jwt = require('jsonwebtoken');
-const session = require("express-session");
-const express = require("express");
 var Handlebars = require('hbs');
 
 
@@ -50,41 +48,16 @@ const verTop = (req, res) => {
         });
     });
 }
-const verMisPartidas = (req, res) => {
-    const getCookie = (req, name) => {
-        return req.headers.cookie
-            .split("; ")
-            .map(it => it.split("="))
-            .filter(it => it[0] == name)[0][1];
-    }
-    let tokensito = getCookie(req, "jwt");
-    console.log("LAS GALLETAS PACO: " + tokensito)
-    let decodedJWT = jwt.verify(tokensito, process.env.JWT_SECRET);
-    let jwtstring = decodedJWT.id;
-    db.query("SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y %H:%i') as fechabien FROM games WHERE jugador = ?", jwtstring, async(error, results) => {
-        if (error) {
-            console.error(error);
-        }
-        console.log(results);
-        res.render('profile', {
-            partidas: results
-        })
-    });
-
-}
 const borrar = (req, res) => {
-    console.log("HOLA ESTAS BORRANDO")
     db.query("DELETE FROM games WHERE id = ?", [req.params.id], (error, results) => {
         if (error) {
-            console.log("error fumando porros " + error);
+            console.log("error en el borrado de la partida " + error);
         } else {
-            console.log("borrada al pingo");
+            console.log("Se ha borrado la partida");
         }
         res.redirect('/perfil/ver')
     });
-
 }
-exports.verMisPartidas = verMisPartidas;
 exports.guardar = guardar;
 exports.borrar = borrar;
 exports.verTop = verTop;
