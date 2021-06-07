@@ -1,8 +1,5 @@
 const mysql = require("mysql");
 const jwt = require('jsonwebtoken');
-const session = require("express-session");
-const express = require("express");
-var Handlebars = require('hbs');
 
 
 const db = mysql.createConnection({
