@@ -34,7 +34,7 @@ exports.register = (req, res) => {
             bcrypt.hash(passReg, salt, function(err, hash) {
                 //returns hash
                 console.log("contraseña hasheada: " + hash);
-                db.query('INSERT INTO users SET ?', { name: name, surname: surname, email: emailReg, password: hash, pp: "/img/perfil.jpg" }, (error, results) => {
+                db.query('INSERT INTO users SET ?', { name: name, surname: surname, descripcion: "", phone: phone, email: emailReg, password: hash, pp: "/img/perfil.png", acepto: acepto }, (error, results) => {
                     if (error) {
                         console.log(error);
                     } else {
