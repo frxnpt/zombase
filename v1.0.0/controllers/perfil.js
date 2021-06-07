@@ -15,8 +15,6 @@ const verPerfil = (req, res) => {
     if (!req.cookies.jwt) {
         res.render("login");
     } else {
-
-
         const getCookie = (req, name) => {
             return req.headers.cookie
                 .split("; ")
@@ -39,7 +37,6 @@ const verPerfil = (req, res) => {
                     jwt: req.cookies.jwt
                 });
             });
-
         });
     }
 }
@@ -62,7 +59,7 @@ exports.guardarPerfil = (req, res) => {
         if (error) {
             console.error(error);
         }
-        console.log("UPDATEANDO PERFIL...")
+        console.log("ACTUALIZANDO PERFIL...");
         res.redirect('/perfil/ver');
     });
 }
