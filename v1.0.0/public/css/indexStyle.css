@@ -398,7 +398,7 @@ footer {
 
 #Scoreboard {
     position: absolute;
-    background: bisque;
+    border: 3px solid black;
     user-select: none;
     width: 12vw;
     height: 2vw;
@@ -413,8 +413,8 @@ footer {
 
 #armamano1 {
     position: absolute;
-    background: bisque;
     user-select: none;
+    border: 3px solid black;
     width: 13vw;
     height: 7vw;
     left: 0.85vw;
@@ -422,8 +422,8 @@ footer {
 
 #armamano2 {
     position: absolute;
-    background: bisque;
     user-select: none;
+    border: 3px solid black;
     width: 13vw;
     height: 7vw;
     left: 0.85vw;
@@ -442,6 +442,8 @@ footer {
 #armamano1-municion,
 #armamano2-municion {
     font-size: 1vw;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .slider {
@@ -484,6 +486,25 @@ footer {
     height: 2.5vw;
     width: 13.5vw;
     margin-left: 0.85vw;
+}
+
+.link-mobile-logout {
+    display: block;
+    --tw-bg-opacity: 1;
+    background-color: rgba(161, 0, 0, var(--tw-text-opacity));
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.link-mobile-logout:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(112, 0, 0, var(--tw-text-opacity));
 }
 
 #iconoaudio {
