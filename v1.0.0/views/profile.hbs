@@ -78,7 +78,7 @@
         <div id="fotoperfil" class="flex flex-row gap-5">
                 <form action="/perfil/guardar" method="POST" class="flex flex-col w-3/12 gap-3">
                 {{#each player}}
-                    <img src="{{this.pp}}" id="pp" class="w-full h-auto rounded-full" alt="">
+                    <img src="{{this.pp}}" id="pp" name="pp" class="w-full h-auto rounded-full" alt="">
                     <p class="text-2xl font-bold" id="nombre">{{this.name}} {{this.surname}}</p>
                     <textarea class="bg-gray-50 rounded-md p-2 resize-none" id="description" name="description">{{this.descripcion}}</textarea>
                     <label for="image_uploads" class="bg-yellow-400 p-2 rounded-md text-center text-white font-bold">Subir Foto</label>
