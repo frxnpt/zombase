@@ -52,6 +52,7 @@ app.use('/', require('./routes/pages'));
 app.use('/auth/', require('./routes/auth'));
 app.use('/partida/', require('./routes/partida'));
 app.use('/perfil/', require('./routes/perfil'));
+app.use('/image/', require('./routes/image'));
 
 
 
