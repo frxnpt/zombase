@@ -123,9 +123,9 @@
                         tus armas y vuelve al ataque!
                     </p>
                     <div class="flex flex-row justify-evenly gap-[0.5vw] mx-[1vw] mt-[2vw] mb-[4vw]">
-                        <button onclick="guardarPartida();"
+                        {{#if jwt}}<button onclick="guardarPartida();"
                             class="text-[1vw] flex-grow bg-green-400 p-[1vw] rounded-md border-green-800 border-dashed border-[0.25vw] font_game hover:text-white">GUARDAR
-                            PARTIDA</button>
+                            PARTIDA</button>{{/if}}
                         <button onclick="resetear();"
                             class="text-[1vw] bg-red-400 p-[1vw] rounded-md border-red-800 border-dashed border-[0.25vw] font_game hover:text-white">RESTART</button>
                     </div>
