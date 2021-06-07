@@ -23,9 +23,9 @@ const verPerfil = (req, res) => {
                 .map(it => it.split("="))
                 .filter(it => it[0] == name)[0][1];
         }
-        let tokensito = getCookie(req, "jwt");
-        console.log("LAS GALLETAS PACO: " + tokensito)
-        let decodedJWT = jwt.verify(tokensito, process.env.JWT_SECRET);
+        let tokenCookie = getCookie(req, "jwt");
+        console.log("La cookie que conteiene el token " + tokenCookie)
+        let decodedJWT = jwt.verify(tokenCookie, process.env.JWT_SECRET);
         let jwtstring = decodedJWT.id;
         db.query("SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y %H:%i') as fechabien FROM games WHERE jugador = ?", jwtstring, async(error, results) => {
             if (error) {
