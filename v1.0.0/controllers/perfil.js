@@ -58,7 +58,7 @@ exports.guardarPerfil = (req, res) => {
     let tokensito = getCookie(req, "jwt");
     let decodedJWT = jwt.verify(tokensito, process.env.JWT_SECRET);
     let jwtstring = decodedJWT.id;
-    db.query("UPDATE users SET descripcion = ? WHERE id = ?", [description, jwtstring], async(error, results) => {
+    db.query("UPDATE users SET descripcion = ?, pp = ? WHERE id = ?", [description, pp, jwtstring], async(error, results) => {
         if (error) {
             console.error(error);
         }
