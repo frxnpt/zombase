@@ -81,14 +81,14 @@
                     <img src="{{this.pp}}" id="pp" name="pp" class="w-full h-auto rounded-full" alt="">
                     <p class="text-2xl font-bold" id="nombre">{{this.name}} {{this.surname}}</p>
                     <textarea class="bg-gray-50 rounded-md p-2 resize-none" id="description" name="description">{{this.descripcion}}</textarea>
-                    <label for="image_uploads" class="bg-yellow-400 p-2 rounded-md text-center text-white font-bold">Subir Foto</label>
-                    <input type="file"  id="image_uploads" name="image_uploads" class="hidden"accept=".jpg, .jpeg, .png" multiple="">
-                    <div class="preview">
-                        <p>No files currently selected for upload</p>
-                    </div>
+                    <label for="avatar" class="bg-yellow-400 p-2 rounded-md text-center text-white font-bold">Subir Foto</label>
+                    
                     <button type="submit" class="bg-green-400 p-2 rounded-md text-center text-white font-bold">Guardar Perfil</button>
                     
                 {{/each}}
+                </form>
+                <form action="/image/subir" class="hidden" method="POST"  enctype="multipart/form-data">
+                    <input type="file"  id="avatar" name="avatar" class="hidden"accept=".jpg, .jpeg, .png" multiple="" onchange="form.submit()";>
                 </form>
             <div class="flex flex-col flex-grow gap-5">
                 <p class="text-2xl font-bold ">Tus partidas</p>
