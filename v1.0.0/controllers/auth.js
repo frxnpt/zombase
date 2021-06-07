@@ -16,9 +16,7 @@ const db = mysql.createConnection({
 exports.register = (req, res) => {
     console.log(req.body);
 
-
     const { name, surname, phone, emailReg, passReg, passRegConfirm, acepto } = req.body;
-
 
     db.query('SELECT email FROM users WHERE email = ?', [emailReg], async(error, results) => {
         if (error) {
@@ -26,12 +24,12 @@ exports.register = (req, res) => {
         }
         if (results.length > 0) {
             return res.render('login', {
-                errorReg: 'That email is already in use'
+                errorReg: 'Ese email se encuentra en uso'
             });
 
         } else if (passReg != passRegConfirm) {
             return res.render('login', {
-                errorReg: 'Passwords do not match'
+                errorReg: 'Las contraseñas no coinciden'
             });
         }
         bcrypt.genSalt(saltRounds, function(err, salt) {
@@ -46,7 +44,7 @@ exports.register = (req, res) => {
                         req.session.loggedin = true;
                         req.session.save();
                         return res.render('login', {
-                            successReg: 'User Registered successfully'
+                            successReg: 'Usuario registrado correctamente!'
                         });
 
                     }
@@ -61,7 +59,7 @@ exports.login = (req, res) => {
 
         if (!emailLog || !passLog) {
             return res.status(400).render('login', {
-                messageLog: 'Please Provide an email and password'
+                messageLog: 'Porfavor introduzca un usuario y contraseña'
             });
         }
 
@@ -69,7 +67,7 @@ exports.login = (req, res) => {
             console.log(results);
             if (!results || !(await bcrypt.compare(passLog, results[0].password))) {
                 res.status(401).render('login', {
-                    messageLog: 'Email or password is incorrect'
+                    messageLog: 'El email o la contraseña son incorrectos'
                 });
 
             } else {
