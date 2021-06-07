@@ -60,19 +60,19 @@ exports.login = (req, res) => {
 
         db.query('SELECT * from users WHERE email = ?', [emailLog], async(error, results) => {
             console.log(results);
-            if (!results || !(await bcrypt.compare(passLog, results[0].password))) {
+            if (!results || !(await bcrypt.compare(passLog, results[0].password))) { //si la contraseña o el usuario están mal
                 res.status(401).render('login', {
                     messageLog: 'El email o la contraseña son incorrectos'
                 });
 
-            } else {
-                const id = results[0].id;
-                const token = jwt.sign({ id }, process.env.JWT_SECRET, {
-                    expiresIn: process.env.JWT_EXPIRES_IN
+            } else { //si está bien
+                const id = results[0].id; //Cogemos la id de la consulta a la base de datos
+                const token = jwt.sign({ id }, process.env.JWT_SECRET, { //creamos el JWT con la id del usuario
+                    expiresIn: process.env.JWT_EXPIRES_IN //le ponemos fecha de caducidad
                 });
-                console.log("The token is:" + token);
+                console.log("The token is:" + token); //lo printeo en consola para asegurarme que se guarda
 
-                const cookieOptions = {
+                const cookieOptions = { //configuramos la cookie que vamos a guardar
                     expires: new Date(
                         Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
                     ),
