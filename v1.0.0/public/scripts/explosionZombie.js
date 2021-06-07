@@ -2,6 +2,7 @@ function explosionZombie(X, Y, id) {//X e Y vienen centradas
     var explosion = document.createElement("div");
     explosion.setAttribute("id", "EXPZ_" + id);
     explosion.setAttribute("class", "EXPLOSIONZ");
+    explosion.setAttribute("style", "z-index: 999;");
     var imagen = document.createElement("img");
     imagen.setAttribute("src", "./resources/gif/EXPLOSION_ZOMBIE.gif");
     imagen.setAttribute("style", "width: 100%; height: 100%;");
@@ -45,6 +46,9 @@ function explosionZombie(X, Y, id) {//X e Y vienen centradas
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
         if (Jugador.salud <= 0) { //Caso en el que el zombie muere
             finalPartida();
+        } else if (Jugador.salud <= 20) {
+            document.getElementById('personaje').style.animation = "saludCritica 1s";
+            document.getElementById("personaje").style.animationIterationCount = "infinite";
         }
     }
 

@@ -14,7 +14,7 @@ function destruir(nombre, tipo, indice) {
             if (generarZombie != 0) {
                 clearInterval(generarZombie);
             }
-            var empezarRonda = setTimeout(nuevaRonda, 6000, contadorIntervalos);
+            setTimeout(nuevaRonda, 6000, contadorIntervalos);
         }
     } else if (tipo == "BalaZombie") {
         clearInterval(BalasZombie[indice].intervalo);

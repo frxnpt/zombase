@@ -225,12 +225,16 @@ function myMove(container, elem) {
 
                     Jugador.salud = Jugador.salud - 1;
                     document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
-                    if (Jugador.salud < 0) {
+                    if (Jugador.salud <= 0) {
                         finalPartida();
                     }
                     inmunidadVeneno = true;
                     document.getElementById('personaje').style.animation = "saludCritica 0.5s";
                     document.getElementById("personaje").style.animationIterationCount = "1";
+                    if (Jugador.salud <= 20) {
+                        document.getElementById('personaje').style.animation = "saludCritica 1s";
+                        document.getElementById("personaje").style.animationIterationCount = "infinite";
+                    }
                     contadorIntervalos++;
                     setTimeout(() => {
                         document.getElementById('personaje').style.animation = "none";

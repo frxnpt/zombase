@@ -61,6 +61,6 @@ function disparoZombie(indice) {
         balaZMovimientoX = (posXFinal - balaZXCliente) / (document.body.clientWidth);
         balaZMovimientoY = (posYFinal - balaZYCliente) / (document.body.clientWidth);
 
-        var moverBalaZ = setInterval(movimientoBalaZombie, 5, balaZMovimientoX, balaZMovimientoY, balasDisparadasZombie);
+        setInterval(movimientoBalaZombie, 5, balaZMovimientoX, balaZMovimientoY, balasDisparadasZombie);
     }
 }
