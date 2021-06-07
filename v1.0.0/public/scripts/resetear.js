@@ -81,10 +81,11 @@ function resetear() {
     document.getElementById("armamano2-img").removeAttribute("src");
     document.getElementById("armamano2-data").innerHTML = "";
     document.getElementById("armamano2-municion").innerHTML = "";
+    document.getElementById("armamano1").style.opacity = 1;
+    document.getElementById("armamano2").style.opacity = 0.4;
     armaAutomatica = false;
     cambiarImagenPersonaje(Jugador.arma1.nombreArma1, 1);
-    myMove();
-    timer = setInterval(myMove, 20, container, elem);
-    empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
+    setInterval(myMove, 20, container, elem);
+    setTimeout(nuevaRonda, 5000, contadorIntervalos);
     generarZombie = 0;
 }

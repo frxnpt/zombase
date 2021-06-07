@@ -163,9 +163,8 @@ document.getElementById("armamano2").style.top = container.getBoundingClientRect
     container.getBoundingClientRect().height / 1.9 + "px";
 document.getElementById("audiocontainer").style.top = container.getBoundingClientRect().top + "px";
 
-myMove();
-var timer = setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
-var empezarRonda = setTimeout(nuevaRonda, 5000, contadorIntervalos);
+setInterval(myMove, 20, container, elem); //Comprueba cada x milisegundos
+setTimeout(nuevaRonda, 5000, contadorIntervalos);
 var generarZombie = 0;
 
 //Contador de intervalos automatico. Hay algunas extensiones que aumentan el número de intervalos (como por ejemplo ublock). De base debería empezar

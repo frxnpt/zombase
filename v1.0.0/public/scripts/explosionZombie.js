@@ -45,6 +45,9 @@ function explosionZombie(X, Y, id) {//X e Y vienen centradas
         document.getElementById("salud").innerHTML = "Salud: " + Jugador.salud + "HP";
         if (Jugador.salud <= 0) { //Caso en el que el zombie muere
             finalPartida();
+        } else if (Jugador.salud <= 20) {
+            document.getElementById('personaje').style.animation = "saludCritica 1s";
+            document.getElementById("personaje").style.animationIterationCount = "infinite";
         }
     }
 
