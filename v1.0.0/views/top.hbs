@@ -87,12 +87,14 @@
                     <i class="ml-5 fa fa-trophy"></i>
                     <div class="ml-5">1st</div>
                 </div>
-                {{#each primero}}
+                {{! Muestro el primer jugador separado para mostrarlo en otro tamaño y con otro color}}
+                {{#each primero}} 
                 <div class="w-1/2 my-auto">{{this.name}} {{this.surname}}</div>
                 <div class="w-1/4 my-auto">{{this.puntuacion}} pts</div>
+                <div class="w-1/4 my-auto font-bold">{{this.puntuacion}} pts</div>
                 {{/each}}
             </div>
-            
+            {{! Muestro los 9 jugadores restantes}}
             {{#each items}}
             <div class="flex h-16">
                 <div class="w-1/4 my-auto font-bold text-sm text-gray-600">
@@ -100,7 +102,7 @@
                     <div class="ml-5">{{position @index}}º</div>
                 </div>
                 <div class="w-1/2 my-auto">{{this.name}} {{this.surname}}</div>
-                <div class="w-1/4 my-auto">{{this.puntuacion}} pts</div>
+                <div class="w-1/4 my-auto font-bold">{{this.puntuacion}} pts</div>
             </div>
             {{/each}}
         </div>
