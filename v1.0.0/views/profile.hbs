@@ -91,6 +91,7 @@
                     <input type="file"  id="avatar" name="avatar" class="hidden"accept=".jpg, .jpeg, .png" multiple="" onchange="form.submit()";>
                 </form>
             <div class="flex flex-col flex-grow gap-5">
+                {{#if partidas}}
                 <p class="text-2xl font-bold ">Tus partidas</p>
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
@@ -145,10 +146,12 @@
                             </td>
                         </tr>
                         {{/each}}
-
-
-
-                        <!-- More people... -->
+                        {{else}}
+                        <div class="bg-red-300 border mx-5 rounded-md w-full p-2 text-center" role="alert">
+                                <strong class="font-bold">Vaya!</strong>
+                                <span class="block sm:inline">Parece que no has guardado ninguna partida todavía!</span>
+                            </div>
+                        {{/if}}
                     </tbody>
                 </table>
             </div>
